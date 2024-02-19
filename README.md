@@ -1,2 +1,4 @@
-# price-of-war
-Replication package for The Price of War
+# The price of war
+Replication package for the paper "The Price of War".
+
+🚧 UNDER CONSTRUCTION 🚧
