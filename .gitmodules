@@ -1,0 +1,3 @@
+[submodule "DynareModWizard"]
+	path = DynareModWizard
+	url = git@github.com:wmutschl/DynareModWizard.git
