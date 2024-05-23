@@ -69,4 +69,4 @@ jobs:
         with:
           command: |
             addpath("Dynare-6.1-arm64/matlab");            
-            dynare war_nk4 -DMATCHING -DSLICE -DSLICE_ROTATED -DMH_NBLOCKS=3 conffile=__parallelconf_mac_R2024a_arm64_github parallel
+            dynare war_nk4 -DMATCHING -DSLICE -DSLICE_ROTATED -DMH_NBLOCKS=3 conffile=__parallelconf_mac_R2024a_arm64_github parallel console
