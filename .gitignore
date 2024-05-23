@@ -2,3 +2,21 @@
 .vscode/
 
 .aux/
+
+\+war_nk4/
+
+dynareParallelLogFiles/
+
+war_nk4.log
+
+war_slice/
+
+war_slice_rotated/
+
+war_rwmh/
+
+war_nk4/
+
+war_mode_compute/
+
+plots/
