@@ -1,0 +1,441 @@
+######################################################################
+Projection h=0
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.135
+Model:                            OLS   Adj. R-squared (uncentered):              0.133
+Method:                 Least Squares   F-statistic:                              14.42
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -29290.
+No. Observations:                7440   AIC:                                  5.862e+04
+Df Residuals:                    7421   BIC:                                  5.875e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.3094      0.050     -6.241        nan         nan         nan
+l2.inflation                       0.0555      0.046      1.209        nan         nan         nan
+l3.inflation                       0.0480      0.030      1.597        nan         nan         nan
+l4.inflation                       0.0108      0.026      0.422        nan         nan         nan
+l0.site                            5.1381      2.362      2.175        nan         nan         nan
+l1.site                           12.3305      5.217      2.363        nan         nan         nan
+l2.site                            3.4515      3.426      1.008        nan         nan         nan
+l3.site                           -0.3209      3.187     -0.101        nan         nan         nan
+l4.site                           -3.0624      3.307     -0.926        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby     50.4307    556.211      0.091        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby   2048.8479    370.448      5.531        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby   1073.5869    456.006      2.354        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby   1866.4455    939.362      1.987        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby   1660.8525    755.508      2.198        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant  -266.9960    381.395     -0.700        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant  -342.4044    515.265     -0.665        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant  -138.7092    259.869     -0.534        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant   449.0024    353.953      1.269        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant   -32.1391    257.191     -0.125        nan         nan         nan
+==============================================================================
+Omnibus:                     4459.182   Durbin-Watson:                   1.996
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           427978.144
+Skew:                           1.990   Prob(JB):                         0.00
+Kurtosis:                      39.942   Cond. No.                     1.99e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.99e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=1
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.211
+Model:                            OLS   Adj. R-squared (uncentered):              0.209
+Method:                 Least Squares   F-statistic:                              42.17
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -30506.
+No. Observations:                7380   AIC:                                  6.105e+04
+Df Residuals:                    7361   BIC:                                  6.118e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.4667      0.054     -8.723        nan         nan         nan
+l2.inflation                       0.0857      0.030      2.867        nan         nan         nan
+l3.inflation                       0.0438      0.033      1.328        nan         nan         nan
+l4.inflation                       0.0087      0.030      0.292        nan         nan         nan
+l0.site                           16.5928      6.288      2.639        nan         nan         nan
+l1.site                           12.3431      4.687      2.633        nan         nan         nan
+l2.site                            1.8854      5.202      0.362        nan         nan         nan
+l3.site                           -3.4640      2.662     -1.301        nan         nan         nan
+l4.site                            0.4842      4.259      0.114        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   2107.0710    480.372      4.386        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby   2400.7664    533.396      4.501        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby   2718.0022   1016.636      2.674        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby   3816.9459   1158.632      3.294        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby  -2867.9356    827.673     -3.465        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant  -563.7401    384.751     -1.465        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant  -353.3523    354.805     -0.996        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant   415.2072    411.459      1.009        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant   120.9632    378.033      0.320        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant   706.7431    349.679      2.021        nan         nan         nan
+==============================================================================
+Omnibus:                     4687.037   Durbin-Watson:                   1.067
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           198156.233
+Skew:                           2.446   Prob(JB):                         0.00
+Kurtosis:                      27.910   Cond. No.                     1.99e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.99e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=2
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.251
+Model:                            OLS   Adj. R-squared (uncentered):              0.249
+Method:                 Least Squares   F-statistic:                              40.31
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -30943.
+No. Observations:                7320   AIC:                                  6.192e+04
+Df Residuals:                    7301   BIC:                                  6.205e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.5495      0.054    -10.269        nan         nan         nan
+l2.inflation                       0.0745      0.043      1.715        nan         nan         nan
+l3.inflation                       0.0222      0.027      0.820        nan         nan         nan
+l4.inflation                       0.0211      0.031      0.675        nan         nan         nan
+l0.site                           15.4893      4.890      3.167        nan         nan         nan
+l1.site                            9.4822      5.437      1.744        nan         nan         nan
+l2.site                           -2.0053      2.527     -0.793        nan         nan         nan
+l3.site                            0.2859      3.419      0.084        nan         nan         nan
+l4.site                            4.2619      4.020      1.060        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   2750.1810    333.341      8.250        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby   3713.3647   1111.018      3.342        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby   4314.1578   1280.295      3.370        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby  -1215.3017    539.209     -2.254        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby  -1056.1187    788.255     -1.340        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant  -582.2948    324.448     -1.795        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant   481.0418    421.071      1.142        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant   124.9945    536.278      0.233        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant   923.1802    469.699      1.965        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant   648.9131    884.255      0.734        nan         nan         nan
+==============================================================================
+Omnibus:                     5211.081   Durbin-Watson:                   0.804
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           170579.857
+Skew:                           3.012   Prob(JB):                         0.00
+Kurtosis:                      25.869   Cond. No.                     1.99e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.99e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=3
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.292
+Model:                            OLS   Adj. R-squared (uncentered):              0.290
+Method:                 Least Squares   F-statistic:                              57.09
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -31095.
+No. Observations:                7260   AIC:                                  6.223e+04
+Df Residuals:                    7241   BIC:                                  6.236e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.6073      0.061    -10.014        nan         nan         nan
+l2.inflation                       0.0437      0.032      1.387        nan         nan         nan
+l3.inflation                       0.0479      0.026      1.827        nan         nan         nan
+l4.inflation                      -0.0036      0.042     -0.084        nan         nan         nan
+l0.site                           13.1317      5.293      2.481        nan         nan         nan
+l1.site                            4.9827      2.563      1.944        nan         nan         nan
+l2.site                            2.4405      3.162      0.772        nan         nan         nan
+l3.site                            4.0426      4.459      0.907        nan         nan         nan
+l4.site                           -5.2848      5.126     -1.031        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   4304.1264    855.704      5.030        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby   5099.5617   1307.786      3.899        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby   -633.0800    514.098     -1.231        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby    821.1865    603.118      1.362        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby  -3000.5573   1363.839     -2.200        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant   430.5345    474.427      0.907        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant   179.2933    499.935      0.359        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant  1248.5244    634.134      1.969        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant  1145.7515    689.881      1.661        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant -1877.3562   1027.983     -1.826        nan         nan         nan
+==============================================================================
+Omnibus:                     5499.683   Durbin-Watson:                   0.687
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           162648.994
+Skew:                           3.358   Prob(JB):                         0.00
+Kurtosis:                      25.194   Cond. No.                     1.98e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.98e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=4
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.324
+Model:                            OLS   Adj. R-squared (uncentered):              0.322
+Method:                 Least Squares   F-statistic:                              21.66
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -31139.
+No. Observations:                7200   AIC:                                  6.232e+04
+Df Residuals:                    7181   BIC:                                  6.245e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.6791      0.056    -12.029        nan         nan         nan
+l2.inflation                       0.0688      0.027      2.501        nan         nan         nan
+l3.inflation                       0.0243      0.025      0.961        nan         nan         nan
+l4.inflation                      -0.0142      0.040     -0.359        nan         nan         nan
+l0.site                            8.1694      2.792      2.926        nan         nan         nan
+l1.site                            8.6961      3.156      2.755        nan         nan         nan
+l2.site                            5.5660      4.898      1.136        nan         nan         nan
+l3.site                           -5.7349      4.414     -1.299        nan         nan         nan
+l4.site                           -2.8659      3.145     -0.911        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   6027.4139   1200.983      5.019        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby    155.2292    569.473      0.273        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby   1259.2252    671.966      1.874        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby  -1515.5532    857.891     -1.767        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby  -2443.3267   1181.025     -2.069        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant   134.6609    565.868      0.238        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant  1418.4499    630.203      2.251        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant  1360.1859    818.874      1.661        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant -1313.2958    954.427     -1.376        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant -1200.2574    789.149     -1.521        nan         nan         nan
+==============================================================================
+Omnibus:                     5670.995   Durbin-Watson:                   0.612
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           158190.279
+Skew:                           3.594   Prob(JB):                         0.00
+Kurtosis:                      24.809   Cond. No.                     1.98e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.98e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=5
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.346
+Model:                            OLS   Adj. R-squared (uncentered):              0.344
+Method:                 Least Squares   F-statistic:                              29.91
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -31092.
+No. Observations:                7140   AIC:                                  6.222e+04
+Df Residuals:                    7121   BIC:                                  6.235e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.7079      0.052    -13.656        nan         nan         nan
+l2.inflation                       0.0444      0.030      1.497        nan         nan         nan
+l3.inflation                       0.0086      0.032      0.271        nan         nan         nan
+l4.inflation                      -0.0137      0.032     -0.431        nan         nan         nan
+l0.site                           11.1727      3.248      3.439        nan         nan         nan
+l1.site                           10.7681      4.981      2.162        nan         nan         nan
+l2.site                           -4.7598      3.649     -1.304        nan         nan         nan
+l3.site                           -3.3629      3.060     -1.099        nan         nan         nan
+l4.site                           -2.4237      2.365     -1.025        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   1383.5279    591.512      2.339        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby   2110.3448    487.439      4.329        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby  -1215.3034    841.636     -1.444        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby  -1470.1044   1021.598     -1.439        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby  -1115.7389    551.786     -2.022        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant  1275.9980    780.764      1.634        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant  1401.9650    765.482      1.831        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant -1271.5610   1028.258     -1.237        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant  -743.3818    733.513     -1.013        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant  -234.1159   1058.737     -0.221        nan         nan         nan
+==============================================================================
+Omnibus:                     5705.619   Durbin-Watson:                   0.561
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           149337.109
+Skew:                           3.705   Prob(JB):                         0.00
+Kurtosis:                      24.144   Cond. No.                     1.98e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.98e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=6
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.370
+Model:                            OLS   Adj. R-squared (uncentered):              0.369
+Method:                 Least Squares   F-statistic:                              56.36
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -30993.
+No. Observations:                7080   AIC:                                  6.202e+04
+Df Residuals:                    7061   BIC:                                  6.216e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.7538      0.047    -16.195        nan         nan         nan
+l2.inflation                       0.0258      0.037      0.702        nan         nan         nan
+l3.inflation                       0.0032      0.022      0.149        nan         nan         nan
+l4.inflation                      -0.0062      0.033     -0.191        nan         nan         nan
+l0.site                           12.4636      4.919      2.534        nan         nan         nan
+l1.site                           -0.4624      3.464     -0.133        nan         nan         nan
+l2.site                           -2.5588      3.049     -0.839        nan         nan         nan
+l3.site                           -2.7576      2.896     -0.952        nan         nan         nan
+l4.site                           -0.2820      2.723     -0.104        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   2376.6112    557.856      4.260        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby   -608.2326    888.787     -0.684        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby  -1175.8127    932.941     -1.260        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby   -287.2755    466.516     -0.616        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby   -348.6489    706.063     -0.494        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant  1493.3314    869.962      1.717        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant -1181.5935   1106.665     -1.068        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant  -764.4121    752.929     -1.015        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant    42.9850   1034.621      0.042        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant   237.4469   1085.083      0.219        nan         nan         nan
+==============================================================================
+Omnibus:                     5723.903   Durbin-Watson:                   0.532
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           144142.957
+Skew:                           3.790   Prob(JB):                         0.00
+Kurtosis:                      23.764   Cond. No.                     1.97e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.97e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=7
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.392
+Model:                            OLS   Adj. R-squared (uncentered):              0.391
+Method:                 Least Squares   F-statistic:                              41.65
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -30855.
+No. Observations:                7020   AIC:                                  6.175e+04
+Df Residuals:                    7001   BIC:                                  6.188e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.8023      0.056    -14.277        nan         nan         nan
+l2.inflation                       0.0190      0.025      0.765        nan         nan         nan
+l3.inflation                       0.0191      0.028      0.670        nan         nan         nan
+l4.inflation                      -0.0224      0.032     -0.690        nan         nan         nan
+l0.site                            1.2865      3.186      0.404        nan         nan         nan
+l1.site                            1.4217      2.839      0.501        nan         nan         nan
+l2.site                           -1.9445      3.611     -0.538        nan         nan         nan
+l3.site                           -0.8167      3.113     -0.262        nan         nan         nan
+l4.site                           -4.0157      2.974     -1.350        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   -127.9690   1044.650     -0.122        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby   -690.8798   1012.567     -0.682        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby     39.9052    407.926      0.098        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby    598.1803    417.267      1.434        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby  -1477.6109    712.315     -2.074        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant -1049.0980   1211.185     -0.866        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant  -574.4948    935.463     -0.614        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant    53.4453   1089.585      0.049        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant   564.6709   1099.980      0.513        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant    71.6694   1280.738      0.056        nan         nan         nan
+==============================================================================
+Omnibus:                     5763.317   Durbin-Watson:                   0.511
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           145213.243
+Skew:                           3.883   Prob(JB):                         0.00
+Kurtosis:                      23.884   Cond. No.                     1.97e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.97e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+######################################################################
+Projection h=8
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.415
+Model:                            OLS   Adj. R-squared (uncentered):              0.413
+Method:                 Least Squares   F-statistic:                              66.90
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:23   Log-Likelihood:                         -30653.
+No. Observations:                6960   AIC:                                  6.134e+04
+Df Residuals:                    6941   BIC:                                  6.147e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+==================================================================================================
+                                     coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------
+l1.inflation                      -0.8403      0.047    -17.774        nan         nan         nan
+l2.inflation                       0.0336      0.030      1.103        nan         nan         nan
+l3.inflation                       0.0161      0.022      0.715        nan         nan         nan
+l4.inflation                      -0.0413      0.029     -1.406        nan         nan         nan
+l0.site                            3.1372      2.714      1.156        nan         nan         nan
+l1.site                            0.7630      3.341      0.228        nan         nan         nan
+l2.site                            0.3568      3.213      0.111        nan         nan         nan
+l3.site                           -4.4734      2.642     -1.693        nan         nan         nan
+l4.site                           -5.5432      2.411     -2.300        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_nearby   -733.0842   1275.349     -0.575        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_nearby    502.4798    409.350      1.228        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_nearby    997.6535    423.268      2.357        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_nearby   -398.9587    607.422     -0.657        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_nearby  -2781.8705    454.369     -6.122        nan         nan         nan
+l0.trans_e(dmw)_f(dmw)_distant  -655.3996   1212.047     -0.541        nan         nan         nan
+l1.trans_e(dmw)_f(dmw)_distant  -416.3519    923.787     -0.451        nan         nan         nan
+l2.trans_e(dmw)_f(dmw)_distant   643.3348   1083.410      0.594        nan         nan         nan
+l3.trans_e(dmw)_f(dmw)_distant   -20.8587   1006.482     -0.021        nan         nan         nan
+l4.trans_e(dmw)_f(dmw)_distant  -437.0466   1400.303     -0.312        nan         nan         nan
+==============================================================================
+Omnibus:                     5753.405   Durbin-Watson:                   0.497
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           143978.129
+Skew:                           3.929   Prob(JB):                         0.00
+Kurtosis:                      23.850   Cond. No.                     1.97e+05
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+[3] The condition number is large, 1.97e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+

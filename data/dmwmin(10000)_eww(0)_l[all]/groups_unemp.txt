@@ -1,0 +1,378 @@
+######################################################################
+Projection h=0
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.177
+Model:                            OLS   Adj. R-squared (uncentered):              0.171
+Method:                 Least Squares   F-statistic:                              11.58
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -3122.5
+No. Observations:                1841   AIC:                                      6273.
+Df Residuals:                    1827   BIC:                                      6350.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp       0.2437      0.074      3.282        nan         nan         nan
+l2.unemp      -0.4071      0.071     -5.699        nan         nan         nan
+l3.unemp       0.1303      0.073      1.794        nan         nan         nan
+l4.unemp      -0.0682      0.038     -1.788        nan         nan         nan
+l0.site        1.5713      0.859      1.829        nan         nan         nan
+l1.site       -2.2770      0.818     -2.784        nan         nan         nan
+l2.site        0.2725      0.252      1.083        nan         nan         nan
+l3.site       -1.3270      0.394     -3.366        nan         nan         nan
+l4.site       -0.1818      0.209     -0.871        nan         nan         nan
+l0.third       0.2665      0.274      0.972        nan         nan         nan
+l1.third       0.3236      0.155      2.082        nan         nan         nan
+l2.third      -0.4527      0.251     -1.800        nan         nan         nan
+l3.third      -0.2048      0.162     -1.262        nan         nan         nan
+l4.third       0.0459      0.156      0.295        nan         nan         nan
+==============================================================================
+Omnibus:                      492.989   Durbin-Watson:                   2.033
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7834.424
+Skew:                           0.819   Prob(JB):                         0.00
+Kurtosis:                      12.972   Cond. No.                         179.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=1
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.180
+Model:                            OLS   Adj. R-squared (uncentered):              0.173
+Method:                 Least Squares   F-statistic:                              10.90
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -3897.6
+No. Observations:                1815   AIC:                                      7823.
+Df Residuals:                    1801   BIC:                                      7900.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp       0.1639      0.122      1.346        nan         nan         nan
+l2.unemp      -0.4011      0.111     -3.613        nan         nan         nan
+l3.unemp       0.0607      0.091      0.670        nan         nan         nan
+l4.unemp      -0.0449      0.056     -0.802        nan         nan         nan
+l0.site       -0.4914      0.966     -0.509        nan         nan         nan
+l1.site       -2.1746      1.365     -1.594        nan         nan         nan
+l2.site       -1.0545      0.368     -2.867        nan         nan         nan
+l3.site       -1.7009      0.475     -3.580        nan         nan         nan
+l4.site        0.2171      0.771      0.281        nan         nan         nan
+l0.third       0.6577      0.407      1.615        nan         nan         nan
+l1.third       0.0584      0.244      0.239        nan         nan         nan
+l2.third      -0.7154      0.379     -1.886        nan         nan         nan
+l3.third      -0.1747      0.293     -0.596        nan         nan         nan
+l4.third       0.0210      0.257      0.082        nan         nan         nan
+==============================================================================
+Omnibus:                      496.996   Durbin-Watson:                   1.051
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3642.871
+Skew:                           1.083   Prob(JB):                         0.00
+Kurtosis:                       9.594   Cond. No.                         179.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=2
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.209
+Model:                            OLS   Adj. R-squared (uncentered):              0.203
+Method:                 Least Squares   F-statistic:                              21.82
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -4238.0
+No. Observations:                1789   AIC:                                      8504.
+Df Residuals:                    1775   BIC:                                      8581.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp       0.0528      0.138      0.383        nan         nan         nan
+l2.unemp      -0.4224      0.142     -2.981        nan         nan         nan
+l3.unemp       0.0419      0.092      0.453        nan         nan         nan
+l4.unemp      -0.0079      0.076     -0.104        nan         nan         nan
+l0.site       -0.9068      1.222     -0.742        nan         nan         nan
+l1.site       -3.4312      1.232     -2.785        nan         nan         nan
+l2.site       -1.5831      0.572     -2.767        nan         nan         nan
+l3.site       -1.0982      0.935     -1.175        nan         nan         nan
+l4.site       -0.3395      0.479     -0.709        nan         nan         nan
+l0.third       0.3241      0.380      0.853        nan         nan         nan
+l1.third      -0.0843      0.327     -0.258        nan         nan         nan
+l2.third      -0.6087      0.415     -1.465        nan         nan         nan
+l3.third      -0.2204      0.366     -0.603        nan         nan         nan
+l4.third      -0.0218      0.325     -0.067        nan         nan         nan
+==============================================================================
+Omnibus:                      576.338   Durbin-Watson:                   0.650
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3503.446
+Skew:                           1.372   Prob(JB):                         0.00
+Kurtosis:                       9.283   Cond. No.                         179.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=3
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.246
+Model:                            OLS   Adj. R-squared (uncentered):              0.240
+Method:                 Least Squares   F-statistic:                              14.13
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -4402.2
+No. Observations:                1763   AIC:                                      8832.
+Df Residuals:                    1749   BIC:                                      8909.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp      -0.1074      0.128     -0.839        nan         nan         nan
+l2.unemp      -0.3887      0.134     -2.894        nan         nan         nan
+l3.unemp       0.0758      0.071      1.061        nan         nan         nan
+l4.unemp      -0.0195      0.086     -0.226        nan         nan         nan
+l0.site       -2.1812      0.842     -2.589        nan         nan         nan
+l1.site       -3.6937      0.905     -4.084        nan         nan         nan
+l2.site       -0.9549      1.078     -0.886        nan         nan         nan
+l3.site       -1.5712      0.585     -2.686        nan         nan         nan
+l4.site       -1.0663      0.688     -1.550        nan         nan         nan
+l0.third       0.1686      0.412      0.409        nan         nan         nan
+l1.third      -0.1538      0.414     -0.372        nan         nan         nan
+l2.third      -0.6057      0.458     -1.321        nan         nan         nan
+l3.third      -0.2225      0.421     -0.528        nan         nan         nan
+l4.third      -0.0733      0.396     -0.185        nan         nan         nan
+==============================================================================
+Omnibus:                      572.436   Durbin-Watson:                   0.447
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2830.274
+Skew:                           1.454   Prob(JB):                         0.00
+Kurtosis:                       8.484   Cond. No.                         178.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=4
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.282
+Model:                            OLS   Adj. R-squared (uncentered):              0.276
+Method:                 Least Squares   F-statistic:                              18.49
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -4472.3
+No. Observations:                1738   AIC:                                      8973.
+Df Residuals:                    1724   BIC:                                      9049.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp      -0.2655      0.106     -2.500        nan         nan         nan
+l2.unemp      -0.3168      0.105     -3.006        nan         nan         nan
+l3.unemp       0.1089      0.078      1.387        nan         nan         nan
+l4.unemp      -0.0580      0.100     -0.581        nan         nan         nan
+l0.site       -2.5165      0.682     -3.692        nan         nan         nan
+l1.site       -2.7349      0.477     -5.734        nan         nan         nan
+l2.site       -1.2911      0.567     -2.279        nan         nan         nan
+l3.site       -2.1967      0.656     -3.351        nan         nan         nan
+l4.site       -1.3001      0.932     -1.394        nan         nan         nan
+l0.third       0.0668      0.461      0.145        nan         nan         nan
+l1.third      -0.2532      0.477     -0.531        nan         nan         nan
+l2.third      -0.5727      0.443     -1.292        nan         nan         nan
+l3.third      -0.2410      0.454     -0.531        nan         nan         nan
+l4.third      -0.0644      0.468     -0.138        nan         nan         nan
+==============================================================================
+Omnibus:                      524.902   Durbin-Watson:                   0.333
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2174.258
+Skew:                           1.403   Prob(JB):                         0.00
+Kurtosis:                       7.706   Cond. No.                         175.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=5
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.316
+Model:                            OLS   Adj. R-squared (uncentered):              0.310
+Method:                 Least Squares   F-statistic:                              14.23
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -4486.2
+No. Observations:                1714   AIC:                                      9000.
+Df Residuals:                    1700   BIC:                                      9077.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp      -0.3895      0.105     -3.701        nan         nan         nan
+l2.unemp      -0.2085      0.109     -1.921        nan         nan         nan
+l3.unemp      -0.0024      0.081     -0.029        nan         nan         nan
+l4.unemp      -0.0025      0.113     -0.023        nan         nan         nan
+l0.site       -1.9533      0.875     -2.231        nan         nan         nan
+l1.site       -3.0556      0.702     -4.354        nan         nan         nan
+l2.site       -2.0513      0.664     -3.088        nan         nan         nan
+l3.site       -2.1913      0.814     -2.690        nan         nan         nan
+l4.site       -0.7588      1.227     -0.618        nan         nan         nan
+l0.third      -0.1042      0.494     -0.211        nan         nan         nan
+l1.third      -0.3566      0.496     -0.719        nan         nan         nan
+l2.third      -0.5365      0.414     -1.296        nan         nan         nan
+l3.third      -0.1943      0.510     -0.381        nan         nan         nan
+l4.third      -0.0829      0.522     -0.159        nan         nan         nan
+==============================================================================
+Omnibus:                      473.540   Durbin-Watson:                   0.273
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1690.027
+Skew:                           1.328   Prob(JB):                         0.00
+Kurtosis:                       7.075   Cond. No.                         171.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=6
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.347
+Model:                            OLS   Adj. R-squared (uncentered):              0.342
+Method:                 Least Squares   F-statistic:                              10.17
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -4473.9
+No. Observations:                1692   AIC:                                      8976.
+Df Residuals:                    1678   BIC:                                      9052.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp      -0.4463      0.102     -4.397        nan         nan         nan
+l2.unemp      -0.2528      0.090     -2.815        nan         nan         nan
+l3.unemp       0.0286      0.104      0.275        nan         nan         nan
+l4.unemp       0.0073      0.120      0.060        nan         nan         nan
+l0.site       -2.7418      0.635     -4.314        nan         nan         nan
+l1.site       -3.4998      0.833     -4.204        nan         nan         nan
+l2.site       -2.1371      0.789     -2.709        nan         nan         nan
+l3.site       -1.4628      1.114     -1.313        nan         nan         nan
+l4.site       -0.7235      1.554     -0.466        nan         nan         nan
+l0.third      -0.2682      0.513     -0.523        nan         nan         nan
+l1.third      -0.4165      0.508     -0.819        nan         nan         nan
+l2.third      -0.3781      0.461     -0.820        nan         nan         nan
+l3.third      -0.1973      0.538     -0.367        nan         nan         nan
+l4.third      -0.2437      0.497     -0.491        nan         nan         nan
+==============================================================================
+Omnibus:                      407.770   Durbin-Watson:                   0.231
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1256.654
+Skew:                           1.205   Prob(JB):                    1.32e-273
+Kurtosis:                       6.467   Cond. No.                         169.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=7
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.368
+Model:                            OLS   Adj. R-squared (uncentered):              0.363
+Method:                 Least Squares   F-statistic:                              6.141
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -4464.6
+No. Observations:                1672   AIC:                                      8957.
+Df Residuals:                    1658   BIC:                                      9033.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp      -0.5506      0.114     -4.829        nan         nan         nan
+l2.unemp      -0.1980      0.097     -2.042        nan         nan         nan
+l3.unemp       0.0423      0.127      0.333        nan         nan         nan
+l4.unemp      -0.0148      0.131     -0.113        nan         nan         nan
+l0.site       -2.8941      0.662     -4.372        nan         nan         nan
+l1.site       -3.3983      0.969     -3.507        nan         nan         nan
+l2.site       -1.6722      1.057     -1.583        nan         nan         nan
+l3.site       -1.5063      1.413     -1.066        nan         nan         nan
+l4.site       -2.2084      1.085     -2.036        nan         nan         nan
+l0.third      -0.3098      0.536     -0.578        nan         nan         nan
+l1.third      -0.3508      0.564     -0.622        nan         nan         nan
+l2.third      -0.4648      0.504     -0.922        nan         nan         nan
+l3.third      -0.2933      0.514     -0.570        nan         nan         nan
+l4.third      -0.0103      0.475     -0.022        nan         nan         nan
+==============================================================================
+Omnibus:                      345.175   Durbin-Watson:                   0.216
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              900.530
+Skew:                           1.092   Prob(JB):                    2.83e-196
+Kurtosis:                       5.856   Cond. No.                         167.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=8
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                  unemp   R-squared (uncentered):                   0.388
+Model:                            OLS   Adj. R-squared (uncentered):              0.383
+Method:                 Least Squares   F-statistic:                              5.608
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:55:00   Log-Likelihood:                         -4434.8
+No. Observations:                1652   AIC:                                      8898.
+Df Residuals:                    1638   BIC:                                      8973.
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+l1.unemp      -0.6295      0.116     -5.443        nan         nan         nan
+l2.unemp      -0.1293      0.113     -1.147        nan         nan         nan
+l3.unemp       0.0302      0.155      0.194        nan         nan         nan
+l4.unemp      -0.0437      0.154     -0.283        nan         nan         nan
+l0.site       -3.0235      0.778     -3.888        nan         nan         nan
+l1.site       -2.6400      0.799     -3.305        nan         nan         nan
+l2.site       -1.7523      1.124     -1.559        nan         nan         nan
+l3.site       -2.9660      1.020     -2.908        nan         nan         nan
+l4.site       -0.4856      2.137     -0.227        nan         nan         nan
+l0.third      -0.2305      0.565     -0.408        nan         nan         nan
+l1.third      -0.5136      0.592     -0.868        nan         nan         nan
+l2.third      -0.6064      0.502     -1.208        nan         nan         nan
+l3.third       0.0206      0.502      0.041        nan         nan         nan
+l4.third       0.2230      0.459      0.486        nan         nan         nan
+==============================================================================
+Omnibus:                      311.817   Durbin-Watson:                   0.199
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              776.637
+Skew:                           1.019   Prob(JB):                    2.27e-169
+Kurtosis:                       5.670   Cond. No.                         165.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+

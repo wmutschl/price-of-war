@@ -1,0 +1,378 @@
+######################################################################
+Projection h=0
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.024
+Model:                            OLS   Adj. R-squared (uncentered):              0.020
+Method:                 Least Squares   F-statistic:                              2.502
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -16271.
+No. Observations:                3963   AIC:                                  3.257e+04
+Df Residuals:                    3949   BIC:                                  3.266e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff    -4.2039      4.283     -0.982        nan         nan         nan
+l2.lgovexp_2015USD_diff    -2.5796      2.963     -0.871        nan         nan         nan
+l3.lgovexp_2015USD_diff    -5.9186      2.325     -2.545        nan         nan         nan
+l4.lgovexp_2015USD_diff    -5.6310      2.936     -1.918        nan         nan         nan
+l0.site                    15.0786      9.293      1.623        nan         nan         nan
+l1.site                    31.3440     12.856      2.438        nan         nan         nan
+l2.site                    -7.5064     12.236     -0.613        nan         nan         nan
+l3.site                    -2.7126      3.599     -0.754        nan         nan         nan
+l4.site                    -3.3879     11.651     -0.291        nan         nan         nan
+l0.third                    1.2326      0.763      1.616        nan         nan         nan
+l1.third                    2.0359      0.783      2.601        nan         nan         nan
+l2.third                    0.5035      0.712      0.707        nan         nan         nan
+l3.third                   -0.1830      0.745     -0.246        nan         nan         nan
+l4.third                    0.7964      0.684      1.164        nan         nan         nan
+==============================================================================
+Omnibus:                      958.508   Durbin-Watson:                   2.012
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            33756.946
+Skew:                           0.436   Prob(JB):                         0.00
+Kurtosis:                      17.271   Cond. No.                         14.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=1
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.039
+Model:                            OLS   Adj. R-squared (uncentered):              0.036
+Method:                 Least Squares   F-statistic:                              1.685
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17224.
+No. Observations:                3893   AIC:                                  3.448e+04
+Df Residuals:                    3879   BIC:                                  3.456e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff    -7.2304      5.827     -1.241        nan         nan         nan
+l2.lgovexp_2015USD_diff    -7.9560      3.950     -2.014        nan         nan         nan
+l3.lgovexp_2015USD_diff   -11.6928      4.311     -2.712        nan         nan         nan
+l4.lgovexp_2015USD_diff   -12.8234      6.087     -2.107        nan         nan         nan
+l0.site                    45.0043     17.872      2.518        nan         nan         nan
+l1.site                    22.8556     12.874      1.775        nan         nan         nan
+l2.site                    -2.5407      9.858     -0.258        nan         nan         nan
+l3.site                    -6.6571     11.758     -0.566        nan         nan         nan
+l4.site                    -8.1883     17.620     -0.465        nan         nan         nan
+l0.third                    3.3322      1.240      2.688        nan         nan         nan
+l1.third                    3.1250      1.275      2.451        nan         nan         nan
+l2.third                    0.3481      1.077      0.323        nan         nan         nan
+l3.third                    0.4785      1.275      0.375        nan         nan         nan
+l4.third                    0.7559      1.175      0.643        nan         nan         nan
+==============================================================================
+Omnibus:                     1224.039   Durbin-Watson:                   1.040
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            30401.705
+Skew:                           0.932   Prob(JB):                         0.00
+Kurtosis:                      16.563   Cond. No.                         14.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=2
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.047
+Model:                            OLS   Adj. R-squared (uncentered):              0.044
+Method:                 Least Squares   F-statistic:                              2.099
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17635.
+No. Observations:                3824   AIC:                                  3.530e+04
+Df Residuals:                    3810   BIC:                                  3.539e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff   -11.8494      6.321     -1.875        nan         nan         nan
+l2.lgovexp_2015USD_diff   -13.5961      4.391     -3.097        nan         nan         nan
+l3.lgovexp_2015USD_diff   -17.9618      7.119     -2.523        nan         nan         nan
+l4.lgovexp_2015USD_diff   -15.9125      7.513     -2.118        nan         nan         nan
+l0.site                    34.8266     20.445      1.703        nan         nan         nan
+l1.site                    26.7714     14.404      1.859        nan         nan         nan
+l2.site                    -8.7847     13.493     -0.651        nan         nan         nan
+l3.site                   -12.3187     15.733     -0.783        nan         nan         nan
+l4.site                   -29.5839     10.919     -2.709        nan         nan         nan
+l0.third                    4.0901      1.720      2.378        nan         nan         nan
+l1.third                    4.1499      1.694      2.449        nan         nan         nan
+l2.third                    1.7462      1.457      1.199        nan         nan         nan
+l3.third                    0.2040      1.729      0.118        nan         nan         nan
+l4.third                   -0.4999      1.708     -0.293        nan         nan         nan
+==============================================================================
+Omnibus:                     1201.724   Durbin-Watson:                   0.720
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            22452.261
+Skew:                           1.016   Prob(JB):                         0.00
+Kurtosis:                      14.696   Cond. No.                         14.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=3
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.055
+Model:                            OLS   Adj. R-squared (uncentered):              0.051
+Method:                 Least Squares   F-statistic:                              2.636
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17812.
+No. Observations:                3760   AIC:                                  3.565e+04
+Df Residuals:                    3746   BIC:                                  3.574e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff   -16.5516      5.421     -3.053        nan         nan         nan
+l2.lgovexp_2015USD_diff   -20.0573      7.067     -2.838        nan         nan         nan
+l3.lgovexp_2015USD_diff   -20.8745      8.464     -2.466        nan         nan         nan
+l4.lgovexp_2015USD_diff   -19.3864      8.588     -2.257        nan         nan         nan
+l0.site                    20.6438     17.929      1.151        nan         nan         nan
+l1.site                    20.2604     23.157      0.875        nan         nan         nan
+l2.site                   -14.3366     18.221     -0.787        nan         nan         nan
+l3.site                   -33.1132      9.524     -3.477        nan         nan         nan
+l4.site                   -20.1529      8.951     -2.252        nan         nan         nan
+l0.third                    4.9560      2.113      2.346        nan         nan         nan
+l1.third                    5.8104      2.122      2.738        nan         nan         nan
+l2.third                    1.8257      1.774      1.029        nan         nan         nan
+l3.third                   -1.1705      2.214     -0.529        nan         nan         nan
+l4.third                   -1.3004      2.141     -0.607        nan         nan         nan
+==============================================================================
+Omnibus:                      998.884   Durbin-Watson:                   0.559
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            12097.066
+Skew:                           0.915   Prob(JB):                         0.00
+Kurtosis:                      11.595   Cond. No.                         14.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=4
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.063
+Model:                            OLS   Adj. R-squared (uncentered):              0.060
+Method:                 Least Squares   F-statistic:                              3.482
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17844.
+No. Observations:                3698   AIC:                                  3.572e+04
+Df Residuals:                    3684   BIC:                                  3.580e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff   -22.4657      6.818     -3.295        nan         nan         nan
+l2.lgovexp_2015USD_diff   -22.6292      8.136     -2.781        nan         nan         nan
+l3.lgovexp_2015USD_diff   -24.2100      9.131     -2.651        nan         nan         nan
+l4.lgovexp_2015USD_diff   -22.0875      9.291     -2.377        nan         nan         nan
+l0.site                    25.9384     25.565      1.015        nan         nan         nan
+l1.site                    13.5793     25.126      0.540        nan         nan         nan
+l2.site                   -34.9717     13.552     -2.581        nan         nan         nan
+l3.site                   -23.1889      7.470     -3.104        nan         nan         nan
+l4.site                   -26.9273     14.142     -1.904        nan         nan         nan
+l0.third                    6.6008      2.466      2.677        nan         nan         nan
+l1.third                    6.1699      2.560      2.410        nan         nan         nan
+l2.third                    0.5092      2.155      0.236        nan         nan         nan
+l3.third                   -2.0230      2.702     -0.749        nan         nan         nan
+l4.third                   -1.4482      2.454     -0.590        nan         nan         nan
+==============================================================================
+Omnibus:                      880.221   Durbin-Watson:                   0.452
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7664.615
+Skew:                           0.883   Prob(JB):                         0.00
+Kurtosis:                       9.828   Cond. No.                         14.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=5
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.060
+Model:                            OLS   Adj. R-squared (uncentered):              0.056
+Method:                 Least Squares   F-statistic:                              2.111
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17802.
+No. Observations:                3637   AIC:                                  3.563e+04
+Df Residuals:                    3623   BIC:                                  3.572e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff   -24.6203      7.266     -3.389        nan         nan         nan
+l2.lgovexp_2015USD_diff   -25.3476      8.704     -2.912        nan         nan         nan
+l3.lgovexp_2015USD_diff   -26.1045      9.459     -2.760        nan         nan         nan
+l4.lgovexp_2015USD_diff   -17.7340      9.336     -1.900        nan         nan         nan
+l0.site                    21.6624     24.747      0.875        nan         nan         nan
+l1.site                    -9.1833     14.872     -0.617        nan         nan         nan
+l2.site                   -25.1278     15.193     -1.654        nan         nan         nan
+l3.site                   -29.7746     13.286     -2.241        nan         nan         nan
+l4.site                   -40.2984     17.731     -2.273        nan         nan         nan
+l0.third                    6.7692      2.812      2.407        nan         nan         nan
+l1.third                    5.4322      2.916      1.863        nan         nan         nan
+l2.third                   -0.5395      2.573     -0.210        nan         nan         nan
+l3.third                   -2.3844      3.071     -0.777        nan         nan         nan
+l4.third                   -0.6948      2.853     -0.244        nan         nan         nan
+==============================================================================
+Omnibus:                      747.247   Durbin-Watson:                   0.385
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4957.680
+Skew:                           0.810   Prob(JB):                         0.00
+Kurtosis:                       8.485   Cond. No.                         14.5
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=6
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.055
+Model:                            OLS   Adj. R-squared (uncentered):              0.052
+Method:                 Least Squares   F-statistic:                              1.763
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17715.
+No. Observations:                3577   AIC:                                  3.546e+04
+Df Residuals:                    3563   BIC:                                  3.554e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff   -27.5011      7.912     -3.476        nan         nan         nan
+l2.lgovexp_2015USD_diff   -27.5440      9.152     -3.010        nan         nan         nan
+l3.lgovexp_2015USD_diff   -21.1412      9.487     -2.228        nan         nan         nan
+l4.lgovexp_2015USD_diff   -18.8976      9.700     -1.948        nan         nan         nan
+l0.site                     5.8598     15.003      0.391        nan         nan         nan
+l1.site                    -0.0127     15.126     -0.001        nan         nan         nan
+l2.site                   -30.9704     16.551     -1.871        nan         nan         nan
+l3.site                   -43.0224     16.493     -2.608        nan         nan         nan
+l4.site                   -44.7989     18.429     -2.431        nan         nan         nan
+l0.third                    6.2419      3.092      2.019        nan         nan         nan
+l1.third                    4.2681      3.252      1.313        nan         nan         nan
+l2.third                   -1.3492      3.031     -0.445        nan         nan         nan
+l3.third                   -1.7272      3.501     -0.493        nan         nan         nan
+l4.third                   -0.0696      3.286     -0.021        nan         nan         nan
+==============================================================================
+Omnibus:                      640.928   Durbin-Watson:                   0.345
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3248.878
+Skew:                           0.765   Prob(JB):                         0.00
+Kurtosis:                       7.411   Cond. No.                         14.2
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=7
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.052
+Model:                            OLS   Adj. R-squared (uncentered):              0.048
+Method:                 Least Squares   F-statistic:                              1.942
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17588.
+No. Observations:                3519   AIC:                                  3.520e+04
+Df Residuals:                    3505   BIC:                                  3.529e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff   -29.8893      8.339     -3.584        nan         nan         nan
+l2.lgovexp_2015USD_diff   -22.7593      9.322     -2.442        nan         nan         nan
+l3.lgovexp_2015USD_diff   -21.7367      9.795     -2.219        nan         nan         nan
+l4.lgovexp_2015USD_diff   -19.4379      9.893     -1.965        nan         nan         nan
+l0.site                    18.4633     16.899      1.093        nan         nan         nan
+l1.site                    -6.8649     14.068     -0.488        nan         nan         nan
+l2.site                   -43.9287     17.346     -2.532        nan         nan         nan
+l3.site                   -47.1206     16.477     -2.860        nan         nan         nan
+l4.site                   -49.8942     17.249     -2.893        nan         nan         nan
+l0.third                    4.9797      3.350      1.486        nan         nan         nan
+l1.third                    3.2671      3.682      0.887        nan         nan         nan
+l2.third                   -0.6192      3.420     -0.181        nan         nan         nan
+l3.third                   -0.9945      3.881     -0.256        nan         nan         nan
+l4.third                   -0.2058      3.743     -0.055        nan         nan         nan
+==============================================================================
+Omnibus:                      551.104   Durbin-Watson:                   0.314
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2304.404
+Skew:                           0.713   Prob(JB):                         0.00
+Kurtosis:                       6.699   Cond. No.                         13.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=8
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:        lgovexp_2015USD   R-squared (uncentered):                   0.048
+Model:                            OLS   Adj. R-squared (uncentered):              0.044
+Method:                 Least Squares   F-statistic:                              1.675
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:31   Log-Likelihood:                         -17439.
+No. Observations:                3462   AIC:                                  3.491e+04
+Df Residuals:                    3448   BIC:                                  3.499e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+===========================================================================================
+                              coef    std err          t      P>|t|      [0.025      0.975]
+-------------------------------------------------------------------------------------------
+l1.lgovexp_2015USD_diff   -25.5651      8.557     -2.988        nan         nan         nan
+l2.lgovexp_2015USD_diff   -23.5945      9.655     -2.444        nan         nan         nan
+l3.lgovexp_2015USD_diff   -22.1197      9.897     -2.235        nan         nan         nan
+l4.lgovexp_2015USD_diff   -21.6924      9.742     -2.227        nan         nan         nan
+l0.site                    -1.2329     10.484     -0.118        nan         nan         nan
+l1.site                   -20.9183     15.855     -1.319        nan         nan         nan
+l2.site                   -47.8981     17.927     -2.672        nan         nan         nan
+l3.site                   -52.2745     15.486     -3.376        nan         nan         nan
+l4.site                   -45.4671     16.224     -2.802        nan         nan         nan
+l0.third                    3.6788      3.714      0.990        nan         nan         nan
+l1.third                    3.6493      4.037      0.904        nan         nan         nan
+l2.third                    0.9127      3.822      0.239        nan         nan         nan
+l3.third                   -0.9015      4.272     -0.211        nan         nan         nan
+l4.third                   -1.8536      3.987     -0.465        nan         nan         nan
+==============================================================================
+Omnibus:                      465.100   Durbin-Watson:                   0.293
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1571.448
+Skew:                           0.666   Prob(JB):                         0.00
+Kurtosis:                       6.020   Cond. No.                         13.5
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+

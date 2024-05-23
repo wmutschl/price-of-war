@@ -1,0 +1,378 @@
+######################################################################
+Projection h=0
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.197
+Model:                            OLS   Adj. R-squared (uncentered):              0.193
+Method:                 Least Squares   F-statistic:                              14.82
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10285.
+No. Observations:                2760   AIC:                                  2.060e+04
+Df Residuals:                    2746   BIC:                                  2.068e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.3451      0.094     -3.688        nan         nan         nan
+l2.inflation    -0.0008      0.090     -0.009        nan         nan         nan
+l3.inflation     0.0676      0.051      1.337        nan         nan         nan
+l4.inflation    -0.0300      0.049     -0.615        nan         nan         nan
+l0.site         11.6225      4.551      2.554        nan         nan         nan
+l1.site         23.4936      9.598      2.448        nan         nan         nan
+l2.site          3.0369      5.210      0.583        nan         nan         nan
+l3.site          2.8746      7.521      0.382        nan         nan         nan
+l4.site         -2.4722      3.961     -0.624        nan         nan         nan
+l0.third         1.0614      0.938      1.131        nan         nan         nan
+l1.third         0.1772      0.898      0.197        nan         nan         nan
+l2.third         0.9510      0.679      1.401        nan         nan         nan
+l3.third         1.2510      0.757      1.652        nan         nan         nan
+l4.third         0.4271      0.680      0.628        nan         nan         nan
+==============================================================================
+Omnibus:                     2273.666   Durbin-Watson:                   2.001
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           382771.815
+Skew:                           3.120   Prob(JB):                         0.00
+Kurtosis:                      60.354   Cond. No.                         333.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=1
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.308
+Model:                            OLS   Adj. R-squared (uncentered):              0.305
+Method:                 Least Squares   F-statistic:                              22.66
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10698.
+No. Observations:                2737   AIC:                                  2.142e+04
+Df Residuals:                    2723   BIC:                                  2.151e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.5739      0.067     -8.628        nan         nan         nan
+l2.inflation     0.0712      0.066      1.073        nan         nan         nan
+l3.inflation     0.0190      0.067      0.282        nan         nan         nan
+l4.inflation    -0.0442      0.048     -0.915        nan         nan         nan
+l0.site         30.8310     12.568      2.453        nan         nan         nan
+l1.site         19.0224      6.915      2.751        nan         nan         nan
+l2.site          4.1418     10.061      0.412        nan         nan         nan
+l3.site         -1.2368      4.519     -0.274        nan         nan         nan
+l4.site          4.6867      8.115      0.578        nan         nan         nan
+l0.third         0.9868      0.820      1.204        nan         nan         nan
+l1.third         1.5436      0.846      1.825        nan         nan         nan
+l2.third         1.4656      0.938      1.563        nan         nan         nan
+l3.third         1.1130      1.036      1.075        nan         nan         nan
+l4.third         1.4909      0.972      1.533        nan         nan         nan
+==============================================================================
+Omnibus:                     2630.260   Durbin-Watson:                   1.097
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           235820.514
+Skew:                           4.342   Prob(JB):                         0.00
+Kurtosis:                      47.637   Cond. No.                         332.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=2
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.361
+Model:                            OLS   Adj. R-squared (uncentered):              0.357
+Method:                 Least Squares   F-statistic:                              46.95
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10803.
+No. Observations:                2714   AIC:                                  2.163e+04
+Df Residuals:                    2700   BIC:                                  2.172e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.6575      0.073     -8.991        nan         nan         nan
+l2.inflation     0.0259      0.082      0.316        nan         nan         nan
+l3.inflation    -0.0495      0.051     -0.978        nan         nan         nan
+l4.inflation     0.0004      0.033      0.012        nan         nan         nan
+l0.site         23.8115      7.468      3.188        nan         nan         nan
+l1.site         15.9374     10.421      1.529        nan         nan         nan
+l2.site         -1.4660      5.413     -0.271        nan         nan         nan
+l3.site          5.6607      6.537      0.866        nan         nan         nan
+l4.site         18.6300      7.927      2.350        nan         nan         nan
+l0.third         2.3445      0.869      2.699        nan         nan         nan
+l1.third         2.1727      1.136      1.913        nan         nan         nan
+l2.third         1.0765      1.167      0.923        nan         nan         nan
+l3.third         1.9357      1.118      1.731        nan         nan         nan
+l4.third         1.5615      1.137      1.373        nan         nan         nan
+==============================================================================
+Omnibus:                     2860.339   Durbin-Watson:                   0.854
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           247968.768
+Skew:                           5.129   Prob(JB):                         0.00
+Kurtosis:                      48.690   Cond. No.                         332.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=3
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.407
+Model:                            OLS   Adj. R-squared (uncentered):              0.404
+Method:                 Least Squares   F-statistic:                              32.51
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10842.
+No. Observations:                2691   AIC:                                  2.171e+04
+Df Residuals:                    2677   BIC:                                  2.179e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.7508      0.079     -9.535        nan         nan         nan
+l2.inflation    -0.0406      0.043     -0.949        nan         nan         nan
+l3.inflation    -0.0193      0.023     -0.832        nan         nan         nan
+l4.inflation     0.0302      0.036      0.846        nan         nan         nan
+l0.site         19.0008      9.697      1.959        nan         nan         nan
+l1.site          7.5640      7.092      1.067        nan         nan         nan
+l2.site          6.1711      5.904      1.045        nan         nan         nan
+l3.site         19.7566      9.380      2.106        nan         nan         nan
+l4.site          2.2597      7.389      0.306        nan         nan         nan
+l0.third         2.7721      1.159      2.391        nan         nan         nan
+l1.third         2.3001      1.463      1.572        nan         nan         nan
+l2.third         2.4376      1.285      1.897        nan         nan         nan
+l3.third         1.7113      1.271      1.347        nan         nan         nan
+l4.third        -0.1937      1.516     -0.128        nan         nan         nan
+==============================================================================
+Omnibus:                     2872.252   Durbin-Watson:                   0.745
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           226690.114
+Skew:                           5.289   Prob(JB):                         0.00
+Kurtosis:                      46.702   Cond. No.                         332.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=4
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.448
+Model:                            OLS   Adj. R-squared (uncentered):              0.445
+Method:                 Least Squares   F-statistic:                              34.67
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10822.
+No. Observations:                2668   AIC:                                  2.167e+04
+Df Residuals:                    2654   BIC:                                  2.175e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.8777      0.065    -13.512        nan         nan         nan
+l2.inflation    -0.0108      0.025     -0.433        nan         nan         nan
+l3.inflation     0.0213      0.028      0.766        nan         nan         nan
+l4.inflation    -0.0018      0.030     -0.060        nan         nan         nan
+l0.site          9.5427      7.243      1.318        nan         nan         nan
+l1.site         12.8208      3.592      3.569        nan         nan         nan
+l2.site         19.6011     10.331      1.897        nan         nan         nan
+l3.site          2.9760      5.762      0.517        nan         nan         nan
+l4.site          9.8968      5.271      1.877        nan         nan         nan
+l0.third         2.6933      1.549      1.738        nan         nan         nan
+l1.third         3.7766      1.667      2.266        nan         nan         nan
+l2.third         2.1001      0.961      2.186        nan         nan         nan
+l3.third        -0.1496      1.617     -0.093        nan         nan         nan
+l4.third         0.0432      1.422      0.030        nan         nan         nan
+==============================================================================
+Omnibus:                     2885.804   Durbin-Watson:                   0.680
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           224794.040
+Skew:                           5.423   Prob(JB):                         0.00
+Kurtosis:                      46.641   Cond. No.                         331.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=5
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.475
+Model:                            OLS   Adj. R-squared (uncentered):              0.472
+Method:                 Least Squares   F-statistic:                              113.0
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10758.
+No. Observations:                2645   AIC:                                  2.154e+04
+Df Residuals:                    2631   BIC:                                  2.163e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.9304      0.038    -24.640        nan         nan         nan
+l2.inflation     0.0282      0.029      0.982        nan         nan         nan
+l3.inflation    -0.0253      0.026     -0.975        nan         nan         nan
+l4.inflation     0.0154      0.025      0.609        nan         nan         nan
+l0.site         13.4404      3.915      3.433        nan         nan         nan
+l1.site         22.7461      9.544      2.383        nan         nan         nan
+l2.site          2.7619      5.372      0.514        nan         nan         nan
+l3.site         10.6167      5.817      1.825        nan         nan         nan
+l4.site          7.3206      7.179      1.020        nan         nan         nan
+l0.third         3.9499      1.741      2.268        nan         nan         nan
+l1.third         3.3086      1.061      3.119        nan         nan         nan
+l2.third         0.2298      1.322      0.174        nan         nan         nan
+l3.third        -0.0432      1.509     -0.029        nan         nan         nan
+l4.third        -0.4138      1.486     -0.278        nan         nan         nan
+==============================================================================
+Omnibus:                     2845.161   Durbin-Watson:                   0.648
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           209044.285
+Skew:                           5.395   Prob(JB):                         0.00
+Kurtosis:                      45.194   Cond. No.                         331.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=6
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.479
+Model:                            OLS   Adj. R-squared (uncentered):              0.476
+Method:                 Least Squares   F-statistic:                              108.1
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10699.
+No. Observations:                2622   AIC:                                  2.143e+04
+Df Residuals:                    2608   BIC:                                  2.151e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.9247      0.032    -28.678        nan         nan         nan
+l2.inflation    -0.0149      0.024     -0.634        nan         nan         nan
+l3.inflation     0.0006      0.024      0.026        nan         nan         nan
+l4.inflation    -0.0083      0.025     -0.328        nan         nan         nan
+l0.site         22.2754      8.902      2.502        nan         nan         nan
+l1.site          4.7192      4.584      1.030        nan         nan         nan
+l2.site         10.0542      6.113      1.645        nan         nan         nan
+l3.site          7.3612      8.486      0.867        nan         nan         nan
+l4.site          6.2543      8.340      0.750        nan         nan         nan
+l0.third         3.4164      1.158      2.949        nan         nan         nan
+l1.third         1.9308      1.206      1.600        nan         nan         nan
+l2.third         0.1605      1.248      0.129        nan         nan         nan
+l3.third        -0.7414      1.647     -0.450        nan         nan         nan
+l4.third        -0.0189      1.318     -0.014        nan         nan         nan
+==============================================================================
+Omnibus:                     2823.132   Durbin-Watson:                   0.640
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           203028.173
+Skew:                           5.414   Prob(JB):                         0.00
+Kurtosis:                      44.727   Cond. No.                         330.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=7
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.485
+Model:                            OLS   Adj. R-squared (uncentered):              0.482
+Method:                 Least Squares   F-statistic:                              145.6
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10648.
+No. Observations:                2599   AIC:                                  2.132e+04
+Df Residuals:                    2585   BIC:                                  2.141e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.9632      0.028    -34.949        nan         nan         nan
+l2.inflation     0.0124      0.024      0.511        nan         nan         nan
+l3.inflation    -0.0036      0.022     -0.160        nan         nan         nan
+l4.inflation    -0.0278      0.027     -1.015        nan         nan         nan
+l0.site          4.1280      4.853      0.851        nan         nan         nan
+l1.site         12.5696      5.335      2.356        nan         nan         nan
+l2.site          7.0950      9.054      0.784        nan         nan         nan
+l3.site          5.6990      9.281      0.614        nan         nan         nan
+l4.site         -1.4665      3.858     -0.380        nan         nan         nan
+l0.third         2.0710      1.197      1.730        nan         nan         nan
+l1.third         1.6899      1.241      1.362        nan         nan         nan
+l2.third        -0.5500      1.704     -0.323        nan         nan         nan
+l3.third        -0.4048      1.482     -0.273        nan         nan         nan
+l4.third        -0.0397      1.194     -0.033        nan         nan         nan
+==============================================================================
+Omnibus:                     2842.719   Durbin-Watson:                   0.633
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           210879.136
+Skew:                           5.553   Prob(JB):                         0.00
+Kurtosis:                      45.708   Cond. No.                         330.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=8
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:              inflation   R-squared (uncentered):                   0.494
+Model:                            OLS   Adj. R-squared (uncentered):              0.491
+Method:                 Least Squares   F-statistic:                              111.4
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:14   Log-Likelihood:                         -10567.
+No. Observations:                2576   AIC:                                  2.116e+04
+Df Residuals:                    2562   BIC:                                  2.124e+04
+Df Model:                          14                                                  
+Covariance Type:         hac-groupsum                                                  
+================================================================================
+                   coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+l1.inflation    -0.9580      0.030    -31.935        nan         nan         nan
+l2.inflation     0.0014      0.023      0.059        nan         nan         nan
+l3.inflation     0.0029      0.024      0.121        nan         nan         nan
+l4.inflation    -0.0545      0.029     -1.911        nan         nan         nan
+l0.site         12.0183      5.286      2.274        nan         nan         nan
+l1.site          7.9021      8.917      0.886        nan         nan         nan
+l2.site          5.7550      9.665      0.595        nan         nan         nan
+l3.site         -1.9354      3.675     -0.527        nan         nan         nan
+l4.site         -2.4163      2.771     -0.872        nan         nan         nan
+l0.third         1.5434      1.218      1.268        nan         nan         nan
+l1.third         0.2964      1.713      0.173        nan         nan         nan
+l2.third        -0.0339      1.423     -0.024        nan         nan         nan
+l3.third        -0.2912      1.264     -0.230        nan         nan         nan
+l4.third        -0.6189      1.145     -0.541        nan         nan         nan
+==============================================================================
+Omnibus:                     2799.844   Durbin-Watson:                   0.621
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           202412.687
+Skew:                           5.501   Prob(JB):                         0.00
+Kurtosis:                      45.010   Cond. No.                         330.
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+

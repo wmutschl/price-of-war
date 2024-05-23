@@ -1,0 +1,423 @@
+######################################################################
+Projection h=0
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.811
+Model:                            OLS   Adj. R-squared (uncentered):              0.810
+Method:                 Least Squares   F-statistic:                              52.39
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -12999.
+No. Observations:                5162   AIC:                                  2.604e+04
+Df Residuals:                    5143   BIC:                                  2.616e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD         102.0056     11.948      8.538        nan         nan         nan
+l2.milex_by_gdp_currentUSD          -2.1714      9.357     -0.232        nan         nan         nan
+l3.milex_by_gdp_currentUSD          -5.5122      5.543     -0.994        nan         nan         nan
+l4.milex_by_gdp_currentUSD          -2.1948      3.796     -0.578        nan         nan         nan
+l0.site                              5.4690      1.865      2.932        nan         nan         nan
+l1.site                             -1.1431      2.435     -0.469        nan         nan         nan
+l2.site                              0.1670      1.016      0.164        nan         nan         nan
+l3.site                              2.0873      1.188      1.756        nan         nan         nan
+l4.site                              1.3328      2.709      0.492        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      1.2551      0.415      3.027        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.2829      0.604      0.468        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.7470      0.519      1.440        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby      0.4229      0.370      1.143        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby      0.2582      0.323      0.800        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1859      0.318     -0.585        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.0627      0.289      0.217        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.0467      0.263      0.178        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.2915      0.169      1.722        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant    -0.0241      0.169     -0.143        nan         nan         nan
+==============================================================================
+Omnibus:                     5804.948   Durbin-Watson:                   1.851
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          6654311.600
+Skew:                          -4.841   Prob(JB):                         0.00
+Kurtosis:                     178.626   Cond. No.                         31.0
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=1
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.633
+Model:                            OLS   Adj. R-squared (uncentered):              0.631
+Method:                 Least Squares   F-statistic:                              15.31
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -14892.
+No. Observations:                5089   AIC:                                  2.982e+04
+Df Residuals:                    5070   BIC:                                  2.995e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD         127.0373     18.236      6.966        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -31.2069     15.771     -1.979        nan         nan         nan
+l3.milex_by_gdp_currentUSD         -23.3920     13.475     -1.736        nan         nan         nan
+l4.milex_by_gdp_currentUSD          15.9386     10.159      1.569        nan         nan         nan
+l0.site                              4.0599      1.901      2.136        nan         nan         nan
+l1.site                              0.8589      2.535      0.339        nan         nan         nan
+l2.site                              2.1738      2.038      1.066        nan         nan         nan
+l3.site                              5.0651      3.741      1.354        nan         nan         nan
+l4.site                             -1.8311      3.829     -0.478        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      2.0975      0.855      2.454        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.9610      1.233      0.779        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.6641      0.854      0.778        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby      0.3274      0.416      0.787        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.0250      0.628     -0.040        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.3834      0.526     -0.729        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.3619      0.608      0.595        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.4554      0.429      1.061        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.3012      0.283      1.065        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.2409      0.372      0.647        nan         nan         nan
+==============================================================================
+Omnibus:                     2062.164   Durbin-Watson:                   1.235
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2728078.115
+Skew:                           0.038   Prob(JB):                         0.00
+Kurtosis:                     116.427   Cond. No.                         30.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=2
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.443
+Model:                            OLS   Adj. R-squared (uncentered):              0.441
+Method:                 Least Squares   F-statistic:                              7.378
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -16142.
+No. Observations:                5021   AIC:                                  3.232e+04
+Df Residuals:                    5002   BIC:                                  3.245e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD         122.6426     24.696      4.966        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -54.9985     24.394     -2.255        nan         nan         nan
+l3.milex_by_gdp_currentUSD         -25.1838     15.557     -1.619        nan         nan         nan
+l4.milex_by_gdp_currentUSD          39.1314     21.757      1.799        nan         nan         nan
+l0.site                              5.5790      2.639      2.114        nan         nan         nan
+l1.site                              6.9579      3.491      1.993        nan         nan         nan
+l2.site                              7.3359      4.186      1.752        nan         nan         nan
+l3.site                              1.7621      3.466      0.508        nan         nan         nan
+l4.site                             -0.3561      3.653     -0.097        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      2.8972      1.575      1.839        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      1.2351      1.590      0.777        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      1.2269      0.991      1.238        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.1112      0.750     -0.148        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -1.5624      1.111     -1.406        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1688      0.807     -0.209        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.7444      0.820      0.908        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.4272      0.422      1.012        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.7680      0.470      1.634        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.9083      0.531      1.712        nan         nan         nan
+==============================================================================
+Omnibus:                     3842.344   Durbin-Watson:                   0.805
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          2074386.864
+Skew:                           2.458   Prob(JB):                         0.00
+Kurtosis:                     102.455   Cond. No.                         29.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=3
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.290
+Model:                            OLS   Adj. R-squared (uncentered):              0.287
+Method:                 Least Squares   F-statistic:                              6.915
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -16888.
+No. Observations:                4947   AIC:                                  3.381e+04
+Df Residuals:                    4928   BIC:                                  3.394e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD          86.2069     20.670      4.171        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -43.4008     18.493     -2.347        nan         nan         nan
+l3.milex_by_gdp_currentUSD         -11.1422     11.557     -0.964        nan         nan         nan
+l4.milex_by_gdp_currentUSD          44.4026     22.911      1.938        nan         nan         nan
+l0.site                              9.9454      4.001      2.486        nan         nan         nan
+l1.site                              8.7952      6.710      1.311        nan         nan         nan
+l2.site                              2.4108      3.691      0.653        nan         nan         nan
+l3.site                              3.3153      3.715      0.892        nan         nan         nan
+l4.site                             -1.9547      2.731     -0.716        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      3.3829      2.175      1.555        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      2.3596      1.874      1.259        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.9383      1.121      0.837        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -1.5960      0.971     -1.644        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.4212      1.369     -1.768        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.1825      1.051      0.174        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.7961      0.819      0.972        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.7722      0.457      1.692        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.3478      0.590      2.285        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.3844      0.590      2.348        nan         nan         nan
+==============================================================================
+Omnibus:                     5018.470   Durbin-Watson:                   0.559
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):          1187764.909
+Skew:                           4.455   Prob(JB):                         0.00
+Kurtosis:                      78.385   Cond. No.                         29.4
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=4
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.216
+Model:                            OLS   Adj. R-squared (uncentered):              0.213
+Method:                 Least Squares   F-statistic:                              4.168
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -17325.
+No. Observations:                4885   AIC:                                  3.469e+04
+Df Residuals:                    4866   BIC:                                  3.481e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD          58.2950     23.708      2.459        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -23.0694     12.559     -1.837        nan         nan         nan
+l3.milex_by_gdp_currentUSD           1.0107     13.093      0.077        nan         nan         nan
+l4.milex_by_gdp_currentUSD          37.2768     20.338      1.833        nan         nan         nan
+l0.site                             11.0631      5.556      1.991        nan         nan         nan
+l1.site                              4.4510      3.797      1.172        nan         nan         nan
+l2.site                              4.3224      4.145      1.043        nan         nan         nan
+l3.site                              0.2233      3.168      0.070        nan         nan         nan
+l4.site                             -2.9213      3.056     -0.956        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      4.1231      2.324      1.774        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      2.3521      1.931      1.218        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.8988      0.967     -0.929        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -2.9560      1.431     -2.065        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.8018      1.121     -2.500        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.2692      0.950      0.283        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     1.2495      0.796      1.570        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     1.3273      0.546      2.431        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.9013      0.700      2.717        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.7382      0.727      2.390        nan         nan         nan
+==============================================================================
+Omnibus:                     5204.405   Durbin-Watson:                   0.404
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           925899.531
+Skew:                           4.990   Prob(JB):                         0.00
+Kurtosis:                      69.703   Cond. No.                         29.5
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=5
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.179
+Model:                            OLS   Adj. R-squared (uncentered):              0.176
+Method:                 Least Squares   F-statistic:                              2.631
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -17627.
+No. Observations:                4820   AIC:                                  3.529e+04
+Df Residuals:                    4801   BIC:                                  3.542e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD          54.4215     25.555      2.130        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -13.3564     14.773     -0.904        nan         nan         nan
+l3.milex_by_gdp_currentUSD          -3.0781     12.260     -0.251        nan         nan         nan
+l4.milex_by_gdp_currentUSD          36.2630     20.215      1.794        nan         nan         nan
+l0.site                              5.2863      3.783      1.398        nan         nan         nan
+l1.site                              7.0871      4.226      1.677        nan         nan         nan
+l2.site                              0.8004      3.550      0.225        nan         nan         nan
+l3.site                             -0.8342      3.844     -0.217        nan         nan         nan
+l4.site                             -3.6274      2.722     -1.332        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      3.9656      2.351      1.687        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.6904      1.296      0.533        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.5483      1.457     -1.748        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.4734      1.312     -2.647        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.9283      1.095     -2.675        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.7242      0.878      0.825        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     1.8358      0.836      2.195        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     1.9099      0.663      2.883        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     2.1800      0.907      2.404        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     2.0294      0.887      2.287        nan         nan         nan
+==============================================================================
+Omnibus:                     5182.348   Durbin-Watson:                   0.338
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           823659.728
+Skew:                           5.121   Prob(JB):                         0.00
+Kurtosis:                      66.217   Cond. No.                         29.4
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=6
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.153
+Model:                            OLS   Adj. R-squared (uncentered):              0.150
+Method:                 Least Squares   F-statistic:                              2.563
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -17884.
+No. Observations:                4762   AIC:                                  3.581e+04
+Df Residuals:                    4743   BIC:                                  3.593e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD          61.0710     26.802      2.279        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -19.8509     11.597     -1.712        nan         nan         nan
+l3.milex_by_gdp_currentUSD           1.4195     13.102      0.108        nan         nan         nan
+l4.milex_by_gdp_currentUSD          32.6270     19.893      1.640        nan         nan         nan
+l0.site                              8.0688      4.178      1.931        nan         nan         nan
+l1.site                              3.4005      3.778      0.900        nan         nan         nan
+l2.site                             -0.1249      3.962     -0.032        nan         nan         nan
+l3.site                             -2.5108      3.224     -0.779        nan         nan         nan
+l4.site                             -4.9612      2.800     -1.772        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      2.3159      1.451      1.596        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -1.0392      1.331     -0.781        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.9141      1.268     -2.298        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.5852      1.399     -2.563        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.9881      1.161     -2.574        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     1.2401      0.861      1.441        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     2.5419      0.836      3.040        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     2.2174      0.934      2.374        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     2.3704      1.089      2.178        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.7716      0.791      2.240        nan         nan         nan
+==============================================================================
+Omnibus:                     5094.582   Durbin-Watson:                   0.305
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           728556.156
+Skew:                           5.117   Prob(JB):                         0.00
+Kurtosis:                      62.725   Cond. No.                         28.9
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=7
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.125
+Model:                            OLS   Adj. R-squared (uncentered):              0.121
+Method:                 Least Squares   F-statistic:                              1.848
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -18132.
+No. Observations:                4702   AIC:                                  3.630e+04
+Df Residuals:                    4683   BIC:                                  3.643e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD          57.5693     25.828      2.229        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -14.1545     11.985     -1.181        nan         nan         nan
+l3.milex_by_gdp_currentUSD           2.1591     12.168      0.177        nan         nan         nan
+l4.milex_by_gdp_currentUSD          27.4125     20.382      1.345        nan         nan         nan
+l0.site                              4.2362      3.816      1.110        nan         nan         nan
+l1.site                              1.8323      4.266      0.429        nan         nan         nan
+l2.site                             -2.1298      3.485     -0.611        nan         nan         nan
+l3.site                             -3.7783      3.240     -1.166        nan         nan         nan
+l4.site                             -3.9063      4.173     -0.936        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.5123      1.404      0.365        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -1.7026      1.477     -1.153        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.8785      1.359     -2.119        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.5551      1.510     -2.354        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -3.4067      1.381     -2.466        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     2.0504      0.870      2.356        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     2.8564      1.053      2.712        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     2.2278      1.086      2.052        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     2.3143      1.057      2.188        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     2.4808      1.218      2.036        nan         nan         nan
+==============================================================================
+Omnibus:                     4953.936   Durbin-Watson:                   0.304
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           627037.997
+Skew:                           5.025   Prob(JB):                         0.00
+Kurtosis:                      58.673   Cond. No.                         28.8
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=8
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:       milex_currentUSD   R-squared (uncentered):                   0.107
+Model:                            OLS   Adj. R-squared (uncentered):              0.103
+Method:                 Least Squares   F-statistic:                              2.112
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:26   Log-Likelihood:                         -18326.
+No. Observations:                4640   AIC:                                  3.669e+04
+Df Residuals:                    4621   BIC:                                  3.681e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milex_by_gdp_currentUSD          59.6641     27.377      2.179        nan         nan         nan
+l2.milex_by_gdp_currentUSD         -13.1301     12.409     -1.058        nan         nan         nan
+l3.milex_by_gdp_currentUSD          -1.2249     12.576     -0.097        nan         nan         nan
+l4.milex_by_gdp_currentUSD          26.0348     22.041      1.181        nan         nan         nan
+l0.site                              3.9508      4.164      0.949        nan         nan         nan
+l1.site                             -0.6046      4.145     -0.146        nan         nan         nan
+l2.site                             -3.5233      3.627     -0.971        nan         nan         nan
+l3.site                             -1.0346      4.857     -0.213        nan         nan         nan
+l4.site                             -0.0219      4.841     -0.005        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -0.4688      1.526     -0.307        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -2.3095      1.616     -1.429        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.6205      1.437     -1.824        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.8423      1.737     -2.212        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -4.6444      1.599     -2.905        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     2.4618      1.071      2.299        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     3.0072      1.133      2.654        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     1.9013      1.073      1.772        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     3.1605      1.535      2.058        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     3.4893      1.791      1.949        nan         nan         nan
+==============================================================================
+Omnibus:                     4811.476   Durbin-Watson:                   0.290
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           554721.005
+Skew:                           4.920   Prob(JB):                         0.00
+Kurtosis:                      55.654   Cond. No.                         28.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+

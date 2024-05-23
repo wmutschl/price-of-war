@@ -1,0 +1,423 @@
+######################################################################
+Projection h=0
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.432
+Model:                            OLS   Adj. R-squared (uncentered):              0.430
+Method:                 Least Squares   F-statistic:                              146.8
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -7963.8
+No. Observations:                5779   AIC:                                  1.597e+04
+Df Residuals:                    5760   BIC:                                  1.609e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population             47.7832      9.519      5.020        nan         nan         nan
+l2.milper_by_population             15.3603      2.974      5.164        nan         nan         nan
+l3.milper_by_population             10.2119      3.958      2.580        nan         nan         nan
+l4.milper_by_population             -8.7060      5.184     -1.679        nan         nan         nan
+l0.site                              0.8644      0.252      3.432        nan         nan         nan
+l1.site                              1.3625      0.571      2.386        nan         nan         nan
+l2.site                              0.3118      0.689      0.453        nan         nan         nan
+l3.site                              0.8285      0.452      1.831        nan         nan         nan
+l4.site                              0.8320      0.432      1.927        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.6133      0.258      2.373        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.2198      0.205      1.073        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.0090      0.240      0.037        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby      0.2998      0.264      1.137        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.0237      0.180     -0.132        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1790      0.105     -1.698        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant    -0.0395      0.098     -0.401        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.0300      0.066      0.453        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant    -0.0326      0.077     -0.423        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.0166      0.066      0.250        nan         nan         nan
+==============================================================================
+Omnibus:                    13092.344   Durbin-Watson:                   2.000
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):        266105436.364
+Skew:                          20.835   Prob(JB):                         0.00
+Kurtosis:                    1053.424   Cond. No.                         56.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=1
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.291
+Model:                            OLS   Adj. R-squared (uncentered):              0.288
+Method:                 Least Squares   F-statistic:                              48.13
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -8547.9
+No. Observations:                5710   AIC:                                  1.713e+04
+Df Residuals:                    5691   BIC:                                  1.726e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population             38.1385      8.183      4.661        nan         nan         nan
+l2.milper_by_population             19.3244      4.191      4.611        nan         nan         nan
+l3.milper_by_population             -5.6833      5.005     -1.136        nan         nan         nan
+l4.milper_by_population             -4.2536      5.712     -0.745        nan         nan         nan
+l0.site                              1.7908      0.555      3.225        nan         nan         nan
+l1.site                              0.9101      0.872      1.044        nan         nan         nan
+l2.site                              1.0093      0.725      1.393        nan         nan         nan
+l3.site                              1.3144      0.577      2.279        nan         nan         nan
+l4.site                              0.2547      0.513      0.497        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.5748      0.303      1.897        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.3288      0.357      0.921        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.3045      0.381      0.800        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby      0.1152      0.240      0.480        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.0667      0.187     -0.357        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1586      0.139     -1.142        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant    -0.0124      0.120     -0.103        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant    -0.0293      0.101     -0.290        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant    -0.0138      0.094     -0.146        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.0646      0.059      1.095        nan         nan         nan
+==============================================================================
+Omnibus:                    12767.849   Durbin-Watson:                   1.230
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):        197766556.493
+Skew:                          20.287   Prob(JB):                         0.00
+Kurtosis:                     913.822   Cond. No.                         56.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=2
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.191
+Model:                            OLS   Adj. R-squared (uncentered):              0.188
+Method:                 Least Squares   F-statistic:                              36.48
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -8867.5
+No. Observations:                5642   AIC:                                  1.777e+04
+Df Residuals:                    5623   BIC:                                  1.790e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population             38.0971      8.228      4.630        nan         nan         nan
+l2.milper_by_population              0.7971      6.196      0.129        nan         nan         nan
+l3.milper_by_population             -3.0899      4.218     -0.733        nan         nan         nan
+l4.milper_by_population             -0.2251      6.282     -0.036        nan         nan         nan
+l0.site                              1.1936      0.775      1.541        nan         nan         nan
+l1.site                              1.6548      0.827      2.001        nan         nan         nan
+l2.site                              1.2980      0.777      1.670        nan         nan         nan
+l3.site                              0.6252      0.514      1.218        nan         nan         nan
+l4.site                             -0.3113      0.240     -1.297        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.6420      0.426      1.506        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.6368      0.522      1.219        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.2084      0.280      0.743        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.0196      0.235     -0.083        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.3635      0.183     -1.982        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1229      0.144     -0.852        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant    -0.0681      0.144     -0.474        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant    -0.0332      0.102     -0.326        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.0521      0.089      0.586        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.1608      0.074      2.166        nan         nan         nan
+==============================================================================
+Omnibus:                    11981.895   Durbin-Watson:                   1.061
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):        124795197.554
+Skew:                          18.015   Prob(JB):                         0.00
+Kurtosis:                     730.707   Cond. No.                         55.9
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=3
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.103
+Model:                            OLS   Adj. R-squared (uncentered):              0.100
+Method:                 Least Squares   F-statistic:                              3.805
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -9105.0
+No. Observations:                5574   AIC:                                  1.825e+04
+Df Residuals:                    5555   BIC:                                  1.837e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population             18.9612     11.616      1.632        nan         nan         nan
+l2.milper_by_population              2.4160      4.470      0.541        nan         nan         nan
+l3.milper_by_population             -1.7274      4.542     -0.380        nan         nan         nan
+l4.milper_by_population              5.8255      6.208      0.938        nan         nan         nan
+l0.site                              1.7720      0.813      2.181        nan         nan         nan
+l1.site                              1.8326      0.937      1.956        nan         nan         nan
+l2.site                              0.7367      0.413      1.782        nan         nan         nan
+l3.site                              0.0404      0.188      0.216        nan         nan         nan
+l4.site                             -0.2165      0.246     -0.880        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.9672      0.614      1.576        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.5360      0.348      1.540        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.1323      0.285      0.464        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.3188      0.179     -1.780        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5865      0.244     -2.408        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1863      0.181     -1.030        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant    -0.0385      0.101     -0.381        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.0226      0.104      0.217        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.1389      0.086      1.607        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.2281      0.092      2.473        nan         nan         nan
+==============================================================================
+Omnibus:                    11378.246   Durbin-Watson:                   0.951
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         89554467.822
+Skew:                          16.476   Prob(JB):                         0.00
+Kurtosis:                     623.088   Cond. No.                         55.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=4
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.065
+Model:                            OLS   Adj. R-squared (uncentered):              0.062
+Method:                 Least Squares   F-statistic:                              3.900
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -9178.8
+No. Observations:                5510   AIC:                                  1.840e+04
+Df Residuals:                    5491   BIC:                                  1.852e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population             11.5636      9.031      1.280        nan         nan         nan
+l2.milper_by_population              1.3224      3.794      0.349        nan         nan         nan
+l3.milper_by_population              2.5205      4.213      0.598        nan         nan         nan
+l4.milper_by_population              6.8557      6.119      1.120        nan         nan         nan
+l0.site                              1.8745      0.812      2.307        nan         nan         nan
+l1.site                              0.9927      0.376      2.642        nan         nan         nan
+l2.site                              0.0892      0.220      0.405        nan         nan         nan
+l3.site                             -0.0052      0.181     -0.029        nan         nan         nan
+l4.site                             -0.1688      0.217     -0.780        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.7515      0.444      1.693        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.5459      0.361      1.511        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.2052      0.186     -1.104        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.6340      0.243     -2.609        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5287      0.169     -3.122        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1242      0.127     -0.976        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.0144      0.112      0.128        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.0907      0.094      0.969        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.2177      0.104      2.098        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.2671      0.097      2.756        nan         nan         nan
+==============================================================================
+Omnibus:                    11259.808   Durbin-Watson:                   0.886
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         82569353.299
+Skew:                          16.552   Prob(JB):                         0.00
+Kurtosis:                     601.793   Cond. No.                         55.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=5
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.045
+Model:                            OLS   Adj. R-squared (uncentered):              0.041
+Method:                 Least Squares   F-statistic:                              2.143
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -9197.0
+No. Observations:                5447   AIC:                                  1.843e+04
+Df Residuals:                    5428   BIC:                                  1.856e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population              6.7880      6.886      0.986        nan         nan         nan
+l2.milper_by_population              4.3926      4.232      1.038        nan         nan         nan
+l3.milper_by_population              2.7404      3.932      0.697        nan         nan         nan
+l4.milper_by_population              7.3847      5.935      1.244        nan         nan         nan
+l0.site                              0.9269      0.331      2.800        nan         nan         nan
+l1.site                              0.3326      0.160      2.084        nan         nan         nan
+l2.site                              0.0327      0.149      0.219        nan         nan         nan
+l3.site                             -0.0285      0.163     -0.175        nan         nan         nan
+l4.site                             -0.0946      0.213     -0.445        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.7257      0.438      1.656        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby      0.1219      0.204      0.598        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.5533      0.236     -2.348        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.5861      0.196     -2.984        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5031      0.145     -3.461        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.0507      0.124     -0.410        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.0894      0.100      0.893        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.1604      0.107      1.498        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.2649      0.111      2.392        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.3079      0.140      2.205        nan         nan         nan
+==============================================================================
+Omnibus:                    11076.439   Durbin-Watson:                   0.855
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         75322041.477
+Skew:                          16.390   Prob(JB):                         0.00
+Kurtosis:                     578.154   Cond. No.                         55.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=6
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.035
+Model:                            OLS   Adj. R-squared (uncentered):              0.032
+Method:                 Least Squares   F-statistic:                              1.622
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -9183.1
+No. Observations:                5385   AIC:                                  1.840e+04
+Df Residuals:                    5366   BIC:                                  1.853e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population              7.7748      6.602      1.178        nan         nan         nan
+l2.milper_by_population              4.0663      3.858      1.054        nan         nan         nan
+l3.milper_by_population              3.2008      3.727      0.859        nan         nan         nan
+l4.milper_by_population              6.6237      5.664      1.169        nan         nan         nan
+l0.site                              0.2463      0.120      2.056        nan         nan         nan
+l1.site                              0.1603      0.126      1.271        nan         nan         nan
+l2.site                             -0.0432      0.160     -0.270        nan         nan         nan
+l3.site                             -0.0005      0.164     -0.003        nan         nan         nan
+l4.site                             -0.1142      0.225     -0.507        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.2539      0.257      0.988        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -0.2802      0.131     -2.132        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.4669      0.178     -2.621        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.5526      0.174     -3.176        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5478      0.164     -3.340        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.0257      0.098      0.263        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.1965      0.111      1.767        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.2230      0.102      2.187        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.2956      0.155      1.903        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.2669      0.132      2.014        nan         nan         nan
+==============================================================================
+Omnibus:                    10924.336   Durbin-Watson:                   0.847
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         71500254.810
+Skew:                          16.311   Prob(JB):                         0.00
+Kurtosis:                     566.560   Cond. No.                         55.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=7
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.036
+Model:                            OLS   Adj. R-squared (uncentered):              0.033
+Method:                 Least Squares   F-statistic:                              1.541
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -9140.0
+No. Observations:                5323   AIC:                                  1.832e+04
+Df Residuals:                    5304   BIC:                                  1.844e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population              7.7691      6.230      1.247        nan         nan         nan
+l2.milper_by_population              4.1462      3.694      1.122        nan         nan         nan
+l3.milper_by_population              3.5244      3.571      0.987        nan         nan         nan
+l4.milper_by_population              5.6910      5.451      1.044        nan         nan         nan
+l0.site                              0.1331      0.135      0.986        nan         nan         nan
+l1.site                              0.0463      0.135      0.344        nan         nan         nan
+l2.site                              0.0501      0.174      0.289        nan         nan         nan
+l3.site                             -0.0332      0.187     -0.178        nan         nan         nan
+l4.site                             -0.1022      0.212     -0.482        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -0.1795      0.127     -1.416        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -0.3497      0.149     -2.343        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.4312      0.157     -2.743        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.5614      0.184     -3.046        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5972      0.189     -3.162        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.1657      0.107      1.551        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.2519      0.104      2.432        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.2146      0.159      1.353        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.2724      0.146      1.867        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.3819      0.215      1.778        nan         nan         nan
+==============================================================================
+Omnibus:                    10781.812   Durbin-Watson:                   0.845
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         69569780.806
+Skew:                          16.253   Prob(JB):                         0.00
+Kurtosis:                     562.120   Cond. No.                         55.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=8
+
+                                 OLS Regression Results                                
+=======================================================================================
+Dep. Variable:                 milper   R-squared (uncentered):                   0.037
+Model:                            OLS   Adj. R-squared (uncentered):              0.034
+Method:                 Least Squares   F-statistic:                              1.414
+Date:                Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                        15:54:19   Log-Likelihood:                         -9098.5
+No. Observations:                5262   AIC:                                  1.824e+04
+Df Residuals:                    5243   BIC:                                  1.836e+04
+Df Model:                          19                                                  
+Covariance Type:         hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.milper_by_population              7.6047      5.962      1.276        nan         nan         nan
+l2.milper_by_population              3.9392      3.535      1.114        nan         nan         nan
+l3.milper_by_population              3.0287      3.354      0.903        nan         nan         nan
+l4.milper_by_population              5.2828      5.223      1.012        nan         nan         nan
+l0.site                              0.0692      0.125      0.554        nan         nan         nan
+l1.site                              0.1147      0.139      0.823        nan         nan         nan
+l2.site                              0.0266      0.165      0.161        nan         nan         nan
+l3.site                             -0.0313      0.190     -0.164        nan         nan         nan
+l4.site                             -0.1077      0.207     -0.521        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -0.2666      0.158     -1.683        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -0.4339      0.171     -2.536        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.4388      0.156     -2.805        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.6032      0.208     -2.899        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5944      0.197     -3.014        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.2350      0.105      2.234        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.2585      0.157      1.644        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.2019      0.137      1.470        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.3985      0.228      1.746        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.3559      0.207      1.719        nan         nan         nan
+==============================================================================
+Omnibus:                    10664.238   Durbin-Watson:                   0.854
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):         69121684.833
+Skew:                          16.269   Prob(JB):                         0.00
+Kurtosis:                     563.540   Cond. No.                         55.5
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+

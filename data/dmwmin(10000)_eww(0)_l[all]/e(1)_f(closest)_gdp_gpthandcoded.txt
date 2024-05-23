@@ -1,0 +1,423 @@
+######################################################################
+Projection h=0
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.057
+Model:                                OLS   Adj. R-squared (uncentered):              0.054
+Method:                     Least Squares   F-statistic:                              8.312
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -21145.
+No. Observations:                    6694   AIC:                                  4.233e+04
+Df Residuals:                        6675   BIC:                                  4.246e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.2128      0.044      4.795        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0292      0.041     -0.705        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff       0.0193      0.042      0.465        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0107      0.033     -0.322        nan         nan         nan
+l0.site                             -1.9383      1.480     -1.310        nan         nan         nan
+l1.site                             -3.1294      1.343     -2.330        nan         nan         nan
+l2.site                             -0.2000      1.258     -0.159        nan         nan         nan
+l3.site                             -1.7444      0.931     -1.875        nan         nan         nan
+l4.site                             -1.1652      0.564     -2.068        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.8231      0.887      0.928        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -0.8248      0.665     -1.240        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.5509      0.605      0.911        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.3516      0.738     -0.476        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5580      0.722     -0.773        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.1389      0.496     -0.280        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     1.1693      0.559      2.092        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant    -0.1916      0.435     -0.440        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.1346      0.403      0.334        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.5340      0.477      1.121        nan         nan         nan
+==============================================================================
+Omnibus:                     3679.661   Durbin-Watson:                   2.000
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           642644.421
+Skew:                          -1.561   Prob(JB):                         0.00
+Kurtosis:                      50.899   Cond. No.                         66.9
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=1
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.039
+Model:                                OLS   Adj. R-squared (uncentered):              0.036
+Method:                     Least Squares   F-statistic:                              6.929
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -23969.
+No. Observations:                    6634   AIC:                                  4.798e+04
+Df Residuals:                        6615   BIC:                                  4.811e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.2251      0.063      3.576        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0176      0.084     -0.210        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff       0.0132      0.073      0.181        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0377      0.053     -0.714        nan         nan         nan
+l0.site                             -5.1305      1.625     -3.158        nan         nan         nan
+l1.site                             -4.1269      2.425     -1.701        nan         nan         nan
+l2.site                             -1.8666      1.783     -1.047        nan         nan         nan
+l3.site                             -3.2886      1.295     -2.540        nan         nan         nan
+l4.site                             -3.1473      2.505     -1.256        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.1023      1.315      0.078        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -0.5477      0.996     -0.550        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.3844      1.030      0.373        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.9178      1.322     -0.694        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -1.4327      1.479     -0.969        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.9476      0.999      0.949        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     1.2869      0.948      1.358        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant    -0.0561      0.748     -0.075        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.7311      0.771      0.948        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.9275      1.031      0.900        nan         nan         nan
+==============================================================================
+Omnibus:                     3436.730   Durbin-Watson:                   1.027
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           249183.884
+Skew:                          -1.636   Prob(JB):                         0.00
+Kurtosis:                      32.846   Cond. No.                         66.8
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=2
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.045
+Model:                                OLS   Adj. R-squared (uncentered):              0.042
+Method:                     Least Squares   F-statistic:                              4.113
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -25316.
+No. Observations:                    6574   AIC:                                  5.067e+04
+Df Residuals:                        6555   BIC:                                  5.080e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.2488      0.095      2.613        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0299      0.118     -0.254        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff      -0.0202      0.073     -0.277        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0544      0.089     -0.613        nan         nan         nan
+l0.site                             -5.7954      1.658     -3.495        nan         nan         nan
+l1.site                             -6.0639      3.001     -2.021        nan         nan         nan
+l2.site                             -2.8627      1.739     -1.646        nan         nan         nan
+l3.site                             -5.0687      2.722     -1.862        nan         nan         nan
+l4.site                             -8.1578      6.214     -1.313        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby      0.3629      1.561      0.233        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -1.2450      1.548     -0.804        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.2357      1.438      0.164        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -1.7515      2.032     -0.862        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -3.7013      2.987     -1.239        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.9111      1.300      0.701        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     1.7239      1.218      1.416        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.5224      1.047      0.499        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.4207      1.152      1.234        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     2.3021      1.172      1.965        nan         nan         nan
+==============================================================================
+Omnibus:                     2655.912   Durbin-Watson:                   0.662
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            94627.544
+Skew:                          -1.268   Prob(JB):                         0.00
+Kurtosis:                      21.413   Cond. No.                         66.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=3
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.048
+Model:                                OLS   Adj. R-squared (uncentered):              0.045
+Method:                     Least Squares   F-statistic:                              3.683
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -26158.
+No. Observations:                    6514   AIC:                                  5.235e+04
+Df Residuals:                        6495   BIC:                                  5.248e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.2442      0.128      1.905        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0668      0.114     -0.584        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff      -0.0361      0.100     -0.359        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0518      0.107     -0.485        nan         nan         nan
+l0.site                             -7.8536      1.993     -3.941        nan         nan         nan
+l1.site                             -7.2011      2.643     -2.724        nan         nan         nan
+l2.site                             -4.8055      3.362     -1.429        nan         nan         nan
+l3.site                            -10.1743      6.105     -1.667        nan         nan         nan
+l4.site                             -6.2801      5.908     -1.063        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -0.3788      1.905     -0.199        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -1.6560      1.993     -0.831        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.6095      1.945     -0.313        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -4.0373      3.409     -1.184        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -4.6131      3.475     -1.328        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     1.1265      1.408      0.800        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     2.2573      1.422      1.587        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     1.0121      1.317      0.768        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     2.6635      1.417      1.880        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     3.5153      1.361      2.583        nan         nan         nan
+==============================================================================
+Omnibus:                     2013.501   Durbin-Watson:                   0.485
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            32368.512
+Skew:                          -1.046   Prob(JB):                         0.00
+Kurtosis:                      13.718   Cond. No.                         66.7
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=4
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.048
+Model:                                OLS   Adj. R-squared (uncentered):              0.046
+Method:                     Least Squares   F-statistic:                              4.736
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -26720.
+No. Observations:                    6454   AIC:                                  5.348e+04
+Df Residuals:                        6435   BIC:                                  5.361e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.2049      0.129      1.593        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0834      0.139     -0.602        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff      -0.0321      0.115     -0.279        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0664      0.121     -0.548        nan         nan         nan
+l0.site                             -9.0452      2.254     -4.013        nan         nan         nan
+l1.site                             -9.1409      4.438     -2.060        nan         nan         nan
+l2.site                            -10.0817      6.787     -1.485        nan         nan         nan
+l3.site                             -8.5569      5.802     -1.475        nan         nan         nan
+l4.site                             -5.4732      5.563     -0.984        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -1.0696      2.408     -0.444        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -2.6981      2.681     -1.006        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.9614      3.261     -0.908        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -5.1035      3.989     -1.279        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -3.8329      3.529     -1.086        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     1.7619      1.559      1.130        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     2.7360      1.608      1.702        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     2.1085      1.521      1.386        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     4.0911      1.635      2.503        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     4.2457      1.531      2.773        nan         nan         nan
+==============================================================================
+Omnibus:                     1510.350   Durbin-Watson:                   0.382
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            14991.802
+Skew:                          -0.833   Prob(JB):                         0.00
+Kurtosis:                      10.278   Cond. No.                         66.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=5
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.050
+Model:                                OLS   Adj. R-squared (uncentered):              0.047
+Method:                     Least Squares   F-statistic:                              2.846
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -27090.
+No. Observations:                    6395   AIC:                                  5.422e+04
+Df Residuals:                        6376   BIC:                                  5.435e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.1807      0.147      1.229        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0761      0.149     -0.511        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff      -0.0479      0.122     -0.392        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0638      0.140     -0.456        nan         nan         nan
+l0.site                            -11.0454      3.223     -3.427        nan         nan         nan
+l1.site                            -14.2655      7.672     -1.859        nan         nan         nan
+l2.site                             -8.6959      6.460     -1.346        nan         nan         nan
+l3.site                             -7.9226      5.480     -1.446        nan         nan         nan
+l4.site                             -3.6545      4.065     -0.899        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -2.3596      3.052     -0.773        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -5.0293      4.007     -1.255        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -4.0453      3.855     -1.049        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -4.5176      4.013     -1.126        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.8738      2.998     -0.959        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     2.3247      1.758      1.322        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     3.7855      1.820      2.080        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     3.4372      1.701      2.020        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     4.9230      1.795      2.743        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     4.2127      1.622      2.597        nan         nan         nan
+==============================================================================
+Omnibus:                     1088.567   Durbin-Watson:                   0.309
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             7672.539
+Skew:                          -0.628   Prob(JB):                         0.00
+Kurtosis:                       8.217   Cond. No.                         66.5
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=6
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.050
+Model:                                OLS   Adj. R-squared (uncentered):              0.047
+Method:                     Least Squares   F-statistic:                              2.019
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -27349.
+No. Observations:                    6336   AIC:                                  5.474e+04
+Df Residuals:                        6317   BIC:                                  5.486e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.1808      0.162      1.116        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0921      0.157     -0.587        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff      -0.0501      0.139     -0.362        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0469      0.154     -0.304        nan         nan         nan
+l0.site                            -16.1187      6.095     -2.644        nan         nan         nan
+l1.site                            -12.9216      7.171     -1.802        nan         nan         nan
+l2.site                             -8.0646      6.134     -1.315        nan         nan         nan
+l3.site                             -6.1913      3.987     -1.553        nan         nan         nan
+l4.site                             -2.8382      4.102     -0.692        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -5.0029      4.457     -1.123        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -6.2107      4.759     -1.305        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -3.2647      3.896     -0.838        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.6974      3.478     -1.063        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -3.0876      2.817     -1.096        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     3.5315      1.912      1.847        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     5.1145      2.011      2.544        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     4.2107      1.912      2.202        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     4.9468      1.846      2.679        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     3.9346      1.583      2.486        nan         nan         nan
+==============================================================================
+Omnibus:                      758.247   Durbin-Watson:                   0.264
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4207.839
+Skew:                          -0.438   Prob(JB):                         0.00
+Kurtosis:                       6.895   Cond. No.                         66.3
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=7
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.042
+Model:                                OLS   Adj. R-squared (uncentered):              0.039
+Method:                     Least Squares   F-statistic:                              2.178
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -27556.
+No. Observations:                    6277   AIC:                                  5.515e+04
+Df Residuals:                        6258   BIC:                                  5.528e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.1635      0.173      0.948        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0929      0.171     -0.543        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff      -0.0378      0.152     -0.248        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0264      0.169     -0.156        nan         nan         nan
+l0.site                            -14.9716      5.699     -2.627        nan         nan         nan
+l1.site                            -12.4282      6.733     -1.846        nan         nan         nan
+l2.site                             -6.4459      4.501     -1.432        nan         nan         nan
+l3.site                             -5.8672      3.946     -1.487        nan         nan         nan
+l4.site                             -1.5430      4.204     -0.367        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -6.8470      5.747     -1.191        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -5.6914      5.089     -1.118        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.1673      3.389     -0.640        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -4.3180      3.490     -1.237        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -1.9624      2.678     -0.733        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     5.1763      2.146      2.412        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     5.8577      2.261      2.591        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     3.9573      1.978      2.001        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     4.9006      1.856      2.641        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     3.6349      1.729      2.103        nan         nan         nan
+==============================================================================
+Omnibus:                      572.448   Durbin-Watson:                   0.238
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2698.208
+Skew:                          -0.324   Prob(JB):                         0.00
+Kurtosis:                       6.146   Cond. No.                         66.0
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=8
+
+                                   OLS Regression Results                                  
+===========================================================================================
+Dep. Variable:     lgdp_2015USD_detrended   R-squared (uncentered):                   0.033
+Model:                                OLS   Adj. R-squared (uncentered):              0.030
+Method:                     Least Squares   F-statistic:                              1.809
+Date:                    Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                            15:54:45   Log-Likelihood:                         -27697.
+No. Observations:                    6218   AIC:                                  5.543e+04
+Df Residuals:                        6199   BIC:                                  5.556e+04
+Df Model:                              19                                                  
+Covariance Type:             hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.lgdp_2015USD_detrended_diff       0.1585      0.188      0.844        nan         nan         nan
+l2.lgdp_2015USD_detrended_diff      -0.0775      0.188     -0.413        nan         nan         nan
+l3.lgdp_2015USD_detrended_diff      -0.0153      0.165     -0.093        nan         nan         nan
+l4.lgdp_2015USD_detrended_diff      -0.0213      0.179     -0.119        nan         nan         nan
+l0.site                            -14.4924      5.269     -2.751        nan         nan         nan
+l1.site                            -10.6533      5.081     -2.097        nan         nan         nan
+l2.site                             -6.2528      4.570     -1.368        nan         nan         nan
+l3.site                             -4.6856      4.005     -1.170        nan         nan         nan
+l4.site                              0.0255      3.833      0.007        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -6.6062      6.179     -1.069        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -4.4720      4.611     -0.970        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.5957      3.352     -0.774        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.4774      3.051     -1.140        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -1.1431      2.867     -0.399        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     6.0205      2.474      2.434        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     5.6187      2.346      2.395        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     3.7810      1.999      1.891        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     4.7563      2.000      2.378        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     2.9745      2.201      1.351        nan         nan         nan
+==============================================================================
+Omnibus:                      462.910   Durbin-Watson:                   0.211
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1975.974
+Skew:                          -0.246   Prob(JB):                         0.00
+Kurtosis:                       5.718   Cond. No.                         65.8
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+

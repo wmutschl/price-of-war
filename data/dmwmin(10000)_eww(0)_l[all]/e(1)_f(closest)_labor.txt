@@ -1,0 +1,423 @@
+######################################################################
+Projection h=0
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.119
+Model:                             OLS   Adj. R-squared (uncentered):              0.114
+Method:                  Least Squares   F-statistic:                              6.045
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -7632.6
+No. Observations:                 3207   AIC:                                  1.530e+04
+Df Residuals:                     3188   BIC:                                  1.542e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         28.5570      5.716      4.996        nan         nan         nan
+l2.ltotal_hours_worked_diff          4.1274      2.641      1.563        nan         nan         nan
+l3.ltotal_hours_worked_diff          0.8323      4.597      0.181        nan         nan         nan
+l4.ltotal_hours_worked_diff         -7.4967      3.221     -2.328        nan         nan         nan
+l0.site                             -0.3681      0.790     -0.466        nan         nan         nan
+l1.site                              0.0461      0.781      0.059        nan         nan         nan
+l2.site                             -0.7789      0.755     -1.032        nan         nan         nan
+l3.site                             -1.5612      0.696     -2.245        nan         nan         nan
+l4.site                             -1.6811      0.617     -2.723        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -0.1652      0.348     -0.475        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -1.1922      0.440     -2.708        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.1632      0.496      0.329        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.2614      0.507     -0.516        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -0.5603      0.395     -1.420        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.4820      0.370     -1.301        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.1560      0.259      0.603        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.0857      0.299      0.287        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.3398      0.212      1.599        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.3370      0.305      1.103        nan         nan         nan
+==============================================================================
+Omnibus:                     1411.550   Durbin-Watson:                   2.008
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):           132633.753
+Skew:                          -1.152   Prob(JB):                         0.00
+Kurtosis:                      34.421   Cond. No.                         18.6
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=1
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.111
+Model:                             OLS   Adj. R-squared (uncentered):              0.106
+Method:                  Least Squares   F-statistic:                              7.087
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -9132.1
+No. Observations:                 3184   AIC:                                  1.830e+04
+Df Residuals:                     3165   BIC:                                  1.842e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         39.8991      9.194      4.340        nan         nan         nan
+l2.ltotal_hours_worked_diff          6.0712      5.516      1.101        nan         nan         nan
+l3.ltotal_hours_worked_diff         -5.8428      6.542     -0.893        nan         nan         nan
+l4.ltotal_hours_worked_diff        -12.3801      6.122     -2.022        nan         nan         nan
+l0.site                             -0.3549      1.590     -0.223        nan         nan         nan
+l1.site                             -0.8355      1.655     -0.505        nan         nan         nan
+l2.site                             -2.3667      1.554     -1.523        nan         nan         nan
+l3.site                             -3.5213      1.399     -2.518        nan         nan         nan
+l4.site                             -4.3656      1.741     -2.508        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -1.3951      0.826     -1.689        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -1.4915      0.504     -2.962        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby      0.1433      0.644      0.223        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -0.7478      0.860     -0.869        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -1.3963      0.716     -1.951        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.4562      0.554     -0.823        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.1115      0.425      0.262        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.3433      0.497      0.691        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     0.7840      0.430      1.824        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.8088      0.546      1.481        nan         nan         nan
+==============================================================================
+Omnibus:                     1006.029   Durbin-Watson:                   1.041
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            33692.606
+Skew:                          -0.844   Prob(JB):                         0.00
+Kurtosis:                      18.847   Cond. No.                         18.5
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=2
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.098
+Model:                             OLS   Adj. R-squared (uncentered):              0.092
+Method:                  Least Squares   F-statistic:                              7.793
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -9946.8
+No. Observations:                 3161   AIC:                                  1.993e+04
+Df Residuals:                     3142   BIC:                                  2.005e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         44.0436      9.110      4.835        nan         nan         nan
+l2.ltotal_hours_worked_diff         -0.2554      6.850     -0.037        nan         nan         nan
+l3.ltotal_hours_worked_diff        -12.3295      8.563     -1.440        nan         nan         nan
+l4.ltotal_hours_worked_diff        -10.1226      9.528     -1.062        nan         nan         nan
+l0.site                             -1.2527      2.407     -0.520        nan         nan         nan
+l1.site                             -2.5154      2.435     -1.033        nan         nan         nan
+l2.site                             -4.1828      2.124     -1.970        nan         nan         nan
+l3.site                             -6.3122      2.226     -2.836        nan         nan         nan
+l4.site                             -5.3680      1.980     -2.711        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -1.9005      0.833     -2.281        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -2.0080      0.795     -2.525        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.0565      0.764     -0.074        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -1.4944      0.953     -1.567        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.5247      1.160     -2.177        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.4760      0.609     -0.782        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.2591      0.578      0.449        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     0.7763      0.660      1.177        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.3697      0.622      2.201        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.1814      0.717      1.648        nan         nan         nan
+==============================================================================
+Omnibus:                      865.730   Durbin-Watson:                   0.679
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            22322.018
+Skew:                          -0.717   Prob(JB):                         0.00
+Kurtosis:                      15.939   Cond. No.                         18.5
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=3
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.084
+Model:                             OLS   Adj. R-squared (uncentered):              0.078
+Method:                  Least Squares   F-statistic:                              6.187
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -10464.
+No. Observations:                 3138   AIC:                                  2.097e+04
+Df Residuals:                     3119   BIC:                                  2.108e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         38.9173      9.818      3.964        nan         nan         nan
+l2.ltotal_hours_worked_diff         -7.0950      8.210     -0.864        nan         nan         nan
+l3.ltotal_hours_worked_diff        -10.4109     10.245     -1.016        nan         nan         nan
+l4.ltotal_hours_worked_diff        -10.6704     11.218     -0.951        nan         nan         nan
+l0.site                             -2.8774      3.095     -0.930        nan         nan         nan
+l1.site                             -4.4041      2.993     -1.472        nan         nan         nan
+l2.site                             -6.9179      2.616     -2.644        nan         nan         nan
+l3.site                             -7.2961      2.441     -2.990        nan         nan         nan
+l4.site                             -5.3850      1.812     -2.973        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -2.5276      1.188     -2.127        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -2.4297      1.007     -2.413        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -0.6795      0.931     -0.730        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -2.5613      1.239     -2.067        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.9748      1.491     -1.995        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant    -0.2795      0.682     -0.410        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     0.6527      0.805      0.811        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     1.3202      0.791      1.669        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.7902      0.744      2.406        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.4360      0.883      1.626        nan         nan         nan
+==============================================================================
+Omnibus:                      646.568   Durbin-Watson:                   0.490
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            13264.103
+Skew:                          -0.428   Prob(JB):                         0.00
+Kurtosis:                      13.036   Cond. No.                         18.4
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=4
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.078
+Model:                             OLS   Adj. R-squared (uncentered):              0.073
+Method:                  Least Squares   F-statistic:                              5.996
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -10788.
+No. Observations:                 3115   AIC:                                  2.161e+04
+Df Residuals:                     3096   BIC:                                  2.173e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         30.8834      8.959      3.447        nan         nan         nan
+l2.ltotal_hours_worked_diff         -5.5550      9.322     -0.596        nan         nan         nan
+l3.ltotal_hours_worked_diff         -9.7613     11.881     -0.822        nan         nan         nan
+l4.ltotal_hours_worked_diff        -15.0718     11.240     -1.341        nan         nan         nan
+l0.site                             -4.5566      3.523     -1.293        nan         nan         nan
+l1.site                             -7.2099      3.014     -2.392        nan         nan         nan
+l2.site                             -7.9351      2.809     -2.825        nan         nan         nan
+l3.site                             -7.2240      2.408     -3.000        nan         nan         nan
+l4.site                             -4.0967      1.468     -2.791        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -3.1161      1.434     -2.174        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -3.2178      1.168     -2.756        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -1.8074      1.249     -1.447        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.0169      1.434     -2.103        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.7805      1.480     -1.879        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.2451      0.754      0.325        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     1.2261      0.929      1.320        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     1.7200      0.808      2.129        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     2.0409      0.883      2.312        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.4462      1.078      1.342        nan         nan         nan
+==============================================================================
+Omnibus:                      499.540   Durbin-Watson:                   0.365
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             8101.072
+Skew:                          -0.195   Prob(JB):                         0.00
+Kurtosis:                      10.891   Cond. No.                         18.4
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=5
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.080
+Model:                             OLS   Adj. R-squared (uncentered):              0.074
+Method:                  Least Squares   F-statistic:                              3.372
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -10995.
+No. Observations:                 3092   AIC:                                  2.203e+04
+Df Residuals:                     3073   BIC:                                  2.214e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         29.9929      9.631      3.114        nan         nan         nan
+l2.ltotal_hours_worked_diff         -4.7893     10.780     -0.444        nan         nan         nan
+l3.ltotal_hours_worked_diff        -13.5087     11.513     -1.173        nan         nan         nan
+l4.ltotal_hours_worked_diff        -17.7367     11.276     -1.573        nan         nan         nan
+l0.site                             -7.2236      3.257     -2.218        nan         nan         nan
+l1.site                             -8.3038      3.145     -2.640        nan         nan         nan
+l2.site                             -7.8088      2.913     -2.680        nan         nan         nan
+l3.site                             -5.8066      2.195     -2.646        nan         nan         nan
+l4.site                             -3.2896      1.461     -2.251        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -4.0306      1.681     -2.398        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -4.4062      1.517     -2.904        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.3023      1.496     -1.539        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -2.8603      1.472     -1.944        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.5672      1.485     -1.729        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     0.9270      0.804      1.153        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     1.7616      0.955      1.844        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     2.0274      0.862      2.352        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     2.0323      1.040      1.955        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.2571      1.138      1.104        nan         nan         nan
+==============================================================================
+Omnibus:                      388.577   Durbin-Watson:                   0.284
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             4179.726
+Skew:                          -0.115   Prob(JB):                         0.00
+Kurtosis:                       8.691   Cond. No.                         18.3
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=6
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.078
+Model:                             OLS   Adj. R-squared (uncentered):              0.073
+Method:                  Least Squares   F-statistic:                              2.676
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -11157.
+No. Observations:                 3069   AIC:                                  2.235e+04
+Df Residuals:                     3050   BIC:                                  2.247e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         29.9867     11.242      2.667        nan         nan         nan
+l2.ltotal_hours_worked_diff         -8.0891     10.627     -0.761        nan         nan         nan
+l3.ltotal_hours_worked_diff        -16.4963     11.895     -1.387        nan         nan         nan
+l4.ltotal_hours_worked_diff        -18.4055     11.617     -1.584        nan         nan         nan
+l0.site                             -8.1936      3.373     -2.429        nan         nan         nan
+l1.site                             -8.3137      3.287     -2.529        nan         nan         nan
+l2.site                             -6.3868      2.908     -2.196        nan         nan         nan
+l3.site                             -5.0380      2.358     -2.137        nan         nan         nan
+l4.site                             -2.2504      1.367     -1.646        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -5.4549      2.120     -2.573        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -5.1586      1.866     -2.765        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -2.1702      1.567     -1.385        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -2.6869      1.451     -1.852        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.4666      1.492     -1.653        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     1.5791      0.819      1.927        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     2.2260      1.019      2.185        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     2.0482      1.067      1.920        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.8585      1.112      1.672        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     1.1916      1.182      1.008        nan         nan         nan
+==============================================================================
+Omnibus:                      327.950   Durbin-Watson:                   0.246
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2828.497
+Skew:                          -0.020   Prob(JB):                         0.00
+Kurtosis:                       7.703   Cond. No.                         18.3
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=7
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.072
+Model:                             OLS   Adj. R-squared (uncentered):              0.066
+Method:                  Least Squares   F-statistic:                              2.466
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -11289.
+No. Observations:                 3046   AIC:                                  2.262e+04
+Df Residuals:                     3027   BIC:                                  2.273e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         26.3294     12.279      2.144        nan         nan         nan
+l2.ltotal_hours_worked_diff        -10.9361     11.225     -0.974        nan         nan         nan
+l3.ltotal_hours_worked_diff        -18.3510     11.822     -1.552        nan         nan         nan
+l4.ltotal_hours_worked_diff        -18.5163     13.208     -1.402        nan         nan         nan
+l0.site                             -8.1139      3.535     -2.296        nan         nan         nan
+l1.site                             -6.9384      3.430     -2.023        nan         nan         nan
+l2.site                             -5.5186      3.159     -1.747        nan         nan         nan
+l3.site                             -3.9781      2.274     -1.750        nan         nan         nan
+l4.site                             -1.0856      1.508     -0.720        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -6.4860      2.729     -2.376        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -5.3881      2.123     -2.538        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -1.8480      1.646     -1.123        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -2.6352      1.545     -1.706        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -2.8888      1.587     -1.820        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     2.1310      0.924      2.307        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     2.3278      1.236      1.884        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     2.0034      1.133      1.767        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.8388      1.168      1.574        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.9339      1.402      0.666        nan         nan         nan
+==============================================================================
+Omnibus:                      302.913   Durbin-Watson:                   0.219
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2333.625
+Skew:                           0.046   Prob(JB):                         0.00
+Kurtosis:                       7.287   Cond. No.                         18.3
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
+######################################################################
+Projection h=8
+
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     ltotal_hours_worked   R-squared (uncentered):                   0.063
+Model:                             OLS   Adj. R-squared (uncentered):              0.058
+Method:                  Least Squares   F-statistic:                              2.427
+Date:                 Fri, 26 Jan 2024   Prob (F-statistic):                         nan
+Time:                         15:54:38   Log-Likelihood:                         -11387.
+No. Observations:                 3023   AIC:                                  2.281e+04
+Df Residuals:                     3004   BIC:                                  2.293e+04
+Df Model:                           19                                                  
+Covariance Type:          hac-groupsum                                                  
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+l1.ltotal_hours_worked_diff         21.8365     13.223      1.651        nan         nan         nan
+l2.ltotal_hours_worked_diff        -12.5917     11.486     -1.096        nan         nan         nan
+l3.ltotal_hours_worked_diff        -19.0433     13.396     -1.422        nan         nan         nan
+l4.ltotal_hours_worked_diff        -18.1430     13.984     -1.297        nan         nan         nan
+l0.site                             -6.6868      3.684     -1.815        nan         nan         nan
+l1.site                             -6.0771      3.757     -1.617        nan         nan         nan
+l2.site                             -4.3162      3.066     -1.408        nan         nan         nan
+l3.site                             -2.7900      2.391     -1.167        nan         nan         nan
+l4.site                             -1.3906      1.922     -0.724        nan         nan         nan
+l0.trans_e(1)_f(closest)_nearby     -6.8384      3.161     -2.163        nan         nan         nan
+l1.trans_e(1)_f(closest)_nearby     -5.2494      2.223     -2.362        nan         nan         nan
+l2.trans_e(1)_f(closest)_nearby     -1.7507      1.658     -1.056        nan         nan         nan
+l3.trans_e(1)_f(closest)_nearby     -3.0942      1.699     -1.822        nan         nan         nan
+l4.trans_e(1)_f(closest)_nearby     -3.0952      1.660     -1.865        nan         nan         nan
+l0.trans_e(1)_f(closest)_distant     2.3054      1.076      2.142        nan         nan         nan
+l1.trans_e(1)_f(closest)_distant     2.3638      1.320      1.790        nan         nan         nan
+l2.trans_e(1)_f(closest)_distant     2.0710      1.169      1.771        nan         nan         nan
+l3.trans_e(1)_f(closest)_distant     1.6075      1.394      1.153        nan         nan         nan
+l4.trans_e(1)_f(closest)_distant     0.8141      1.442      0.564        nan         nan         nan
+==============================================================================
+Omnibus:                      286.009   Durbin-Watson:                   0.191
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             2058.251
+Skew:                           0.040   Prob(JB):                         0.00
+Kurtosis:                       7.042   Cond. No.                         18.3
+==============================================================================
+
+Notes:
+[1] R² is computed without centering (uncentered) since the model does not contain a constant.
+[2] Driscoll and Kraay Standard Errors are robust to cluster correlation (HAC-Groupsum)
+
