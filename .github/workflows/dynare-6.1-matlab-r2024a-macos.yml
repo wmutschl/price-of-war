@@ -1,0 +1,72 @@
+name: 'macOS '
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dynare_6_1_matlab_r2024a_macos:
+    runs-on: macos-14
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Setup SSH keys
+        run: |
+          mkdir -p ~/.ssh
+          cd ~/.ssh
+          ssh-keygen -t ed25519 -f id_ed25519 -N ""
+          cat ~/.ssh/id_ed25519.pub >> ~/.ssh/authorized_keys
+          chmod 644 ~/.ssh/authorized_keys
+          chmod 600 ~/.ssh/id_ed25519
+          chmod 700 ~/.ssh
+          touch ~/.ssh/config
+          tee -a ~/.ssh/config > /dev/null <<EOT
+          Host *
+          AddKeysToAgent yes
+          UseKeychain yes
+          IdentityFile ~/.ssh/id_ed25519
+          EOT
+          eval "$(ssh-agent -s)"
+          ssh-add -K ~/.ssh/id_ed25519
+          ssh-keyscan -H localhost >> ~/.ssh/known_hosts
+          ssh localhost "echo 'SSH connection successful'; exit"
+
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v2
+        with:
+          release: R2024a
+          products: Symbolic_Math_Toolbox Statistics_and_Machine_Learning_Toolbox Optimization_Toolbox Econometrics_Toolbox Parallel_Computing_Toolbox Control_System_Toolbox Global_Optimization_Toolbox
+          cache: true
+
+      - name: Download Dynare .pkg for macOS ARM64
+        run: |          
+          curl -L "https://www.dynare.org/release/macos-arm64/dynare-6.1-arm64.pkg" -o "dynare-6.1-arm64.pkg"
+        shell: bash
+
+      - name: Install Dynare from the .pkg file (without sudo)
+        run: |
+          pkgutil --expand dynare-6.1-arm64.pkg Dynare-6.1-arm64
+          cd Dynare-6.1-arm64/dynare-6.1-arm64.pkg/
+          tar -zxvf Payload -C ../
+          ls
+          cd ..
+          cd ..
+        shell: bash
+      
+      - name: Test Dynare parallel environment
+        uses: matlab-actions/run-command@v2
+        with:
+          command: |
+            addpath("Dynare-6.1-arm64/matlab");
+            matlabroot
+            dynare war_nk4 conffile=__parallelconf_mac_R2024a_arm64_github parallel_test
+
+      - name: Matching with rotated slice sampler
+        uses: matlab-actions/run-command@v2
+        with:
+          command: |
+            addpath("Dynare-6.1-arm64/matlab");            
+            dynare war_nk4 -DMATCHING -DSLICE -DSLICE_ROTATED -DMH_NBLOCKS=3 conffile=__parallelconf_mac_R2024a_arm64_github parallel
