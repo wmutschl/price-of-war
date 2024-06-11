@@ -1,0 +1,53 @@
+name: Generate and Configure SSH Key
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup_ssh:
+    runs-on: macos-latest
+    steps:
+      - name: Generate SSH Key Pair
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -N ""
+          cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+          chmod 600 ~/.ssh/id_rsa
+          chmod 644 ~/.ssh/authorized_keys
+          # Debugging: List .ssh directory contents
+          ls -la ~/.ssh
+          # Debugging: Show the contents of the public key and authorized_keys
+          echo "Public Key:"
+          cat ~/.ssh/id_rsa.pub
+          echo "Authorized Keys:"
+          cat ~/.ssh/authorized_keys
+
+      - name: Add SSH Key to SSH Agent
+        run: |
+          eval "$(ssh-agent -s)"
+          ssh-add ~/.ssh/id_rsa
+          # Debugging: List the keys added to the SSH agent
+          ssh-add -l
+
+      - name: Add localhost to Known Hosts
+        run: |
+          ssh-keyscan -H localhost >> ~/.ssh/known_hosts
+          # Debugging: Show known hosts
+          echo "Known Hosts:"
+          cat ~/.ssh/known_hosts
+
+      - name: Configure SSH Daemon
+        run: |
+          sudo tee -a /etc/ssh/sshd_config > /dev/null <<EOT
+          PubkeyAuthentication yes
+          AuthorizedKeysFile .ssh/authorized_keys
+          EOT
+          sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
+          sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+          # Debugging: Show SSH daemon configuration
+          echo "SSHD Config:"
+          sudo cat /etc/ssh/sshd_config
+
+      - name: Test SSH Connection
+        run: |
+          ssh -vvv -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa localhost "echo 'SSH connection successful'; exit"
