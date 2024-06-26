@@ -1,48 +1,35 @@
-@#define COUNTRIES                   = ["R", "D", "N", "H"]           // indices for countries
-@#define CLOSING_COUNTRY             = "R"                            // country that is used to "balance out" equations and parameters in a consistent manner
-@#define HABIT                       = true                           // false, true
-@#define GROWTH                      = false                          // false, true
-@#define INTERMEDIATE_INPUTS         = true                           // false, true
-@#define CAPITAL                     = true                           // false, true
-@#define CAPITAL_UTILIZATION         = false                          // false, true
-@#define LABOR_MARKET_STRUCTURE      = "MONOPOLISTIC_COMPETITION_CES" // "PERFECT_COMPETITION", "MONOPOLISTIC_COMPETITION_CES"
-@#define NOMINAL_WAGE_SETTING        = "CALVO"                        // "FLEX", "CALVO"
-@#define IMPORT_ADJUSTMENT_COSTS     = true                           // false, true
-@#define PRICING_REGIMES             = ["PCP"]                        // any combination of elements in ["LCP", "PCP", "DCP"]
-@#define DOMINANT_CURRENCY           = ""                             // country in COUNTRIES that has dominant currency in DCP regime
-@#define INTERNATIONAL_BONDS         = ["R"]                          // any combination of elements in COUNTRIES
-@#define CLOSING_CONDITION           = "CARRYING_COST"                // "CARRYING_COST", "DEBT_ELASTIC"
-@#define ICEBERG_COSTS               = false                          // false, true
-@#define IMPORT_CONTENT_GOV_SPENDING = false                          // false, true
-@#define ADD_FLEX_MODEL              = false                          // false, true
+@#define MONETARY_POLICY = "MONEY_GROWTH" // "TAYLOR_RULE", "MONEY_GROWTH"
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                         PREPROCESSOR SETTINGS                         %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% COUNTRIES                   = @{COUNTRIES}
-% CLOSING_COUNTRY             = @{CLOSING_COUNTRY}
-% HABIT                       = @{HABIT}
-% GROWTH                      = @{GROWTH}
-% INTERMEDIATE_INPUTS         = @{INTERMEDIATE_INPUTS}
-% CAPITAL                     = @{CAPITAL}
-% CAPITAL_UTILIZATION         = @{CAPITAL_UTILIZATION}
-% LABOR_MARKET_STRUCTURE      = @{LABOR_MARKET_STRUCTURE}
-% NOMINAL_WAGE_SETTING        = @{NOMINAL_WAGE_SETTING}
-% IMPORT_ADJUSTMENT_COSTS     = @{IMPORT_ADJUSTMENT_COSTS}
-% PRICING_REGIMES             = @{PRICING_REGIMES}
-% DOMINANT_CURRENCY           = @{DOMINANT_CURRENCY}
-% INTERNATIONAL_BONDS         = @{INTERNATIONAL_BONDS}
-% CLOSING_CONDITION           = @{CLOSING_CONDITION}
-% ICEBERG_COSTS               = @{ICEBERG_COSTS}
-% IMPORT_CONTENT_GOV_SPENDING = @{IMPORT_CONTENT_GOV_SPENDING}
-% ADD_FLEX_MODEL              = @{ADD_FLEX_MODEL}
-  
+@#define COUNTRIES                     = ["R", "D", "N", "H"]           // indices for countries
+@#define CLOSING_COUNTRY               = "R"                            // country that is used to "balance out" equations and parameters in a consistent manner
+@#define HABIT                         = true                           // false, true
+@#define GROWTH                        = false                          // false, true
+@#define INTERMEDIATE_INPUTS           = true                           // false, true
+@#define CAPITAL                       = true                           // false, true
+@#define CAPITAL_UTILIZATION           = false                          // false, true
+@#define INVESTMENT_ADJUSTMENT_COSTS   = true                           // false, true
+@#define GOODS_MARKET_STRUCTURE        = "MONOPOLISTIC_COMPETITION_CES" // "PERFECT_COMPETITION", "MONOPOLISTIC_COMPETITION_CES"
+@#define NOMINAL_PRICE_SETTING         = "CALVO"                        // "FLEX", "CALVO"
+@#define PARTIAL_INDEXATION_PRICES     = false                          // false, true
+@#define LABOR_MARKET_STRUCTURE        = "MONOPOLISTIC_COMPETITION_CES" // "PERFECT_COMPETITION", "MONOPOLISTIC_COMPETITION_CES"
+@#define NOMINAL_WAGE_SETTING          = "CALVO"                        // "FLEX", "CALVO"
+@#define PARTIAL_INDEXATION_WAGES      = false                          // false, true
+@#define IMPORT_ADJUSTMENT_COSTS       = true                           // false, true
+@#define PRICING_REGIMES               = ["PCP"]                        // any combination of elements in ["LCP", "PCP", "DCP"]
+@#define DOMINANT_CURRENCY             = ""                             // country in COUNTRIES that has dominant currency in DCP regime
+@#define INTERNATIONAL_BONDS           = ["R"]                          // any combination of elements in COUNTRIES
+@#define CLOSING_CONDITION             = "CARRYING_COST"                // "CARRYING_COST", "DEBT_ELASTIC"
+@#define ICEBERG_COSTS                 = false                          // false, true
+@#define IMPORT_CONTENT_GOV_SPENDING   = false                          // false, true
+@#define ADD_FLEX_MODEL                = false                          // false, true
+@#define CONSUMPTION_TRANSACTION_COSTS = true                           // false, true
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                         ENDOGENOUS VARIABLES                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@#include "DynareModWizard/modfile/__var.inc"
 var
+@#include "DynareModWizard/modfile/__var.inc"
+  
 % add plotting variables
 @#for j in COUNTRIES
   plot_gdp_@{j} plot_pi_@{j} plot_k_@{j} plot_g_@{j} plot_a_@{j} plot_lab_@{j} plot_x_@{j} plot_nx_@{j}
@@ -53,8 +40,9 @@ var
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                          EXOGENOUS VARIABLES                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+varexo
 @#include "DynareModWizard/modfile/__varexo.inc"
-varexo  
+    
 % innovation to war shock
   eps_war  
 ;
@@ -67,13 +55,17 @@ parameters
   RHOA_H    ${\rho^{A}_{H}}$
   RHOG_H    ${\rho^{G}_{H}}$
   RHOR_H    ${\rho^{R}_{H}}$
+@#if MONETARY_POLICY == "TAYLOR_RULE"
   PSIRPI_H  ${\psi^{\Pi}_{H}}$
   PSIRGDP_H ${\psi^{GDP}_{H}}$
+@#endif
 % common symmetric parameters in monetary & fiscal policy rules in R, D and N
   RHOG_RDN    ${\rho^{G}}$
   RHOR_RDN    ${\rho^{R}}$
+@#if MONETARY_POLICY == "TAYLOR_RULE"
   PSIRPI_RDN  ${\psi^{\Pi}}$
   PSIRGDP_RDN ${\psi^{GDP}}$
+@#endif
 % war related parameters
   WAR_RHO1_ROOT_H ${\rho_{I}}$
   WAR_RHO2_ROOT_H ${\rho_{II}}$
@@ -81,15 +73,16 @@ parameters
   WAR_DELTA_A_H   ${\Delta^{A}_{H}}$
   WAR_DELTA_G_H   ${\Delta^{G}_{H}}$
   WAR_DELTA_G_RDN ${\Delta^{G}}$  
-;
   
 @#include "DynareModWizard/modfile/__parameters.inc"
+;
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                            MODEL EQUATIONS                            %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 model;
-@#include "DynareModWizard/modfile/__model.inc"
+@#include "DynareModWizard/modfile/__model_aux.inc"
+@#include "DynareModWizard/modfile/__model_core.inc"
 end;
   
 %%%%%%%%%%%%%%%%%%%
@@ -132,24 +125,43 @@ end;
 % add military spending to fiscal policy rules %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 model_replace('government spending rule in H');
-log(g_H/steady_state(g_H)) = RHOG_H * log(g_H(-1)/steady_state(g_H)) + eps_g_H + WAR_DELTA_G_H*war;
+%log(g_H/steady_state(g_H)) = RHOG_H * log(g_H(-1)/steady_state(g_H)) + eps_g_H + WAR_DELTA_G_H*war;
+g_H/steady_state(gdp_H) = (1-RHOG_H)*steady_state(g_H)/steady_state(gdp_H) + RHOG_H * g_H(-1)/steady_state(gdp_H) + eps_g_H + WAR_DELTA_G_H*war;
 end;
 @#for j in COUNTRIES when j != "H"
 model_replace('government spending rule in @{j}');
-log(g_@{j}/steady_state(g_@{j})) = RHOG_RDN * log(g_@{j}(-1)/steady_state(g_@{j})) + eps_g_@{j} + WAR_DELTA_G_RDN*war;
+%log(g_@{j}/steady_state(g_@{j})) = RHOG_RDN * log(g_@{j}(-1)/steady_state(g_@{j})) + eps_g_@{j} + WAR_DELTA_G_RDN*war;
+g_@{j}/steady_state(gdp_@{j}) = (1-RHOG_RDN)*steady_state(g_@{j})/steady_state(gdp_@{j}) + RHOG_RDN * g_@{j}(-1)/steady_state(gdp_@{j}) + eps_g_@{j} + WAR_DELTA_G_RDN*war;
 end;
 var_remove RHOG_@{j};
 @#endfor
   
+@#if MONETARY_POLICY == "TAYLOR_RULE"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % impose symmetry of monetary policy parameters in R, D and N %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-@#for j in COUNTRIES when j != "H"
+    @#for j in COUNTRIES when j != "H"
 model_replace('monetary policy rule in @{j}');
 rnom_@{j} = steady_state(rnom_@{j})^(1-RHOR_RDN) * rnom_@{j}(-1)^RHOR_RDN * ( (pi_@{j}/steady_state(pi_@{j}))^PSIRPI_RDN * (gdp_@{j}/steady_state(gdp_@{j}))^PSIRGDP_RDN )^(1-RHOR_RDN) * exp(eps_r_@{j});
 end;
 var_remove RHOR_@{j} PSIRPI_@{j} PSIRGDP_@{j};
-@#endfor
+    @#endfor
+@#else
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% switch out Taylor rule with money growth rule               %
+% impose symmetry of monetary policy parameters in R, D and N %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+model_replace('monetary policy rule in H');
+(m_H/m_H(-1)*pi_H) = (1-RHOR_H)*steady_state(pi_H) + RHOR_H * (m_H(-1)/m_H(-2)*pi_H(-1)) + eps_r_H;
+end;
+var_remove PSIRPI_H PSIRGDP_H;
+    @#for j in COUNTRIES when j != "H"
+model_replace('monetary policy rule in @{j}');
+(m_@{j}/m_@{j}(-1)*pi_@{j}) = (1-RHOR_RDN)*steady_state(pi_@{j}) + RHOR_RDN * (m_@{j}(-1)/m_@{j}(-2)*pi_@{j}(-1)) + eps_r_@{j};
+end;
+var_remove RHOR_@{j} PSIRPI_@{j} PSIRGDP_@{j};
+    @#endfor
+@#endif
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % add equations for plotting variables %
@@ -232,14 +244,14 @@ lineWidth      = 2;
 @#include "_figure_matching.inc"
   
 @#include "_figure_transmission.inc"
-//@#include "_figure_data_paper.inc"
-//@#include "_figure_decomposition.inc"
+//@#include "__figure_data_paper.inc"
+//@#include "__figure_decomposition.inc"
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                             SAVE FIGURES                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-exportgraphics(fig_matching,"plots/fig_matching.pdf",'ContentType','vector');
-exportgraphics(fig_transmission,"plots/fig_transmission.pdf",'ContentType','vector');
+%exportgraphics(fig_matching,"plots/fig_matching.pdf",'ContentType','vector');
+%exportgraphics(fig_transmission,"plots/fig_transmission.pdf",'ContentType','vector');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                             HOUSEKEEPING                              %%

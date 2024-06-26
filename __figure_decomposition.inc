@@ -1,3 +1,4 @@
+SLIDES = true;
 PLOTS_PRINT = 1;
 irfs = oo_.irfs;
 
@@ -26,35 +27,35 @@ M_.params(ismember(M_.param_names,'WAR_DELTA_G_RDN')) = WAR_DELTA_G_RDN;
 stoch_simul(order=1,irf=100,periods=0,nograph,nodecomposition,nocorr,nofunctions,noprint);
 irfs_WAR_DELTA_G = oo_.irfs;
 
-gdpH_dat = sum([irfs_WAR_DELTA_G.plot_gdp_H_eps_war(horizon);
-                irfs_WAR_DELTA_A_H.plot_gdp_H_eps_war(horizon);
-                irfs_WAR_DELTA_K_H.plot_gdp_H_eps_war(horizon);
-                ],2)/length(horizon);
+gdpH_dat = sum([irfs_WAR_DELTA_G.plot_gdp_H_eps_war(irf_horizon);
+                irfs_WAR_DELTA_A_H.plot_gdp_H_eps_war(irf_horizon);
+                irfs_WAR_DELTA_K_H.plot_gdp_H_eps_war(irf_horizon);
+                ],2)/length(irf_horizon);
 
-gdpN_dat = sum([irfs_WAR_DELTA_G.plot_gdp_N_eps_war(horizon);
-                irfs_WAR_DELTA_A_H.plot_gdp_N_eps_war(horizon);
-                irfs_WAR_DELTA_K_H.plot_gdp_N_eps_war(horizon);
-                ],2)/length(horizon);
+gdpN_dat = sum([irfs_WAR_DELTA_G.plot_gdp_N_eps_war(irf_horizon);
+                irfs_WAR_DELTA_A_H.plot_gdp_N_eps_war(irf_horizon);
+                irfs_WAR_DELTA_K_H.plot_gdp_N_eps_war(irf_horizon);
+                ],2)/length(irf_horizon);
 
-gdpD_dat = sum([irfs_WAR_DELTA_G.plot_gdp_D_eps_war(horizon);
-                irfs_WAR_DELTA_A_H.plot_gdp_D_eps_war(horizon);
-                irfs_WAR_DELTA_K_H.plot_gdp_D_eps_war(horizon);
-                ],2)/length(horizon);
+gdpD_dat = sum([irfs_WAR_DELTA_G.plot_gdp_D_eps_war(irf_horizon);
+                irfs_WAR_DELTA_A_H.plot_gdp_D_eps_war(irf_horizon);
+                irfs_WAR_DELTA_K_H.plot_gdp_D_eps_war(irf_horizon);
+                ],2)/length(irf_horizon);
 
-cpiH_dat = sum([irfs_WAR_DELTA_G.plot_pi_H_eps_war(horizon);
-                irfs_WAR_DELTA_A_H.plot_pi_H_eps_war(horizon);
-                irfs_WAR_DELTA_K_H.plot_pi_H_eps_war(horizon);
-                ],2)/length(horizon);
+cpiH_dat = sum([irfs_WAR_DELTA_G.plot_pi_H_eps_war(irf_horizon);
+                irfs_WAR_DELTA_A_H.plot_pi_H_eps_war(irf_horizon);
+                irfs_WAR_DELTA_K_H.plot_pi_H_eps_war(irf_horizon);
+                ],2)/length(irf_horizon);
 
-cpiN_dat = sum([irfs_WAR_DELTA_G.plot_pi_N_eps_war(horizon);
-                irfs_WAR_DELTA_A_H.plot_pi_N_eps_war(horizon);
-                irfs_WAR_DELTA_K_H.plot_pi_N_eps_war(horizon);
-                ],2)/length(horizon);
+cpiN_dat = sum([irfs_WAR_DELTA_G.plot_pi_N_eps_war(irf_horizon);
+                irfs_WAR_DELTA_A_H.plot_pi_N_eps_war(irf_horizon);
+                irfs_WAR_DELTA_K_H.plot_pi_N_eps_war(irf_horizon);
+                ],2)/length(irf_horizon);
 
-cpiD_dat = sum([irfs_WAR_DELTA_G.plot_pi_D_eps_war(horizon);
-                irfs_WAR_DELTA_A_H.plot_pi_D_eps_war(horizon);
-                irfs_WAR_DELTA_K_H.plot_pi_D_eps_war(horizon);
-                ],2)/length(horizon);
+cpiD_dat = sum([irfs_WAR_DELTA_G.plot_pi_D_eps_war(irf_horizon);
+                irfs_WAR_DELTA_A_H.plot_pi_D_eps_war(irf_horizon);
+                irfs_WAR_DELTA_K_H.plot_pi_D_eps_war(irf_horizon);
+                ],2)/length(irf_horizon);
 
 % Shades of grey (RGB triplets)
 shades = [0.2, 0.2, 0.2;  % Dark Grey
@@ -72,23 +73,25 @@ cols = [107/255, 142/255, 35/255;  % olive green
         ];
 col_star = 'black';
 
-%fig_decomposition_output = figure('Name','Decomposition: output');
-fig_decomposition = figure('name','decomposition');
-fig_decomposition.Position(3) = 1200;
-fig_decomposition.Position(4) = 375;
-subplot(1,2,1)
-set(gca,'FontSize',FontSize,'TickLabelInterpreter','latex');
+if SLIDES
+    fig_decomposition_output = figure('name','decomposition: output');
+    fig_decomposition_output.Position(3) = 600;
+else
+    fig_decomposition = figure('name','decomposition');
+    fig_decomposition.Position(3) = 1200;
+    fig_decomposition.Position(4) = 375;
+    subplot(1,2,1);
+end
+set(gca,'FontSize',fontSize,'TickLabelInterpreter','latex');
 
 % Create a stacked bar chart
 hold on;
-%yline(0,'LineWidth',linWidth0);
 hh_gdp = bar([gdpH_dat gdpN_dat gdpD_dat]', 'stacked');
-plot(1,sum(irfs.plot_gdp_H_eps_war(horizon))/length(horizon),'pentagram', 'LineWidth',linWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
-plot(2,sum(irfs.plot_gdp_N_eps_war(horizon))/length(horizon),'pentagram', 'LineWidth',linWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
-plot(3,sum(irfs.plot_gdp_D_eps_war(horizon))/length(horizon),'pentagram', 'LineWidth',linWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
+plot(1,sum(irfs.plot_gdp_H_eps_war(irf_horizon))/length(irf_horizon),'pentagram', 'LineWidth',lineWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
+plot(2,sum(irfs.plot_gdp_N_eps_war(irf_horizon))/length(irf_horizon),'pentagram', 'LineWidth',lineWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
+plot(3,sum(irfs.plot_gdp_D_eps_war(irf_horizon))/length(irf_horizon),'pentagram', 'LineWidth',lineWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
 %title('Output');
-%legend({'Gov''t', 'TFP', 'Capital', 'Iceberg','Total'},'Location','North','Box', 'off','NumColumns',5);
-leg = legend({'Military', 'TFP', 'Capital', 'Total'},'Location','southeast','NumColumns',1,'Interpreter','latex','FontSize',FontSizeLegend); leg.BackgroundAlpha = legendBackgroundAlpha;
+leg = legend({'Military', 'TFP', 'Capital', 'Total'},'Location','southeast','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
 ylim([-24 2])
 xlim([0.25 3.75])
 xticks([1 2 3])
@@ -106,25 +109,23 @@ for i = 1:3
    hh_gdp(i).CData = repmat(cols(i, :), 3, 1);
 end
 
-%if PLOTS_PRINT
-%    filename = "war_plots/fig_decomposition_output.pdf";
-%    saveas(fig_decomposition_output,filename,'pdf')
-%    system(sprintf('pdfcrop %s %s',filename,filename));
-%end
+if SLIDES
+    exportgraphics(fig_decomposition_output,'plots/slides_fig_decomposition_output.pdf','ContentType','vector');
+end
 
-
-%fig_decomposition_cpi = figure('Name','Decomposition: cpi');
-subplot(1,2,2)
-set(gca,'FontSize',FontSize,'TickLabelInterpreter','latex');
+if SLIDES
+    fig_decomposition_cpi = figure('name','decomposition: cpi');
+    fig_decomposition_cpi.Position(3) = 600;
+else
+    subplot(1,2,2);
+end
+set(gca,'FontSize',fontSize,'TickLabelInterpreter','latex');
 hold on;
 hh_cpi = bar([cpiH_dat cpiN_dat cpiD_dat]', 'stacked');
-star_cpi_H = plot(1,sum(irfs.plot_pi_H_eps_war(horizon))/length(horizon),'pentagram', 'LineWidth',linWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
-star_cpi_N = plot(2,sum(irfs.plot_pi_N_eps_war(horizon))/length(horizon),'pentagram', 'LineWidth',linWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
-star_cpi_D = plot(3,sum(irfs.plot_pi_D_eps_war(horizon))/length(horizon),'pentagram', 'LineWidth',linWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
-%yline(0,'LineWidth',linWidth0);
-%title('Inflation');
-%legend({'Gov''t', 'TFP', 'Capital', 'Iceberg','Total'},'Location','North','Box', 'off','NumColumns',5);
-leg = legend({'Military', 'TFP', 'Capital', 'Total'},'Location','NorthEast','NumColumns',1,'Interpreter','latex','FontSize',FontSizeLegend); leg.BackgroundAlpha = legendBackgroundAlpha;
+star_cpi_H = plot(1,sum(irfs.plot_pi_H_eps_war(irf_horizon))/length(irf_horizon),'pentagram', 'LineWidth',lineWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
+star_cpi_N = plot(2,sum(irfs.plot_pi_N_eps_war(irf_horizon))/length(irf_horizon),'pentagram', 'LineWidth',lineWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
+star_cpi_D = plot(3,sum(irfs.plot_pi_D_eps_war(irf_horizon))/length(irf_horizon),'pentagram', 'LineWidth',lineWidth,'MarkerEdgeColor',col_star,'MarkerFaceColor',col_star,'MarkerSize',20);
+leg = legend({'Military', 'TFP', 'Capital', 'Total'},'Location','NorthEast','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
 ylim([-0.75 10])
 xlim([0.25 3.75])
 xticks([1 2 3])
@@ -140,24 +141,11 @@ for i = 1:3
    %hh_gdp(i).CData = repmat(shades(i, :), 3, 1);
    hh_cpi(i).CData = repmat(cols(i, :), 3, 1);
 end
-% if PLOTS_PRINT
-%     filename = "war_plots/fig_decomposition_cpi.pdf";
-%     saveas(fig_decomposition_cpi,filename,'pdf')
-%     system(sprintf('pdfcrop %s %s',filename,filename));
-% end
 
-if PLOTS_PRINT
-    filename = "war_plots_paper/fig_decomposition.pdf";
-    exportgraphics(fig_decomposition,filename,'ContentType','vector');
+if SLIDES
+    exportgraphics(fig_decomposition_cpi,'plots/slides_fig_decomposition_cpi.pdf','ContentType','vector');
+else
+    if PLOTS_PRINT
+        exportgraphics(fig_decomposition,'plots/paper_fig_decomposition.pdf','ContentType','vector');
+    end
 end
-
-% Adding a legend at the bottom
-% axes('Position',[0, 0, 1, 1],'Visible','off');
-% lgd = legend([hh_cpi(1),hh_cpi(2),hh_cpi(3), star_cpi_H],{'Military', 'TFP', 'Capital','Total'},'Location','South','NumColumns',4,'FontSize',FontSizeLegend);
-% lgd.Position = [0.27 0.01 lgd.Position(3) lgd.Position(4)];
-
-% if PLOTS_PRINT
-%     filename = "war_plots/fig_decomposition.pdf";
-%     saveas(fig_decomposition,filename,'pdf')
-%     system(sprintf('pdfcrop %s %s',filename,filename));
-% end

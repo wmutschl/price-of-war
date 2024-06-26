@@ -6,7 +6,7 @@ BETA_@{j}     = 1/1.04; % discount factor in @{j}
 SIGMAC_@{j}   = 2;      % risk aversion in @{j}
 @#endfor
 @#for j in COUNTRIES
-SIGMAL_@{j}   = 2;      % inverse Frisch elasticity in @{j}
+SIGMAL_@{j}   = 1;      % inverse Frisch elasticity in @{j}
 @#endfor
 @#if HABIT == true
   @#for j in COUNTRIES
@@ -26,6 +26,14 @@ PHIK_@{j}     = 4;      % investment-adjustment costs in @{j}
   @#for j in COUNTRIES
 PHIU_@{j}     = 0.95;   % capital utilization costs in @{j}
   @#endfor
+@#endif
+@#if CONSUMPTION_TRANSACTION_COSTS == true
+    @#for j in COUNTRIES
+PHIV1_@{j} = 0.029;
+    @#endfor
+    @#for j in COUNTRIES
+PHIV2_@{j} = 0.150;
+    @#endfor
 @#endif
   
 % FIRM PARAMETERS
@@ -51,6 +59,17 @@ THETAP_@{j}   = 0.15;   % price stickiness probability in @{j}
 THETAW_@{j}   = 0.15;   % wage stickiness probability in @{j}
   @#endfor
 @#endif
+@#if PARTIAL_INDEXATION_WAGES == true
+    @#for j in COUNTRIES
+IOTAW_@{j}   = 0.75;   % partial wage indexation to past inflation in @{j}
+    @#endfor
+@#endif
+@#if PARTIAL_INDEXATION_PRICES == true
+    @#for j in COUNTRIES
+IOTAP_@{j}   = 0.50;   % partial price indexation to past inflation in @{j}
+    @#endfor
+@#endif
+  
   
 % MONETARY POLICY
 @#for j in COUNTRIES
@@ -58,11 +77,12 @@ TARGET_PI_@{j} = 1;    % inflation target in @{j}
 @#endfor
 RHOR_RDN    = 0.50; % interest rate rule smoothing in R, D, N (symmetric)
 RHOR_H      = 0.50; % interest rate rule smoothing in H
+@#if MONETARY_POLICY == "TAYLOR_RULE"
 PSIRPI_RDN  = 1.50; % interest rate rule inflation feedback in R, D, N (symmetric)
 PSIRPI_H    = 1.50; % interest rate rule inflation feedback in H
 PSIRGDP_RDN = 0.50; % interest rate rule gdp gap feedback in R, D, N (symmetric)
 PSIRGDP_H   = 0.50; % interest rate rule gdp gap feedback in H
-  
+@#endif
 % FISCAL POLICY
 @#for j in COUNTRIES
 TARGET_G_to_GDP_@{j} = 0.2; % government spending ratio (relative to GDP) in steady-state in @{j}
@@ -96,9 +116,9 @@ SIZE_H = 0.06; % size of households and firms in H
 SIZE_N = 0.06; % size of households and firms in N
 SIZE_D = 0.06; % size of households and firms in D
   
-OPENNESS_H = 0.30*(1 - ALPHAX_H*(EPSILONP_H-1)/EPSILONP_H); % steady-state share of imports to GDP in steady-state in H (30%)
-OPENNESS_N = 0.30*(1 - ALPHAX_N*(EPSILONP_N-1)/EPSILONP_N); % steady-state share of imports to GDP in steady-state in N (30%)
-OPENNESS_D = 0.30*(1 - ALPHAX_D*(EPSILONP_D-1)/EPSILONP_D); % steady-state share of imports to GDP in steady-state in D (30%)
+OPENNESS_H = 0.25*(1 - ALPHAX_H*(EPSILONP_H-1)/EPSILONP_H); % steady-state share of imports to GDP in steady-state in H (30%)
+OPENNESS_N = 0.25*(1 - ALPHAX_N*(EPSILONP_N-1)/EPSILONP_N); % steady-state share of imports to GDP in steady-state in N (30%)
+OPENNESS_D = 0.25*(1 - ALPHAX_D*(EPSILONP_D-1)/EPSILONP_D); % steady-state share of imports to GDP in steady-state in D (30%)
 
 OMEGA_N_H  = 1;    % N and H are fully integrated
 OMEGA_D_H  = 0.01; % almost no trade between D and H 
@@ -121,9 +141,9 @@ OMEGA_D_R = OMEGA_R_D;
 SIGMA_@{j} = 0.9; % trade elasticity in @{j}
 @#endfor
   
-PHINX_N_H = 20;  PHINX_D_H = 10;  PHINX_R_H = 0; % import adjustment costs in H
-PHINX_H_N = 20;  PHINX_D_N =  0;  PHINX_R_N = 0; % import adjustment costs in N
-PHINX_H_D = 10;  PHINX_N_D =  0;  PHINX_R_D = 0; % import adjustment costs in D
+PHINX_N_H = 10;  PHINX_D_H = 10;  PHINX_R_H = 0; % import adjustment costs in H
+PHINX_H_N = 10;  PHINX_D_N = 10;  PHINX_R_N = 0; % import adjustment costs in N
+PHINX_H_D = 10;  PHINX_N_D = 10;  PHINX_R_D = 0; % import adjustment costs in D
 PHINX_H_R =  0;  PHINX_D_R =  0;  PHINX_N_R = 0; % import adjustment costs in R
   
 PHIB_H_H = 0    ;  PHIB_N_H = 0.001;  PHIB_D_H = 0.001;  PHIB_R_H = 0.001; % bond carrying costs in H
@@ -143,6 +163,96 @@ shocks;
 var eps_war = 1; % innovation to war shock
 end;
   
+@#ifdef WIP
+
+% WAR_RHO1_ROOT_H        0.500       0.6529      0.5350      0.7672     beta       0.1000
+% WAR_RHO2_ROOT_H        0.500       0.6531      0.5375      0.7709     beta       0.1000
+% WAR_DELTA_K_H          0.025       0.0303      0.0059      0.0645     invg       0.1000
+% WAR_DELTA_A_H          0.020       0.0847      0.0730      0.0994     invg       0.1000
+% WAR_DELTA_G_H          0.035       0.0161      0.0086      0.0237     invg       0.1000
+% WAR_DELTA_G_RDN        0.001       0.0078      0.0002      0.0161     invg       0.1000
+% RHOA_H                 0.500       0.5902      0.4649      0.7281     beta       0.1000
+% RHOG_H                 0.600       0.5111      0.4171      0.5999     beta       0.1000
+% RHOG_RDN               0.600       0.5371      0.4620      0.6000     beta       0.1000
+% RHOR_H                 0.500       0.7125      0.6032      0.8138     beta       0.1000
+% PSIRPI_H               2.000       2.0441      1.8995      2.2005     norm       0.1000
+% PSIRGDP_H              0.500       0.3528      0.2316      0.4642     norm       0.1000
+% RHOR_RDN               0.500       0.4800      0.3213      0.6336     beta       0.1000
+% PSIRPI_RDN             2.000       1.9435      1.7824      2.0976     norm       0.1000
+% PSIRGDP_RDN            0.500       0.6009      0.4893      0.7368     norm       0.1000
+
+WAR_RHO1_ROOT_H        = 0.6529;
+WAR_RHO2_ROOT_H        = 0.6531;
+WAR_DELTA_K_H          = 0.0303;
+WAR_DELTA_A_H          = 0.0847;
+WAR_DELTA_G_H          = 0.0161;
+WAR_DELTA_G_RDN        = 0.0078;
+RHOA_H                 = 0.5902;
+RHOG_H                 = 0.5111;
+RHOG_RDN               = 0.5371;
+RHOR_H                 = 0.7125;
+RHOR_RDN               = 0.4800;
+@#if MONETARY_POLICY == "TAYLOR_RULE"
+PSIRPI_H               = 2.0441;
+PSIRPI_RDN             = 1.9435;
+PSIRGDP_H              = 0.3528;
+PSIRGDP_RDN            = 0.6009;
+@#endif
+
+%ESTIMATION RESULTS (SIGMAL=1,PHINX=15,OPEN=25%)
+% WAR_RHO1_ROOT_H        0.500       0.6598      0.5351      0.7745     beta       0.1000
+% WAR_RHO2_ROOT_H        0.500       0.6620      0.5480      0.7820     beta       0.1000
+% WAR_DELTA_K_H          0.025       0.0326      0.0058      0.0687     invg       0.1000
+% WAR_DELTA_A_H          0.020       0.0821      0.0686      0.0969     invg       0.1000
+% WAR_DELTA_G_H          0.030       0.0139      0.0070      0.0203     invg       0.1000
+% WAR_DELTA_G_RDN        0.001       0.0107      0.0003      0.0186     invg       0.1000
+% RHOA_H                 0.500       0.5810      0.4500      0.7083     beta       0.1000
+% RHOG_H                 0.600       0.5101      0.4161      0.6000     beta       0.1000
+% RHOG_RDN               0.600       0.5405      0.4700      0.6000     beta       0.1000
+% RHOR_H                 0.500       0.7262      0.6222      0.8361     beta       0.1000
+% PSIRPI_H               2.000       2.0388      1.8797      2.1841     norm       0.1000
+% PSIRGDP_H              0.500       0.3566      0.2402      0.4719     norm       0.1000
+% RHOR_RDN               0.500       0.4741      0.3173      0.6276     beta       0.1000
+% PSIRPI_RDN             2.000       1.9425      1.7825      2.0979     norm       0.1000
+% PSIRGDP_RDN            0.500       0.6017      0.4928      0.7379     norm       0.1000
+
+%ESTIMATION RESULTS (SIGMAL=1,PHINX=10,OPEN=25%)
+% WAR_RHO1_ROOT_H        0.500       0.6525      0.5248      0.7691     beta       0.1000
+% WAR_RHO2_ROOT_H        0.500       0.6508      0.5348      0.7735     beta       0.1000
+% WAR_DELTA_K_H          0.025       0.0308      0.0067      0.0661     invg       0.1000
+% WAR_DELTA_A_H          0.020       0.0839      0.0711      0.0979     invg       0.1000
+% WAR_DELTA_G_H          0.030       0.0146      0.0073      0.0216     invg       0.1000
+% WAR_DELTA_G_RDN        0.001       0.0073      0.0002      0.0159     invg       0.1000
+% RHOA_H                 0.500       0.5913      0.4589      0.7318     beta       0.1000
+% RHOG_H                 0.600       0.5093      0.4145      0.5998     beta       0.1000
+% RHOG_RDN               0.600       0.5322      0.4499      0.6000     beta       0.1000
+% RHOR_H                 0.500       0.7095      0.6074      0.8246     beta       0.1000
+% PSIRPI_H               2.000       2.0413      1.8984      2.2067     norm       0.1000
+% PSIRGDP_H              0.500       0.3558      0.2367      0.4681     norm       0.1000
+% RHOR_RDN               0.500       0.4775      0.3253      0.6336     beta       0.1000
+% PSIRPI_RDN             2.000       1.9387      1.7893      2.1045     norm       0.1000
+% PSIRGDP_RDN            0.500       0.5987      0.4802      0.7316     norm       0.1000
+
+    % parameters
+    %                   prior mean   post. mean        90% HPD interval    prior       pstdev
+    % 
+    % WAR_RHO1_ROOT_H        0.500       0.6692      0.5467      0.8007     beta       0.1000
+    % WAR_RHO2_ROOT_H        0.500       0.6707      0.5545      0.8034     beta       0.1000
+    % WAR_DELTA_K_H          0.025       0.0292      0.0061      0.0634     invg       0.1000
+    % WAR_DELTA_A_H          0.020       0.0755      0.0605      0.0895     invg       0.1000
+    % WAR_DELTA_G_H          0.030       0.0145      0.0074      0.0215     invg       0.1000
+    % WAR_DELTA_G_RDN        0.001       0.0078      0.0002      0.0199     invg       0.1000
+    % RHOA_H                 0.500       0.5688      0.4214      0.7337     beta       0.1000
+    % RHOG_H                 0.600       0.5101      0.4136      0.6000     beta       0.1000
+    % RHOG_RDN               0.600       0.5394      0.4634      0.6000     beta       0.1000
+    % RHOR_H                 0.500       0.7064      0.5951      0.8223     beta       0.1000
+    % PSIRPI_H               2.000       2.0400      1.8881      2.1994     norm       0.1000
+    % PSIRGDP_H              0.500       0.3627      0.2335      0.4795     norm       0.1000
+    % RHOR_RDN               0.500       0.4747      0.3207      0.6290     beta       0.1000
+    % PSIRPI_RDN             2.000       1.9612      1.8046      2.1193     norm       0.1000
+    % PSIRGDP_RDN            0.500       0.5910      0.4740      0.7263     norm       0.1000
+
+@#endif
 
 @#ifdef SLICE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -175,10 +285,12 @@ if (SIGMAC_H == 2) && (SIGMA_H == 0.9)
     RHOG_RDN        = 0.8822;
     RHOR_H          = 0.8722;
     RHOR_RDN        = 0.5638;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2396;
     PSIRGDP_RDN     = 0.5972;
     PSIRPI_H        = 2.0748;
     PSIRPI_RDN      = 1.8380;
+    @#endif
 elseif (SIGMAC_H == 1) && (SIGMA_H == 0.9)
     % WAR_RHO1_ROOT_H        0.500       0.6911      0.5277      0.8581     beta       0.2000
     % WAR_RHO2_ROOT_H        0.500       0.6945      0.5393      0.8599     beta       0.2000
@@ -206,10 +318,12 @@ elseif (SIGMAC_H == 1) && (SIGMA_H == 0.9)
     RHOG_RDN        = 0.8786;
     RHOR_H          = 0.8359;
     RHOR_RDN        = 0.5535;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2665;
     PSIRGDP_RDN     = 0.5992;
     PSIRPI_H        = 2.0507;
     PSIRPI_RDN      = 1.8370;
+    @#endif
 elseif (SIGMAC_H == 2) && (SIGMA_H == 1.5)
     %%%%%%%%%%%%%%%%%%%%%%%%%%
     % SIGMAC=2 and SIGMA=1.5 %
@@ -240,10 +354,12 @@ elseif (SIGMAC_H == 2) && (SIGMA_H == 1.5)
     RHOG_RDN        = 0.8815;
     RHOR_H          = 0.7973;
     RHOR_RDN        = 0.4546;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2694;
     PSIRGDP_RDN     = 0.6329;
     PSIRPI_H        = 2.0802;
     PSIRPI_RDN      = 1.7163;
+    @#endif
 
 elseif (SIGMAC_H == 1) && (SIGMA_H == 1.5)
     %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -275,10 +391,12 @@ elseif (SIGMAC_H == 1) && (SIGMA_H == 1.5)
     RHOG_RDN        = 0.8833;
     RHOR_H          = 0.7734;
     RHOR_RDN        = 0.4676;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2661;
     PSIRGDP_RDN     = 0.6285;
     PSIRPI_H        = 2.0581;
     PSIRPI_RDN      = 1.7380;
+    @#endif
 end
 @#endif
 
@@ -314,10 +432,12 @@ if SIGMAC_H == 2 && SIGMA_H == 0.9
     RHOG_RDN        = 0.8796;
     RHOR_H          = 0.8667;
     RHOR_RDN        = 0.5547;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2439;
     PSIRGDP_RDN     = 0.5985;
     PSIRPI_H        = 2.0677;
     PSIRPI_RDN      = 1.8378;
+    @#endif
 elseif SIGMAC_H == 1 && SIGMA_H == 0.9
     % WAR_RHO1_ROOT_H        0.500       0.6870      0.5212      0.8508     beta       0.2000
     % WAR_RHO2_ROOT_H        0.500       0.6826      0.5139      0.8511     beta       0.2000
@@ -345,10 +465,12 @@ elseif SIGMAC_H == 1 && SIGMA_H == 0.9
     RHOG_RDN        = 0.8853;
     RHOR_H          = 0.8366;
     RHOR_RDN        = 0.5511;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2747;
     PSIRGDP_RDN     = 0.5985;
     PSIRPI_H        = 2.0610;
     PSIRPI_RDN      = 1.8364;
+    @#endif
 elseif SIGMAC_H == 2 && SIGMA_H == 1.5
     % WAR_RHO1_ROOT_H        0.500       0.6605      0.5021      0.8168     beta       0.2000
     % WAR_RHO2_ROOT_H        0.500       0.6620      0.5043      0.8215     beta       0.2000
@@ -376,10 +498,12 @@ elseif SIGMAC_H == 2 && SIGMA_H == 1.5
     RHOG_RDN        = 0.8835;
     RHOR_H          = 0.7960;
     RHOR_RDN        = 0.4516;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2669;
     PSIRGDP_RDN     = 0.6344;
     PSIRPI_H        = 2.0711;
     PSIRPI_RDN      = 1.7182;
+    @#endif
 elseif SIGMAC_H == 1 && SIGMA_H == 1.5
     % WAR_RHO1_ROOT_H        0.500       0.6643      0.4966      0.8308     beta       0.2000
     % WAR_RHO2_ROOT_H        0.500       0.6638      0.4926      0.8289     beta       0.2000
@@ -407,9 +531,11 @@ elseif SIGMAC_H == 1 && SIGMA_H == 1.5
     RHOG_RDN        = 0.8768;
     RHOR_H          = 0.7684;
     RHOR_RDN        = 0.4687;
+    @#if MONETARY_POLICY == "TAYLOR_RULE"
     PSIRGDP_H       = 0.2744;
     PSIRGDP_RDN     = 0.6322;
     PSIRPI_H        = 2.0688;
     PSIRPI_RDN      = 1.7418;
+    @#endif
 end
 @#endif
