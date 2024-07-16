@@ -59,6 +59,17 @@ THETAP_@{j}   = 0.15;   % price stickiness probability in @{j}
 THETAW_@{j}   = 0.15;   % wage stickiness probability in @{j}
   @#endfor
 @#endif
+@#if PARTIAL_INDEXATION_WAGES == true
+    @#for j in COUNTRIES
+IOTAW_@{j}   = 0.75;   % partial wage indexation to past inflation in @{j}
+    @#endfor
+@#endif
+@#if PARTIAL_INDEXATION_PRICES == true
+    @#for j in COUNTRIES
+IOTAP_@{j}   = 0.50;   % partial price indexation to past inflation in @{j}
+    @#endfor
+@#endif
+  
   
 % MONETARY POLICY
 @#for j in COUNTRIES
