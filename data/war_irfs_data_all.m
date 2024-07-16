@@ -101,7 +101,7 @@ fclose(fid);
 
 %% warsite military expenditures
 warsite.milex = nan(projection_horizon,4);
-f = "data/dmwmin(10000)_eww(0)_l[all]/groups_milex_prior_gdp_currentUSD.txt";
+f = "data/dmwmin(10000)_eww(0)_l[all]/groups_milex_prior_gdp_2015USD.txt";
 fid = fopen(f, 'r');
 idx = 1;
 line = fgetl(fid);
@@ -221,7 +221,7 @@ fclose(fid);
 
 %% nearby military expenditures
 nearby.milex = nan(projection_horizon,4);
-f = "data/dmwmin(10000)_eww(0)_l[all]/e(1)_f(closest)_milex_prior_gdp_currentUSD.txt";
+f = "data/dmwmin(10000)_eww(0)_l[all]/e(1)_f(closest)_milex_prior_gdp_2015USD.txt";
 fid = fopen(f, 'r');
 idx = 1;
 line = fgetl(fid);
@@ -341,7 +341,7 @@ fclose(fid);
 
 %% distant military expenditures
 distant.milex = nan(projection_horizon,4);
-f = "data/dmwmin(10000)_eww(0)_l[all]/e(1)_f(closest)_milex_prior_gdp_currentUSD.txt";
+f = "data/dmwmin(10000)_eww(0)_l[all]/e(1)_f(closest)_milex_prior_gdp_2015USD.txt";
 fid = fopen(f, 'r');
 idx = 1;
 line = fgetl(fid);
