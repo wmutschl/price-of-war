@@ -1,0 +1,11 @@
+[cluster]
+Name = Local
+Members = n1
+
+[node]
+Name = n1
+ComputerName = localhost
+CPUnbr = 3
+NumberOfThreadsPerJob=1
+MatlabOctavePath=/Users/runner/hostedtoolcache/MATLAB/2024.1.999/arm64/MATLAB.app/bin/matlab
+SingleCompThread=true
