@@ -27,6 +27,14 @@ PHIK_@{j}     = 4;      % investment-adjustment costs in @{j}
 PHIU_@{j}     = 0.95;   % capital utilization costs in @{j}
   @#endfor
 @#endif
+@#if CONSUMPTION_TRANSACTION_COSTS == true
+    @#for j in COUNTRIES
+PHIV1_@{j} = 0.029;
+    @#endfor
+    @#for j in COUNTRIES
+PHIV2_@{j} = 0.350;
+    @#endfor
+@#endif
   
 % FIRM PARAMETERS
 @#for j in COUNTRIES
