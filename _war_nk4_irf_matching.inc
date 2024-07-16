@@ -53,7 +53,7 @@ method_of_moments(mom_method = irf_matching
                  ,order = 1
                  ,mh_nblocks = @{MH_NBLOCKS}
                  ,mh_drop = 0.5
-                 ,mh_replic = 5%200
+                 ,mh_replic = 200
                  %,load_mh_file
                  %,mh_replic=0
                  ,posterior_sampling_method = 'slice'
@@ -80,7 +80,7 @@ CheckPath('metropolis','war_slice_rotated');
   
 method_of_moments(mom_method = irf_matching
                  ,mh_nblocks = @{MH_NBLOCKS}
-                 ,mh_replic = 10 %1000
+                 ,mh_replic = 1000
                  ,plot_priors = 0
                  ,load_mh_file
                  ,posterior_sampling_method = 'slice'
@@ -122,7 +122,7 @@ method_of_moments(mom_method = irf_matching
                  ,mh_drop = 0.5
                  ,mh_jscale = 0.5
                  ,mh_nblocks = @{MH_NBLOCKS}
-                 ,mh_replic = 100 %100000
+                 ,mh_replic = 1000000
                  %,load_mh_file
                  %,mh_replic=0
                  ,mode_compute = 0
