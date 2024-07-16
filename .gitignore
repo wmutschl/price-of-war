@@ -2,3 +2,11 @@
 .vscode/
 
 .aux/
+dynareParallelLogFiles/
+plots/
+comp_status_posterior_sampler_core*.mat
+ConcurrentCommand1.bat
+P_posterior_sampler_core_*End.txt
+posterior_sampler_core_*.log
+posterior_sampler_core_input.mat
+slaveParallel_input*.mat
