@@ -102,6 +102,9 @@ RHOA_@{j}          = 0; % persistence in total factor productivity in @{j}
 RHOMU_@{j}         = 0; % persistence in discount factor preference shifter in @{j}
 @#endfor
 @#for j in COUNTRIES
+RHOCHIL_@{j}       = 0; % persistence in labor supply shifter in @{j}
+@#endfor
+@#for j in COUNTRIES
 RHOZETA_@{j}       = 0; % persistence in investment-specific productivity in @{j}
 @#endfor
 @#for j in COUNTRIES
