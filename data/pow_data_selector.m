@@ -1,5 +1,5 @@
-function out = data_selector(country, varname, weight)
-% out = data_selector(country, varname, weight, restricted_sample)
+function out = pow_data_selector(country, varname, weight)
+% out = pow_data_selector(country, varname, weight)
 % -------------------------------------------------------------------------
 % outputs either value or weight of IRF
 % -------------------------------------------------------------------------
@@ -12,7 +12,7 @@ function out = data_selector(country, varname, weight)
 horizon = 1:9;
 
 % retrieve war-related data
-[warsite,nearby,distant] = war_irfs_data_all;
+[warsite,nearby,distant,belligerent] = pow_irfs_data_all;
 
 % select country
 switch country
@@ -22,6 +22,10 @@ switch country
         country = nearby;
     case 3
         country = distant;
+    case 4
+        country = belligerent.nearby;
+    case 5
+        country = belligerent.distant;
 end
 
 % select variable

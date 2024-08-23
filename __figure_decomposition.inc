@@ -5,7 +5,7 @@ irfs = oo_.irfs;
 idx_WAR_DELTA = find(ismember(M_.param_names,["WAR_DELTA_K_H";
                                               "WAR_DELTA_A_H";
                                               "WAR_DELTA_G_H";
-                                              "WAR_DELTA_G_RDN";                                              
+                                              "WAR_DELTA_G_RDN";
                                               ]));
 
 % SIMULATION FOR CAPITAL DESTRUCTION ONLY
