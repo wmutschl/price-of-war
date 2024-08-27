@@ -352,8 +352,10 @@ lineWidth      = 2;
 @#if length(COUNTRIES) == 4
     @#include "_figure_transmission" + ((string) length(COUNTRIES)) + ".inc"
 @#endif
-//@#include "__figure_data_paper.inc"
-//@#include "__figure_decomposition.inc"
+@#ifdef PLOTS_PAPER
+    @#include "_figure_data_paper.inc"
+    @#include "_figure_decomposition.inc"
+@#endif
 @{NEWLINE}
 
 @#ifdef SLICE
