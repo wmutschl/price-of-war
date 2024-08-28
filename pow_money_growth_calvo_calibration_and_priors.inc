@@ -201,68 +201,36 @@ WAR_DELTA_M_@{j}    = 0; % size of initial money supply change in @{j}
 % PRIORS %
 %%%%%%%%%%
 estimated_params;
-  WAR_RHO1_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
-  WAR_RHO2_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
-  RHOA_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
-  %RHOG_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
-  RHOM_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
-  RHOM_N          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
-  RHOM_D          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
   WAR_DELTA_A_S   ,  , 0    , 0.10 , inv_gamma_pdf , 0.050 , 0.15 ;
   WAR_DELTA_G_S   ,  , 0    , 1.00 , inv_gamma_pdf , 0.050 , 0.15 ;
   WAR_DELTA_K_S   ,  , 0    , 0.10 , inv_gamma_pdf , 0.025 , 0.15 ;
   WAR_DELTA_M_S   ,  , 0    , 1.00 , inv_gamma_pdf , 0.020 , 0.15 ;
   WAR_DELTA_M_N   ,  , 0    , 1.00 , inv_gamma_pdf , 0.010 , 0.15 ;
   WAR_DELTA_M_D   ,  , 0    , 1.00 , inv_gamma_pdf , 0.005 , 0.15 ;
+  WAR_RHO1_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+  WAR_RHO2_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+  RHOA_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+  RHOM_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+  RHOM_N          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+  RHOM_D          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
 end;
 @{NEWLINE}
 
+@#ifdef SLICE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ESTIMATION RESULTS: SLICE %
+% POSTERIOR MEAN FROM SLICE %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-WAR_RHO1_ROOT_S = 0.69822;
-WAR_RHO2_ROOT_S = 0.69796;
-RHOA_S          = 0.72971;
-RHOG_S          = 0;%0.42105;
-RHOM_S          = 0.4665;
-RHOM_N          = 0.43605;
-RHOM_D          = 0.60569;
-WAR_DELTA_A_S   = 0.055151;
-WAR_DELTA_G_S   = 0.03;%0.017067;
-WAR_DELTA_K_S   = 0.01587;
-WAR_DELTA_M_S   = 0.0097335;
-WAR_DELTA_M_N   = 0.0098422;
-WAR_DELTA_M_D   = 0.002333;
+  WAR_DELTA_A_S = 0.055479416552947;
+  WAR_DELTA_G_S = 0.025824312707286;
+  WAR_DELTA_K_S = 0.017791968906345;
+  WAR_DELTA_M_S = 0.013145056630695;
+  WAR_DELTA_M_N = 0.011966992623502;
+  WAR_DELTA_M_D = 0.003573535919287;
+WAR_RHO1_ROOT_S = 0.689614340874530;
+WAR_RHO2_ROOT_S = 0.690845812831013;
+         RHOA_S = 0.700441844093189;
+         RHOM_S = 0.519506569210922;
+         RHOM_N = 0.369467313655702;
+         RHOM_D = 0.644066038102285;
 @{NEWLINE}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ESTIMATION RESULTS: SLICE ROTATED %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% parameters
-%                   prior mean   post. mean        90% HPD interval    prior       pstdev
-% 
-% WAR_RHO1_ROOT_S        0.500       0.6868      0.5492      0.8170     beta       0.1500
-% WAR_RHO2_ROOT_S        0.500       0.6867      0.5554      0.8197     beta       0.1500
-% RHOA_S                 0.500       0.7097      0.5795      0.8427     beta       0.1500
-% RHOM_S                 0.500       0.5245      0.2956      0.7539     beta       0.1500
-% RHOM_N                 0.500       0.3770      0.1744      0.5584     beta       0.1500
-% RHOM_D                 0.500       0.6478      0.4287      0.8734     beta       0.1500
-% WAR_DELTA_A_S          0.050       0.0549      0.0446      0.0641     invg       0.1500
-% WAR_DELTA_G_S          0.040       0.0218      0.0102      0.0335     invg       0.1500
-% WAR_DELTA_K_S          0.025       0.0180      0.0061      0.0313     invg       0.1500
-% WAR_DELTA_M_S          0.020       0.0132      0.0059      0.0206     invg       0.1500
-% WAR_DELTA_M_N          0.010       0.0121      0.0063      0.0174     invg       0.1500
-% WAR_DELTA_M_D          0.005       0.0036      0.0020      0.0053     invg       0.1500
-WAR_RHO1_ROOT_S = 0.686790299918229;
-WAR_RHO2_ROOT_S = 0.686668424588302;
-RHOA_S          = 0.709665833456330;
-RHOM_S          = 0.524469384089409;
-RHOM_N          = 0.376965585104295;
-RHOM_D          = 0.647751103262935;
-WAR_DELTA_A_S   = 0.054858420954291;
-WAR_DELTA_G_S   = 0.021849746513199;
-WAR_DELTA_K_S   = 0.018027428309352;
-WAR_DELTA_M_S   = 0.013171734665404;
-WAR_DELTA_M_N   = 0.012126147022497;
-WAR_DELTA_M_D   = 0.003622001382576;
-@{NEWLINE}
+@#endif
