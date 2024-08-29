@@ -208,16 +208,7 @@ end;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % war-induced money growth rate rule in S, N, D (replace) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-model_replace('money growth rule in S');
-    @#ifdef MONEY_FINANCED_MILITARY_SPENDING
-        @#if MONEY_FINANCED_MILITARY_SPENDING == true
-m_S - m_S(-1)/pi_S = eps_m_S + WAR_DELTA_M_S * ( p_S_S*g_S - steady_state(p_S_S)*steady_state(g_S) ); // explicit money financing of government spending
-        @#else
-(m_S/m_S(-1)*pi_S) = (1-RHOM_S)*steady_state(pi_S) + RHOM_S * (m_S(-1)/m_S(-2)*pi_S(-1)) + eps_m_S + WAR_DELTA_M_S * war;
-        @#endif
-    @#endif
-end;
-    @#for j in (COUNTRIES - ["S","R"])
+    @#for j in (COUNTRIES - ["R"])
 model_replace('money growth rule in @{j}');
 (m_@{j}/m_@{j}(-1)*pi_@{j}) = (1-RHOM_@{j})*steady_state(pi_@{j}) + RHOM_@{j} * (m_@{j}(-1)/m_@{j}(-2)*pi_@{j}(-1)) + eps_m_@{j} + WAR_DELTA_M_@{j} * war;
 end;

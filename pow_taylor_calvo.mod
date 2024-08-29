@@ -3,7 +3,6 @@
 @#define COUNTRIES                        = ["R", "D", "N", "S"]
 
 @#define MONETARY_POLICY_RULE             = "INTEREST_RATE_RULE"
-@#define MONEY_FINANCED_MILITARY_SPENDING = false
 
 @#define GOODS_MARKET_STRUCTURE           = "MONOPOLISTIC_COMPETITION_CES"
 @#define LABOR_MARKET_STRUCTURE           = "MONOPOLISTIC_COMPETITION_CES"
