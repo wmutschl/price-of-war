@@ -1,12 +1,24 @@
 
 .vscode/
-
 .aux/
+
 dynareParallelLogFiles/
-plots/
 comp_status_posterior_sampler_core*.mat
 ConcurrentCommand1.bat
 P_posterior_sampler_core_*End.txt
 posterior_sampler_core_*.log
 posterior_sampler_core_input.mat
 slaveParallel_input*.mat
+slice_iter_info*
+*_geweke_block_*.tex
+
+\+pow_money_growth_calvo/
+pow_money_growth_calvo/
+
+pow_money_growth_calvo.log
+
+\+pow_money_growth_flex/
+
+pow_money_growth_flex/
+
+pow_money_growth_flex.log
