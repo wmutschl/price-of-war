@@ -43,8 +43,11 @@ ncn     = estim_params_.ncn;
 np      = estim_params_.np ;
 npar    = nvx+nvn+ncx+ncn+np;
 
-MaxNumberOfPlotPerFigure = 9;% The square root must be an integer!
-nn = sqrt(MaxNumberOfPlotPerFigure);
+%MaxNumberOfPlotPerFigure = 9;% The square root must be an integer!
+%nn = sqrt(MaxNumberOfPlotPerFigure);
+MaxNumberOfPlotPerFigure = 12;
+nn1 = 4;
+nn2 = 3;
 
 figurename = 'Priors and posteriors';
 
@@ -63,6 +66,8 @@ for i=1:npar
     if subplotnum == 1
         figunumber = figunumber+1;
         hh_fig=dyn_figure(options_.nodisplay, 'Name', figurename);
+        hh_fig.Position(3) = 1400;
+        hh_fig.Position(4) = 800;
     end
     [nam,texnam] = get_the_name(i, TeX, M_, estim_params_, options_.varobs);
     [x2, f2, ~, ~, binf2, bsup2] = draw_prior_density(i, bayestopt_);
@@ -126,7 +131,7 @@ for i=1:npar
     bsup1 = x1(end);
     borneinf = min(binf1, binf2);
     bornesup = max(bsup1, bsup2);
-    subplot(nn, nn, subplotnum)
+    subplot(nn1, nn2, subplotnum)
     %set(gcf, 'Color', 'white'); % Sets the color of the entire figure to white
     %set(gca, 'Color', 'white'); % Ensures the axes background is also white
     % plot prior in light transparent red (% light red, 60% opacity)
@@ -156,12 +161,13 @@ for i=1:npar
     hold off
     drawnow
     if subplotnum == MaxNumberOfPlotPerFigure || i == npar
-        dyn_saveas(hh_fig,[graphDirectoryName filesep M_.fname '_PriorsAndPosteriors' int2str(figunumber)], options_.nodisplay, options_.graph_format);
+        %dyn_saveas(hh_fig,[graphDirectoryName filesep M_.fname '_PriorsAndPosteriors' int2str(figunumber)], options_.nodisplay, options_.graph_format);
+        exportgraphics(hh_fig,[graphDirectoryName filesep M_.fname '_PriorsAndPosteriors' int2str(figunumber) '.pdf'],'ContentType','vector');
         if TeX && any(strcmp('eps', cellstr(options_.graph_format)))
             fprintf(fidTeX, '\\begin{figure}[H]\n');
             fprintf(fidTeX, '\\centering\n');
             fprintf(fidTeX, '\\includegraphics[width=%2.2f\\textwidth]{%s/%s_PriorsAndPosteriors%s}\n', ...
-                    options_.figures.textwidth*min(subplotnum/nn,1), graphDirectoryName, M_.fname, int2str(figunumber));
+                    options_.figures.textwidth*min(subplotnum/nn2,1), graphDirectoryName, M_.fname, int2str(figunumber));
             fprintf(fidTeX,'\\caption{Priors and posteriors.}');
             fprintf(fidTeX,'\\label{Fig:PriorsAndPosteriors:%s}\n', int2str(figunumber));
             fprintf(fidTeX,'\\end{figure}\n');
