@@ -6,8 +6,15 @@ addpath('nicer_plots_in_Dynare'); % for nicer prior vs posterior plots
 %%%%%%%%%%%%%%%
 varobs
 plot_gdp_S plot_pi_S
+@#if length(COUNTRIES) == 4
 plot_gdp_N plot_pi_N
 plot_gdp_D plot_pi_D
+@#elseif length(COUNTRIES) == 6
+plot_gdp_BN plot_pi_BN
+plot_gdp_BD plot_pi_BD
+plot_gdp_TN plot_pi_TN
+plot_gdp_TD plot_pi_TD
+@#endif
 ;
 @{NEWLINE}
 
@@ -17,12 +24,25 @@ plot_gdp_D plot_pi_D
 % we use helper function "pow_data_selector(country,varname,weight)" to set values and weights
 matched_irfs;
   var plot_gdp_S; varexo eps_war; periods 1:9; values (pow_data_selector(1,1,0)); weights (pow_data_selector(1,1,1));
+@#if length(COUNTRIES) == 4
   var plot_gdp_N; varexo eps_war; periods 1:9; values (pow_data_selector(2,1,0)); weights (pow_data_selector(2,1,1));
   var plot_gdp_D; varexo eps_war; periods 1:9; values (pow_data_selector(3,1,0)); weights (pow_data_selector(3,1,1));
-
+@#elseif length(COUNTRIES) == 6
+  var plot_gdp_TN; varexo eps_war; periods 1:9; values (pow_data_selector(2,1,0)); weights (pow_data_selector(2,1,1));
+  var plot_gdp_BN; varexo eps_war; periods 1:9; values (pow_data_selector(4,1,0)); weights (pow_data_selector(4,1,1));
+  var plot_gdp_TD; varexo eps_war; periods 1:9; values (pow_data_selector(3,1,0)); weights (pow_data_selector(3,1,1));
+  var plot_gdp_BD; varexo eps_war; periods 1:9; values (pow_data_selector(5,1,0)); weights (pow_data_selector(5,1,1));
+@#endif
   var plot_pi_S;  varexo eps_war; periods 1:9; values (pow_data_selector(1,2,0)); weights (pow_data_selector(1,2,1));
+@#if length(COUNTRIES) == 4
   var plot_pi_N;  varexo eps_war; periods 1:9; values (pow_data_selector(2,2,0)); weights (pow_data_selector(2,2,1));
   var plot_pi_D;  varexo eps_war; periods 1:9; values (pow_data_selector(3,2,0)); weights (pow_data_selector(3,2,1));
+@#elseif length(COUNTRIES) == 6
+  var plot_pi_TN;  varexo eps_war; periods 1:9; values (pow_data_selector(2,2,0)); weights (pow_data_selector(2,2,1));
+  var plot_pi_BN;  varexo eps_war; periods 1:9; values (pow_data_selector(4,2,0)); weights (pow_data_selector(4,2,1));
+  var plot_pi_TD;  varexo eps_war; periods 1:9; values (pow_data_selector(3,2,0)); weights (pow_data_selector(3,2,1));
+  var plot_pi_BD;  varexo eps_war; periods 1:9; values (pow_data_selector(4,2,0)); weights (pow_data_selector(4,2,1));
+@#endif
 end;
 @{NEWLINE}
 

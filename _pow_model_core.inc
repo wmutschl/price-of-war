@@ -58,15 +58,8 @@ parameters
 @#endif
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
   RHOM_S            ${\rho^{M}_{S}}$
-    @#if length(COUNTRIES) == 6
-  RHOM_BN           ${\rho^{M}_{B_N}}$
-  RHOM_BD           ${\rho^{M}_{B_D}}$
-  RHOM_TN           ${\rho^{M}_{T_N}}$
-  RHOM_TD           ${\rho^{M}_{T_D}}$
-    @#else
   RHOM_N            ${\rho^{M}_{N}}$
   RHOM_D            ${\rho^{M}_{D}}$
-    @#endif
 @#elseif MONETARY_POLICY_RULE == "INTEREST_RATE_RULE"
   RHOR_S            ${\rho^{R}_{S}}$
   PSIRPI_S          ${\psi^{\Pi}_{S}}$
@@ -83,20 +76,12 @@ parameters
   WAR_DELTA_L_S     ${\Delta^{L}_{S}}$
   WAR_DELTA_G_S     ${\Delta^{G}_{S}}$
     @#if length(COUNTRIES) == 6
-  WAR_DELTA_G_BN    ${\Delta^{G}_{B_N}}$
-  WAR_DELTA_G_BD    ${\Delta^{G}_{B_D}}$
+  WAR_DELTA_G_B     ${\Delta^{G}_{B}}$
     @#endif
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
   WAR_DELTA_M_S     ${\Delta^{M}_{S}}$
-    @#if length(COUNTRIES) == 6
-  WAR_DELTA_M_BN    ${\Delta^{M}_{B_N}}$
-  WAR_DELTA_M_BD    ${\Delta^{M}_{B_D}}$
-  WAR_DELTA_M_TN    ${\Delta^{M}_{T_N}}$
-  WAR_DELTA_M_TD    ${\Delta^{M}_{T_D}}$
-    @#else
   WAR_DELTA_M_N     ${\Delta^{M}_{T_N}}$
   WAR_DELTA_M_D     ${\Delta^{M}_{T_D}}$
-    @#endif
 @#endif
 
 @#include "__parameters.inc"
@@ -187,37 +172,52 @@ end;
 @{NEWLINE}
 
 @#if length(COUNTRIES) == 6
-    @#define MILEXCOUNTRIES = ["S", "BN", "BD"]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % military spending in fiscal policy rule in war site and belligerents (replace) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @#else
-    @#define MILEXCOUNTRIES = ["S"]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % military spending in fiscal policy rule in war site (replace) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 @#endif
-@#for j in MILEXCOUNTRIES
-model_replace('government spending rule in @{j}');
-g_@{j}/steady_state(gdp_@{j}) = (1-RHOG_@{j})*steady_state(g_@{j})/steady_state(gdp_@{j}) + RHOG_@{j} * g_@{j}(-1)/steady_state(gdp_@{j}) + eps_g_@{j} + WAR_DELTA_G_@{j}*war;
+model_replace('government spending rule in S');
+g_S/steady_state(gdp_S) = (1-RHOG_S)*steady_state(g_S)/steady_state(gdp_S) + RHOG_S * g_S(-1)/steady_state(gdp_S) + eps_g_S + WAR_DELTA_G_S*war;
 end;
-@#endfor
+@#if length(COUNTRIES) == 6
+    @#for j in ["BN", "BD"]
+model_replace('government spending rule in @{j}');
+g_@{j}/steady_state(gdp_@{j}) = (1-RHOG_@{j})*steady_state(g_@{j})/steady_state(gdp_@{j}) + RHOG_@{j} * g_@{j}(-1)/steady_state(gdp_@{j}) + eps_g_@{j} + WAR_DELTA_G_B*war;
+end;
+    @#endfor
+@#endif
 @{NEWLINE}
 
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % war-induced money growth rate rule in S, N, D (replace) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    @#for j in (COUNTRIES - ["R"])
+model_replace('money growth rule in S');
+(m_S/m_S(-1)*pi_S) = (1-RHOM_S)*steady_state(pi_S) + RHOM_S * (m_S(-1)/m_S(-2)*pi_S(-1)) + eps_m_S + WAR_DELTA_M_S * war;
+end;
+    @#for j in ["N", "D"]
+        @#if length(COUNTRIES) == 4
 model_replace('money growth rule in @{j}');
 (m_@{j}/m_@{j}(-1)*pi_@{j}) = (1-RHOM_@{j})*steady_state(pi_@{j}) + RHOM_@{j} * (m_@{j}(-1)/m_@{j}(-2)*pi_@{j}(-1)) + eps_m_@{j} + WAR_DELTA_M_@{j} * war;
 end;
+        @#elseif length(COUNTRIES) == 6
+            @#for c in ["B", "T"]
+model_replace('money growth rule in @{c}@{j}');
+(m_@{c}@{j}/m_@{c}@{j}(-1)*pi_@{c}@{j}) = (1-RHOM_@{j})*steady_state(pi_@{c}@{j}) + RHOM_@{j} * (m_@{c}@{j}(-1)/m_@{c}@{j}(-2)*pi_@{c}@{j}(-1)) + eps_m_@{c}@{j} + WAR_DELTA_M_@{j} * war;
+end;
+var_remove RHOM_@{c}@{j};
+            @#endfor
+        @#endif
     @#endfor
 
 @#elseif MONETARY_POLICY_RULE == "INTEREST_RATE_RULE"
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% war-induced symmetry of monetary policy parameters in Nearby, Distant, Rest of World (replace) %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% war-induced symmetry of monetary policy parameters in N, D, R (replace) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     @#for j in COUNTRIES when j != "S"
 model_replace('interest rate rule in @{j}');
 rnom_@{j}/steady_state(rnom@{_}@{j}) = (rnom_@{j}(-1)/steady_state(rnom@{_}@{j}))^RHOR_RDN * ( (pi_@{j}/steady_state(pi_@{j}))^PSIRPI_RDN * (gdp_@{j}/steady_state(gdp_@{j}))^PSIRGDP_RDN )^(1-RHOR_RDN) * exp(eps_r_@{j});
@@ -382,7 +382,7 @@ IOTAP_@{j}   = 0.50;   % partial price indexation to past inflation in @{j}
 TARGET_PI_@{j} = 1; % inflation target in @{j}
 @#endfor
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
-    @#for j in COUNTRIES
+    @#for j in ["R","D","N","S"]
 RHOM_@{j}      = 0; % money growth rule smoothing in @{j}
     @#endfor
 @#elseif MONETARY_POLICY_RULE == "INTEREST_RATE_RULE"
@@ -445,6 +445,8 @@ OPENNESS_@{j} = 0.25*(1 - ALPHAX_@{j}*(EPSILONP_@{j}-1)/EPSILONP_@{j}); % steady
 @#endfor
 @{NEWLINE}
 
+@#if length(COUNTRIES) == 4
+
 OMEGA_N_S  = 1;   % Nearby and War site are fully integrated
 OMEGA_D_N  = 0.1; % Distant is far away from Nearby
 OMEGA_D_S  = 0.1; % Distant is far away from War site
@@ -475,6 +477,65 @@ PHIB_S_D = 0.001; PHIB_N_D = 0.001; PHIB_D_D = 0    ; PHIB_R_D = 0.001; % bond c
 PHIB_S_R = 0.001; PHIB_N_R = 0.001; PHIB_D_R = 0.001; PHIB_R_R = 0    ; % bond carrying costs in R
 @{NEWLINE}
 
+@#elseif length(COUNTRIES) == 6
+
+OMEGA_BN_S = 1;   % Nearby countries are fully integrated
+OMEGA_BD_S = 0.1; % Distant is far away from War site
+OMEGA_TD_S = 0.1; % Distant is far away from War site
+OMEGA_TN_S = 1;   % Nearby countries are fully integrated
+
+OMEGA_BD_BN = 0.1; % Distant is far away from Nearby
+OMEGA_TD_BN = 0.1; % Distant is far away from Nearby
+OMEGA_TN_BN = 1  ; % Nearby countries are fully integrated
+OMEGA_S_BN  = 1  ; % Nearby and War Site are fully integrated
+
+OMEGA_TD_BD = 1;   % Distant countries are fully integrated
+OMEGA_TN_BD = 0.1; % Distant is far away from Nearby
+OMEGA_S_BD  = 0.1; % Distant is far away from War site
+OMEGA_BN_BD = 0.1; % Distant is far away from Nearby
+
+OMEGA_TN_TD = 0.1; % Distant is far away from Nearby
+OMEGA_S_TD  = 0.1; % Distant is far away from War site
+OMEGA_BN_TD = 0.1; % Distant is far away from Nearby
+OMEGA_BD_TD = 1;   % Distant countries are fully integrated
+
+OMEGA_S_TN  = 1;   % Nearby and War site are fully integrated
+OMEGA_BN_TN = 1;   % Nearby countries are fully integrated
+OMEGA_BD_TN = 0.1; % Distant is far away from Nearby
+OMEGA_TD_TN = 0.1; % Distant is far away from Nearby
+@{NEWLINE}
+
+OMEGA_R_S  = ( OPENNESS_S                       - OMEGA_BN_S *SIZE_BN - OMEGA_TN_S *SIZE_TN - OMEGA_BD_S *SIZE_BD - OMEGA_TD_S *SIZE_TD ) / (1-SIZE_S-SIZE_BN-SIZE_TN-SIZE_BD-SIZE_TD); % R is the "closing country"
+OMEGA_R_BN = ( OPENNESS_BN - OMEGA_S_BN*SIZE_S                        - OMEGA_TN_BN*SIZE_TN - OMEGA_BD_BN*SIZE_BD - OMEGA_TD_BN*SIZE_TD ) / (1-SIZE_S-SIZE_BN-SIZE_TN-SIZE_BD-SIZE_TD); % R is the "closing country"
+OMEGA_R_BD = ( OPENNESS_BD - OMEGA_S_BD*SIZE_S  - OMEGA_BN_BD*SIZE_BN - OMEGA_TN_BD*SIZE_TN                       - OMEGA_TD_BD*SIZE_TD ) / (1-SIZE_S-SIZE_BN-SIZE_TN-SIZE_BD-SIZE_TD); % R is the "closing country"
+OMEGA_R_TN = ( OPENNESS_TN - OMEGA_S_TN*SIZE_S  - OMEGA_BN_TN*SIZE_BN                       - OMEGA_BD_TN*SIZE_BD - OMEGA_TD_TN*SIZE_TD ) / (1-SIZE_S-SIZE_BN-SIZE_TN-SIZE_BD-SIZE_TD); % R is the "closing country"
+OMEGA_R_TD = ( OPENNESS_TD - OMEGA_S_TD*SIZE_S  - OMEGA_BN_TD*SIZE_BN - OMEGA_TN_TD*SIZE_TN - OMEGA_BD_TD*SIZE_BD                       ) / (1-SIZE_S-SIZE_BN-SIZE_TN-SIZE_BD-SIZE_TD); % R is the "closing country"
+
+OMEGA_S_R  = OMEGA_R_S;  % balanced trade in steady-state
+OMEGA_BN_R = OMEGA_R_BN; % balanced trade in steady-state
+OMEGA_BD_R = OMEGA_R_BD; % balanced trade in steady-state
+OMEGA_TN_R = OMEGA_R_TN; % balanced trade in steady-state
+OMEGA_TD_R = OMEGA_R_TD; % balanced trade in steady-state
+@{NEWLINE}
+
+                PHINX_BN_S  = 5; PHINX_BD_S  = 5; PHINX_TN_S  = 5; PHINX_TD_S  = 5; PHINX_R_S  = 0; % import adjustment costs in S
+PHINX_S_BN = 5;                  PHINX_BD_BN = 5; PHINX_TN_BN = 5; PHINX_TD_BN = 5; PHINX_R_BN = 0; % import adjustment costs in BN
+PHINX_S_BD = 5; PHINX_BN_BD = 5;                  PHINX_TN_BD = 5; PHINX_TD_BD = 5; PHINX_R_BD = 0; % import adjustment costs in BD
+PHINX_S_TN = 5; PHINX_BN_TN = 5; PHINX_BD_TN = 5;                  PHINX_TD_TN = 5; PHINX_R_TN = 0; % import adjustment costs in TN
+PHINX_S_TD = 5; PHINX_BN_TD = 5; PHINX_BD_TD = 5; PHINX_TN_TD = 5;                  PHINX_R_TD = 0; % import adjustment costs in TD
+PHINX_S_R  = 0; PHINX_BN_R  = 0; PHINX_BD_R  = 0; PHINX_TN_R  = 0; PHINX_TD_R  = 0;                 % import adjustment costs in R
+@{NEWLINE}
+
+PHIB_S_S  = 0;     PHIB_BN_S  = 0.001; PHIB_BD_S  = 0.001; PHIB_TN_S  = 0.001; PHIB_TD_S  = 0.001; PHIB_R_S  = 0.001; % bond carrying costs in S
+PHIB_S_BN = 0.001; PHIB_BN_BN = 0    ; PHIB_BD_BN = 0.001; PHIB_TN_BN = 0.001; PHIB_TD_BN = 0.001; PHIB_R_BN = 0.001; % bond carrying costs in BN
+PHIB_S_BD = 0.001; PHIB_BN_BD = 0.001; PHIB_BD_BD = 0;     PHIB_TN_BD = 0.001; PHIB_TD_BD = 0.001; PHIB_R_BD = 0.001; % bond carrying costs in BD
+PHIB_S_TN = 0.001; PHIB_BN_TN = 0.001; PHIB_BD_TN = 0.001; PHIB_TN_TN = 0;     PHIB_TD_TN = 0.001; PHIB_R_TN = 0.001; % bond carrying costs in TN
+PHIB_S_TD = 0.001; PHIB_BN_TD = 0.001; PHIB_BD_TD = 0.001; PHIB_TN_TD = 0.001; PHIB_TD_TD = 0;     PHIB_R_TD = 0.001; % bond carrying costs in TD
+PHIB_S_R  = 0.001; PHIB_BN_R  = 0.001; PHIB_BD_R  = 0.001; PHIB_TN_R  = 0.001; PHIB_TD_R  = 0.001; PHIB_R_R  = 0;     % bond carrying costs in R
+@{NEWLINE}
+
+@#endif
+
 % INITIALIZATION WAR PARAMETERS
 shocks;
 var eps_war = 1; % innovation to war shock
@@ -488,8 +549,11 @@ WAR_DELTA_A_S    = 0; % size of initial productivity decline in S
 WAR_DELTA_ZETA_S = 0; % size of initial productivity decline in S
 WAR_DELTA_L_S    = 0; % size of initial labor supply decline in S
 WAR_DELTA_G_S    = 0; % size of initial military spending increase in S
+@#if length(COUNTRIES) == 6
+WAR_DELTA_G_B    = 0; % size of initial military spending increase in belligerents
+@#endif
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
-    @#for j in COUNTRIES when j != "R"
+    @#for j in ["S","N","D"]
 WAR_DELTA_M_@{j}    = 0; % size of initial money supply change in @{j}
     @#endfor
 @#endif
@@ -527,7 +591,38 @@ try
     end
     disp(array2table(xparam1','VariableNames',parameter_names));
 catch
-    warning('Estimates not available\n');
+    warning('Estimates not available, use prior mean.');
+    WAR_DELTA_A_S   = 0.050;
+    WAR_DELTA_G_S   = 0.050;
+    @#if length(COUNTRIES) == 6
+    WAR_DELTA_G_B   = 0.050;
+    @#endif
+    WAR_DELTA_K_S   = 0.025;
+    @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
+    WAR_DELTA_M_S   = 0.020;
+    WAR_DELTA_M_N   = 0.010;
+    WAR_DELTA_M_D   = 0.005;
+    @#endif
+    WAR_RHO1_ROOT_S = 0.500;
+    WAR_RHO2_ROOT_S = 0.500;
+    RHOA_S          = 0.500;
+    @#if length(COUNTRIES) == 6
+    RHOG_S          = 0.500;
+    RHOG_BN         = 0.500;
+    RHOG_BD         = 0.500;
+    @#endif
+    @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
+    RHOM_S          = 0.500;
+    RHOM_N          = 0.500;
+    RHOM_D          = 0.500;
+    @#elseif MONETARY_POLICY_RULE == "INTEREST_RATE_RULE"
+    RHOR_S          = 0.500;
+    RHOR_RDN        = 0.500;
+    PSIRPI_S        = 2.000;
+    PSIRPI_RDN      = 2.000;
+    PSIRGDP_S       = 0.500;
+    PSIRGDP_RDN     = 0.500;
+    @#endif
 end
 @{NEWLINE}
 @#endif
@@ -538,6 +633,9 @@ end
 estimated_params;
   WAR_DELTA_A_S   ,  , 0    , 0.10 , inv_gamma_pdf , 0.050 , 0.15 ;
   WAR_DELTA_G_S   ,  , 0    , 1.00 , inv_gamma_pdf , 0.050 , 0.15 ;
+@#if length(COUNTRIES) == 6
+  WAR_DELTA_G_B   ,  , 0    , 1.00 , inv_gamma_pdf , 0.050 , 0.15 ;
+@#endif
   WAR_DELTA_K_S   ,  , 0    , 0.10 , inv_gamma_pdf , 0.025 , 0.15 ;
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
   WAR_DELTA_M_S   ,  , 0    , 1.00 , inv_gamma_pdf , 0.020 , 0.15 ;
@@ -547,6 +645,11 @@ estimated_params;
   WAR_RHO1_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
   WAR_RHO2_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
   RHOA_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+@#if length(COUNTRIES) == 6
+  RHOG_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+  RHOG_BN         ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+  RHOG_BD         ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
+@#endif
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
   RHOM_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
   RHOM_N          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;

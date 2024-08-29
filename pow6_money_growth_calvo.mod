@@ -1,9 +1,8 @@
-@#define MODEL_NAME = "pow6_money_financed_calvo"
+@#define MODEL_NAME = "pow6_money_growth_calvo"
 
 @#define COUNTRIES                        = ["R", "BD", "BN", "TD", "TN", "S"]
 
 @#define MONETARY_POLICY_RULE             = "MONEY_GROWTH_RATE_RULE"
-@#define MONEY_FINANCED_MILITARY_SPENDING = true
 
 @#define GOODS_MARKET_STRUCTURE           = "MONOPOLISTIC_COMPETITION_CES"
 @#define LABOR_MARKET_STRUCTURE           = "MONOPOLISTIC_COMPETITION_CES"
@@ -20,5 +19,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                             SAVE FIGURES                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%exportgraphics(fig_matching,"plots/fig_matching_@{MODEL_NAME}.pdf",'ContentType','vector');
-%exportgraphics(fig_transmission,"plots/fig_transmission_@{MODEL_NAME}.pdf",'ContentType','vector');
+exportgraphics(fig_matching,"plots/fig_matching_@{MODEL_NAME}.pdf",'ContentType','vector');
+exportgraphics(fig_transmission,"plots/fig_transmission_@{MODEL_NAME}.pdf",'ContentType','vector');
