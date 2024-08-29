@@ -192,9 +192,11 @@ WAR_DELTA_A_S    = 0; % size of initial productivity decline in S
 WAR_DELTA_ZETA_S = 0; % size of initial productivity decline in S
 WAR_DELTA_L_S    = 0; % size of initial labor supply decline in S
 WAR_DELTA_G_S    = 0; % size of initial military spending increase in S
-@#for j in COUNTRIES when j != "R"
+@#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
+    @#for j in COUNTRIES when j != "R"
 WAR_DELTA_M_@{j}    = 0; % size of initial money supply change in @{j}
-@#endfor
+    @#endfor
+@#endif
 @{NEWLINE}
 
 %%%%%%%%%%
@@ -204,9 +206,11 @@ estimated_params;
   WAR_DELTA_A_S   ,  , 0    , 0.10 , inv_gamma_pdf , 0.050 , 0.15 ;
   WAR_DELTA_G_S   ,  , 0    , 1.00 , inv_gamma_pdf , 0.050 , 0.15 ;
   WAR_DELTA_K_S   ,  , 0    , 0.10 , inv_gamma_pdf , 0.025 , 0.15 ;
+@#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
   WAR_DELTA_M_S   ,  , 0    , 1.00 , inv_gamma_pdf , 0.020 , 0.15 ;
   WAR_DELTA_M_N   ,  , 0    , 1.00 , inv_gamma_pdf , 0.010 , 0.15 ;
   WAR_DELTA_M_D   ,  , 0    , 1.00 , inv_gamma_pdf , 0.005 , 0.15 ;
+@#endif
   WAR_RHO1_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
   WAR_RHO2_ROOT_S ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
   RHOA_S          ,  , 0    , 0.99 , beta_pdf      , 0.500 , 0.15 ;
@@ -272,4 +276,10 @@ WAR_RHO2_ROOT_S = 0.712298073335497;
          RHOM_D = 0.720372607889175;
 @{NEWLINE}
 @#endif
+
+@#ifdef MODE_COMPUTE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% POSTERIOR MODE FROM RWMH %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@{NEWLINE}
 @#endif
