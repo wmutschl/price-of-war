@@ -20,7 +20,7 @@ point_warsite = plot(irf_horizon-1,warsite.gdp(:,1)','-','LineWidth',lineWidth,'
 plot(irf_horizon-1,oo_.irfs.plot_gdp_S_eps_war(irf_horizon),'--','LineWidth',lineWidth,'Color',col_S);
 hold off;
 leg = legend(point_warsite,{'War site'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-%xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+%xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 ylabel('Percent','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);
@@ -50,7 +50,7 @@ point_distant = plot(irf_horizon-1,distant.gdp(:,1)','-','LineWidth',lineWidth,'
 plot(irf_horizon-1,oo_.irfs.plot_gdp_D_eps_war(irf_horizon),'--','LineWidth',lineWidth,'Color',col_D);
 hold off;
 leg = legend([point_nearby,point_distant],{'Nearby','Distant'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 ylabel('Percent','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);
@@ -75,7 +75,7 @@ point_warsite = plot(irf_horizon-1,warsite.inflation(:,1)','-','LineWidth',lineW
 plot(irf_horizon-1,oo_.irfs.plot_pi_S_eps_war(irf_horizon),'--','LineWidth',lineWidth,'Color',col_S);
 hold off;
 leg = legend(point_warsite,{'War site'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-%xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+%xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 %ylabel('Percent','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);
@@ -105,7 +105,7 @@ point_distant = plot(irf_horizon-1,distant.inflation(:,1)','-','LineWidth',lineW
 plot(irf_horizon-1,oo_.irfs.plot_pi_D_eps_war(irf_horizon),'--','LineWidth',lineWidth,'Color',col_D);
 hold off;
 leg = legend([point_nearby,point_distant],{'Nearby','Distant'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 %ylabel('Percent','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);
@@ -141,7 +141,7 @@ plot(irf_horizon-1,oo_.irfs.plot_k_S_eps_war(irf_horizon),'--','LineWidth',lineW
 hold off;
 %leg = legend([point_warsite,point_nearby,point_distant],{'War site','Nearby','Distant'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
 leg = legend([point_warsite],{'War site'},'Location','North','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-%xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+%xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 %ylabel('Percent','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);
@@ -177,7 +177,7 @@ plot(irf_horizon-1,oo_.irfs.plot_g_S_eps_war(irf_horizon),'--','LineWidth',lineW
 hold off;
 %leg = legend([point_warsite,point_nearby,point_distant],{'War site','Nearby','Distant'},'Location','North','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
 leg = legend([point_warsite],{'War site'},'Location','North','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 %ylabel('Percent','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);
@@ -213,7 +213,7 @@ plot(irf_horizon-1,oo_.irfs.plot_a_S_eps_war(irf_horizon),'--','LineWidth',lineW
 hold off;
 %leg = legend([point_warsite,point_nearby,point_distant],{'War site','Nearby','Distant'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
 leg = legend([point_warsite],{'War site'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-%xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+%xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 %ylabel('Percent','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);
@@ -234,7 +234,7 @@ hold on;
 point_war_shock = plot(irf_horizon-1,oo_.irfs.war_eps_war(irf_horizon),'-','LineWidth',lineWidth,'Color',col_S);
 hold off;
 leg = legend(point_war_shock,{'$\omega_t$'},'Location','South','NumColumns',1,'Interpreter','latex','FontSize',fontSizeLegend); leg.BackgroundAlpha = alphaLegend;
-xlabel('Year after war onset','Interpreter','latex','FontSize',fontSizeLabels);
+xlabel('Year after start of war','Interpreter','latex','FontSize',fontSizeLabels);
 ylabel('Level','Interpreter','latex','FontSize',fontSizeLabels);
 xlim([-0.4 8.4]);
 xticks(0:2:8);

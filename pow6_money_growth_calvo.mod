@@ -20,4 +20,3 @@
 %%                             SAVE FIGURES                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 exportgraphics(fig_matching,"plots/fig_matching_@{MODEL_NAME}.pdf",'ContentType','vector');
-exportgraphics(fig_transmission,"plots/fig_transmission_@{MODEL_NAME}.pdf",'ContentType','vector');
