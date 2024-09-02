@@ -1,9 +1,9 @@
-@#define MODEL_NAME = "pow_taylor_calvo"
+@#define MODEL_NAME = "pow_money_growth_calvo_pegR"
 
 @#define COUNTRIES                        = ["R", "D", "N", "S"]
 
-@#define MONETARY_POLICY_RULE             = "INTEREST_RATE_RULE"
-@#define EXCHANGE_RATE_PEG_WITH_R         = false
+@#define MONETARY_POLICY_RULE             = "MONEY_GROWTH_RATE_RULE"
+@#define EXCHANGE_RATE_PEG_WITH_R         = true
 
 @#define GOODS_MARKET_STRUCTURE           = "MONOPOLISTIC_COMPETITION_CES"
 @#define LABOR_MARKET_STRUCTURE           = "MONOPOLISTIC_COMPETITION_CES"

@@ -193,27 +193,37 @@ end;
 @{NEWLINE}
 
 @#if MONETARY_POLICY_RULE == "MONEY_GROWTH_RATE_RULE"
+    @#if EXCHANGE_RATE_PEG_WITH_R == true
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% exchange rate peg instead of money growth rate rule in S, N, D (replace) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        @#for j in COUNTRIES when j != "R"
+model_replace('money growth rule in @{j}');
+dner_@{j}_R = 1 + eps_m_@{j};
+end;
+        @#endfor
+    @#else
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % war-induced money growth rate rule in S, N, D (replace) %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 model_replace('money growth rule in S');
 (m_S/m_S(-1)*pi_S) = (1-RHOM_S)*steady_state(pi_S) + RHOM_S * (m_S(-1)/m_S(-2)*pi_S(-1)) + eps_m_S + WAR_DELTA_M_S * war;
 end;
-    @#for j in ["N", "D"]
-        @#if length(COUNTRIES) == 4
+        @#for j in ["N", "D"]
+            @#if length(COUNTRIES) == 4
 model_replace('money growth rule in @{j}');
 (m_@{j}/m_@{j}(-1)*pi_@{j}) = (1-RHOM_@{j})*steady_state(pi_@{j}) + RHOM_@{j} * (m_@{j}(-1)/m_@{j}(-2)*pi_@{j}(-1)) + eps_m_@{j} + WAR_DELTA_M_@{j} * war;
 end;
-        @#elseif length(COUNTRIES) == 6
-            @#for c in ["B", "T"]
+            @#elseif length(COUNTRIES) == 6
+                @#for c in ["B", "T"]
 model_replace('money growth rule in @{c}@{j}');
 (m_@{c}@{j}/m_@{c}@{j}(-1)*pi_@{c}@{j}) = (1-RHOM_@{j})*steady_state(pi_@{c}@{j}) + RHOM_@{j} * (m_@{c}@{j}(-1)/m_@{c}@{j}(-2)*pi_@{c}@{j}(-1)) + eps_m_@{c}@{j} + WAR_DELTA_M_@{j} * war;
 end;
 var_remove RHOM_@{c}@{j};
-            @#endfor
-        @#endif
-    @#endfor
-
+                @#endfor
+            @#endif
+        @#endfor
+    @#endif
 @#elseif MONETARY_POLICY_RULE == "INTEREST_RATE_RULE"
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % war-induced symmetry of monetary policy parameters in N, D, R (replace) %

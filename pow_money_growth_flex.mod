@@ -3,6 +3,7 @@
 @#define COUNTRIES                        = ["R", "D", "N", "S"]
 
 @#define MONETARY_POLICY_RULE             = "MONEY_GROWTH_RATE_RULE"
+@#define EXCHANGE_RATE_PEG_WITH_R         = false
 
 @#define GOODS_MARKET_STRUCTURE           = "PERFECT_COMPETITION"
 @#define LABOR_MARKET_STRUCTURE           = "PERFECT_COMPETITION"
