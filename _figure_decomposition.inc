@@ -1,4 +1,4 @@
-SLIDES = true;
+SLIDES = false;
 irfs = oo_.irfs;
 
 idx_WAR_DELTA = find(ismember(M_.param_names,["WAR_DELTA_K_S";

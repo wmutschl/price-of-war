@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %% plots used in paper %%
 %%%%%%%%%%%%%%%%%%%%%%%%%
-SLIDES = true;
+SLIDES = false;
 
 fontSize = 18;
 fontSizeTitle  = 23;

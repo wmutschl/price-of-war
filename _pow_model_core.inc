@@ -719,8 +719,10 @@ lineWidth      = 2;
     @#include "_figure_transmission" + ((string) length(COUNTRIES)) + ".inc"
 @#endif
 @#ifdef PLOTS_PAPER
-    @#include "_figure_data_paper.inc"
-    @#include "_figure_decomposition.inc"
+    @#include "_figure_data_paper" + ((string) length(COUNTRIES)) + ".inc"
+    @#if length(COUNTRIES) == 4
+        @#include "_figure_decomposition.inc"
+    @#endif
 @#endif
 @{NEWLINE}
 
